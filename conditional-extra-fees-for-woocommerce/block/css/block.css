@@ -1,0 +1,47 @@
+.pisol-fees-parent label {
+    display: flex;
+    align-items: center;
+}
+
+.pisol-fees-parent label input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.pisol-fees-container-label:empty {
+    display: none;
+}
+
+.pisol-fees-container-label {
+    margin-bottom: 10px;
+    display: block;
+}
+
+body .pisol-fees-container{
+    padding:10px 20px !important;
+}
+
+body.pi-cefw-processing .pisol-fees-container{
+    position:relative;
+    pointer-events: none;
+    opacity:0.4;
+}
+
+body.pi-cefw-processing .pisol-fees-container:after{
+    animation: spinner__animation 1s linear infinite;
+    backface-visibility: hidden;
+    border: .2em solid;
+    border-left: .2em solid transparent;
+    border-radius: 50%;
+    box-sizing: border-box;
+    content: " ";
+    height: 1em;
+    left: 50%;
+    margin: -.5em 0 0 -.5em;
+    position: absolute;
+    top: 50%;
+    transform: translateZ(0) scale(.5);
+    transform-origin: 50% 50%;
+    width: 1em
+}
