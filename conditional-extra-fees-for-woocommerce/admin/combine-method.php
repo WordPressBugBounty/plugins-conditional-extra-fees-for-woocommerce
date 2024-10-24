@@ -14,7 +14,9 @@ class pisol_cefw_combine_methods{
 
     private $setting_key = 'cefw_combine_method';
     
-    
+    public $post_id;
+
+    public $tab;
 
     function __construct($plugin_name){
         $this->plugin_name = $plugin_name;

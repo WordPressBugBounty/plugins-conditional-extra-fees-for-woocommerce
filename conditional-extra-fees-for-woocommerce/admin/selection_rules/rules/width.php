@@ -1,6 +1,9 @@
 <?php
 
 class Pi_cefw_selection_rule_width{
+    public $slug;
+    public $condition;
+    
     function __construct($slug){
         $this->slug = $slug;
         $this->condition = 'width';

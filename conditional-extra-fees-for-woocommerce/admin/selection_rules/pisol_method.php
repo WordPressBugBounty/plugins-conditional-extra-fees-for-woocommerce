@@ -1,6 +1,11 @@
 <?php
 
 class Pisol_cefw_method_evaluation{
+    public $method;
+    public $package;
+    public $results;
+    public $result;
+    
     function __construct($method, $package){
         $this->method = $method;
         $this->package = $package;

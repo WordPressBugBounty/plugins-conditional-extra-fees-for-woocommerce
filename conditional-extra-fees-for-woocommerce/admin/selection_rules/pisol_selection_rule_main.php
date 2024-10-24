@@ -1,6 +1,13 @@
 <?php
 
 class Pi_cefw_selection_rule_main{
+    
+    public $title;
+    public $slug;
+    public $data;
+    public $saved_conditions;
+    public $rules;
+
     function __construct($title , $saved_conditions, $data){
         $this->title = $title;
         $this->saved_conditions = $saved_conditions;

@@ -16,6 +16,8 @@ class pisol_cefw_options{
     
     static $instance = null;
 
+    public $tab;
+
     static function get_instance($plugin_name){
         if(self::$instance == null){
             self::$instance = new self($plugin_name);

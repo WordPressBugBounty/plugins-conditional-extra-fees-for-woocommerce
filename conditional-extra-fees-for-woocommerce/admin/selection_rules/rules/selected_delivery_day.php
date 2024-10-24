@@ -1,6 +1,9 @@
 <?php
 
 class Pi_cefw_selection_rule_selected_delivery_day{
+    public $slug;
+    public $condition;
+    
     function __construct($slug){
         $this->slug = $slug;
         $this->condition = 'selected_delivery_day';

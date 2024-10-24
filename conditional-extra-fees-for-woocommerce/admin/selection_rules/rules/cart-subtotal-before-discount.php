@@ -1,6 +1,9 @@
 <?php
 
 class Pi_cefw_selection_rule_cart_subtotal_before_fees{
+    public $slug;
+    public $condition;
+    
     function __construct($slug){
         $this->slug = $slug;
         $this->condition = 'cart_subtotal_before_fees';

@@ -4,6 +4,7 @@ class Pi_cefw_Menu{
 
     public $plugin_name;
     public $menu;
+    public $version;
     
     function __construct($plugin_name , $version){
         $this->plugin_name = $plugin_name;

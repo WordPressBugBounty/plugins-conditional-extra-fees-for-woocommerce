@@ -12,7 +12,9 @@ class Class_Pi_cefw_Add_Edit{
 
     private $setting_key = 'pi_cdre_add_rule';
     
-    
+    public $tab_name;
+
+    public $tab;
 
     function __construct($plugin_name){
         $this->plugin_name = $plugin_name;

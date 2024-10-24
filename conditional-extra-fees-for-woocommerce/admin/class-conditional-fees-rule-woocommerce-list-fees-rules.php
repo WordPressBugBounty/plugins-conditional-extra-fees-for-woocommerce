@@ -14,7 +14,9 @@ class Class_Pi_cefw_List{
 
     private $setting_key = 'pi_cefw_list';
     
-    
+    public $post_id;
+
+    public $tab;
 
     function __construct($plugin_name){
         $this->plugin_name = $plugin_name;

@@ -7,6 +7,10 @@ class Pi_cefw_Apply_fees{
 
     public $fees_amount = [];
 
+    public $short_code_fees_id;
+
+    public $short_code_cart;
+
     public static function get_instance( ) {
 		if ( is_null( self::$instance ) ) {
 			self::$instance = new self();

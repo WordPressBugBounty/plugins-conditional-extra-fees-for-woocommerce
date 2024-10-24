@@ -1,6 +1,9 @@
 <?php
 
 class Pi_cefw_selection_rule_weight{
+    public $slug;
+    public $condition;
+    
     function __construct($slug){
         $this->slug = $slug;
         $this->condition = 'weight';

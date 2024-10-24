@@ -1,6 +1,9 @@
 <?php
 
 class Pi_cefw_selection_rule_pickup_location{
+    public $slug;
+    public $condition;
+    
     function __construct($slug){
         $this->slug = $slug;
         $this->condition = 'pickup_location';

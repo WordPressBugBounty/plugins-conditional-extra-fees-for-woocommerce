@@ -1,6 +1,10 @@
 <?php
 
 class Pi_cefw_selection_rule_product{
+    
+    public $slug;
+    public $condition;
+
     function __construct($slug){
         $this->slug = $slug;
         $this->condition = 'product';

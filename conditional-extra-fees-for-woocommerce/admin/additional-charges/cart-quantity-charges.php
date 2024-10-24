@@ -2,6 +2,8 @@
  
 class pisol_cefw_cart_quantity_extra_charges_setting{
 
+    public $slug;
+
     function __construct(){
         $this->slug = 'cart_quantity';
 

@@ -1,6 +1,9 @@
 <?php
 
 class pisol_cefw_pro_rules{
+    
+    public $slug;
+
     function __construct($slug){
         $this->slug = $slug;
          /* this adds the condition in set of rules dropdown */

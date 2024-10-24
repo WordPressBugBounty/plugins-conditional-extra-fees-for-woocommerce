@@ -2,6 +2,8 @@
  
 class pisol_cefw_weight_based_extra_charges_setting{
 
+    public $slug;
+
     function __construct(){
         $this->slug = 'weight';
 

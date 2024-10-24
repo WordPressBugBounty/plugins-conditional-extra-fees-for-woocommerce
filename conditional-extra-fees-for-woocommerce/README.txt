@@ -4,7 +4,7 @@ Donate link: piwebsolution.com
 Tags: cart fee, Extra Charge, additional fee, service charge, woocommerce extra fee, woocommerce additional fees, woocommerce fees, woocommerce extra cost, woocommerce additional cost, Woocommerce advanced fees, extra fee, woocommerce extra cost
 Requires at least: 3.0.1
 Tested up to: 6.6.1
-Stable tag: 1.1.41
+Stable tag: 1.1.42
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -221,6 +221,9 @@ Yes the Free version and PRO version both are HPOS compatible
 Please make sure that you have use one of the following product selection rule (Cart has product, Cart has product of category, Shipping class) in the Selection Rules section and those product are there in the cart as well. 
 
 == Changelog ==
+
+= 1.1.42 =
+* Made compatible with PHP 8.2
 
 = 1.1.41 =
 * Tested with WC 9.3.0
