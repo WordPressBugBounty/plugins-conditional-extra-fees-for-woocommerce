@@ -9,21 +9,21 @@
  * that starts the plugin.
  *
  * @link              piwebsolution.com
- * @since             1.1.42
+ * @since             1.1.43
  * @package           Conditional_fees_Rule_Woocommerce
  *
  * @wordpress-plugin
  * Plugin Name:       Conditional extra fees for WooCommerce
  * Plugin URI:        piwebsolution.com/conditional-fees-rule-wooCommerce
  * Description:       Conditional extra fees for WooCommerce
- * Version:           1.1.42
+ * Version:           1.1.43
  * Author:            PI Websolution
  * Author URI:        piwebsolution.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       conditional-extra-fees-woocommerce
  * Domain Path:       /languages
- * WC tested up to: 9.3.0
+ * WC tested up to: 9.3.3
  */
 
 // If this file is called directly, abort.
@@ -60,10 +60,10 @@ if(is_plugin_active( 'conditional-extra-fees-for-woocommerce-pro/conditional-fee
 
 /**
  * Currently plugin version.
- * Start at version 1.1.42 and use SemVer - https://semver.org
+ * Start at version 1.1.43 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'CONDITIONAL_FEES_RULE_WOOCOMMERCE_VERSION', '1.1.42' );
+define( 'CONDITIONAL_FEES_RULE_WOOCOMMERCE_VERSION', '1.1.43' );
 define('PI_CEFW_BUY_URL', 'https://www.piwebsolution.com/cart/?add-to-cart=15441&variation_id=15442&utm_campaign=conditional-fee&utm_source=website&utm_medium=direct-buy');
 define('PI_CEFW_PRICE', '$34');
 define('PI_CEFW_DELETE_SETTING', false);

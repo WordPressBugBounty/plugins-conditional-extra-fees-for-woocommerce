@@ -133,3 +133,7 @@
 .additional-charges-tab-content.pi-active-tab{
     display:block;
 }
+
+#pisol-cefw-fees-list-view table td{
+    vertical-align: middle;
+}

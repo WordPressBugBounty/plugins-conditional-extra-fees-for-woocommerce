@@ -3,8 +3,8 @@ Contributors: jyotsnasingh520
 Donate link: piwebsolution.com
 Tags: cart fee, Extra Charge, additional fee, service charge, woocommerce extra fee, woocommerce additional fees, woocommerce fees, woocommerce extra cost, woocommerce additional cost, Woocommerce advanced fees, extra fee, woocommerce extra cost
 Requires at least: 3.0.1
-Tested up to: 6.6.1
-Stable tag: 1.1.42
+Tested up to: 6.7.0
+Stable tag: 1.1.43
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -218,9 +218,18 @@ Yes it gives option to apply rule for specific currency, so that way you can mak
 Yes the Free version and PRO version both are HPOS compatible
 
 = I have used shortcode [selected_product_qty] but fee is not applied =
-Please make sure that you have use one of the following product selection rule (Cart has product, Cart has product of category, Shipping class) in the Selection Rules section and those product are there in the cart as well. 
+Please make sure that you have use one of the following product selection rule (Cart has product, Cart has product of category, Shipping class) in the Selection Rules section and those product are there in the cart as well.
+
+= I want percentage of the fees to be based on Subtotal after discount =
+Yes, you can do that by in the pro version, in the Extra setting tab you can set the Percentage to be based on (Subtotal - Discount)
+
+= I want percentage of the fees to be based on Subtotal after discount and also consider the shipping price =
+Yes, you can do that by in the pro version, in the Extra setting tab you can set the Percentage to be based on (Subtotal - Discount + Shipping cost)
 
 == Changelog ==
+
+= 1.1.43 =
+* Tested with WP 6.7.0
 
 = 1.1.42 =
 * Made compatible with PHP 8.2
