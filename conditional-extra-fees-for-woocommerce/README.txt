@@ -4,7 +4,7 @@ Donate link: piwebsolution.com
 Tags: cart fee, Extra Charge, additional fee, service charge, woocommerce extra fee, woocommerce additional fees, woocommerce fees, woocommerce extra cost, woocommerce additional cost, Woocommerce advanced fees, extra fee, woocommerce extra cost
 Requires at least: 3.0.1
 Tested up to: 6.7.0
-Stable tag: 1.1.43
+Stable tag: 1.1.44
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -227,6 +227,9 @@ Yes, you can do that by in the pro version, in the Extra setting tab you can set
 Yes, you can do that by in the pro version, in the Extra setting tab you can set the Percentage to be based on (Subtotal - Discount + Shipping cost)
 
 == Changelog ==
+
+= 1.1.44 =
+* Tested with WC 9.4.0
 
 = 1.1.43 =
 * Tested with WP 6.7.0
