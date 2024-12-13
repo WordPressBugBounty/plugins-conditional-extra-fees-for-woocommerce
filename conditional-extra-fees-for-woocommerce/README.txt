@@ -3,8 +3,8 @@ Contributors: jyotsnasingh520
 Donate link: piwebsolution.com
 Tags: cart fee, Extra Charge, additional fee, service charge, woocommerce extra fee, woocommerce additional fees, woocommerce fees, woocommerce extra cost, woocommerce additional cost, Woocommerce advanced fees, extra fee, woocommerce extra cost
 Requires at least: 3.0.1
-Tested up to: 6.7.0
-Stable tag: 1.1.44
+Tested up to: 6.7.1
+Stable tag: 1.1.46
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
