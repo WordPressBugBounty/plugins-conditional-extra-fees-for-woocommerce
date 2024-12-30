@@ -33,6 +33,14 @@
 			dateFormat: 'yy/mm/dd',
 		});
 
+		jQuery(document).on('click', '.pi-cefw-delete', function (e) {
+			//show confirmation dialog
+			var choice = confirm("Are you sure you want to delete it ?");
+			if (!choice) {
+				e.preventDefault();
+			}
+		});
+
 		function clearDate() {
 
 			jQuery(document).on('click', ".pi-clear", function (e) {

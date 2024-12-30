@@ -49,7 +49,7 @@ foreach($shipping_methods as $method){
     echo '</td>';
     echo '<td>';
     echo '<a href="'.admin_url( '/admin.php?page=pisol-cefw&tab=pi_cefw_add_rule&action=edit&id='.$method->ID ).'" class="btn btn-primary btn-sm mr-2" title="Edit"><span class="dashicons dashicons-admin-customizer"></span></a>';
-    echo '<a href="'.wp_nonce_url(admin_url( '/admin.php?page=pisol-cefw&action=cefw_delete&id='.$method->ID ), 'cefw-delete').'" class="btn btn-warning btn-sm" title="Delete"><span class="dashicons dashicons-trash"></span></a>';
+    echo '<a href="'.wp_nonce_url(admin_url( '/admin.php?page=pisol-cefw&action=cefw_delete&id='.$method->ID ), 'cefw-delete').'" class="btn btn-warning btn-sm pi-cefw-delete" title="Delete"><span class="dashicons dashicons-trash"></span></a>';
     echo '</td>';
     echo '</tr>';
 }
