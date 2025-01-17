@@ -17,12 +17,6 @@ class pisol_cefw_pro_rules{
             'condition'=>'state',
             'pro'=>true
         );
-        $rules['postcode'] = array(
-            'name'=>__('Postcode (Available in PRO Version)','conditional-extra-fees-woocommerce'),
-            'group'=>'location_related',
-            'condition'=>'postcode',
-            'pro'=>true
-        );
         
         $rules['product_tag'] = array(
             'name'=>__('Cart has Product tag (Available in PRO Version)','conditional-extra-fees-woocommerce'),

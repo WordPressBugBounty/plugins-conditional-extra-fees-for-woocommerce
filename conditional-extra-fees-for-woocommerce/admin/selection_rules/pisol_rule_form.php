@@ -18,3 +18,8 @@
 <div id="pisol-rules-container-<?php echo $this->slug; ?>">
 <?php echo $this->savedRows(); ?>
 </div>
+<div class="row">
+    <div class="col-12 text-right py-3">
+    <a href="javascript:void(0);" class="btn btn-primary btn-sm pi-add-<?php echo PI_CEFW_SELECTION_RULE_SLUG; ?>-rule" data-target="#pisol-rules-container-<?php echo $this->slug; ?>"><?php echo __('Add Condition','conditional-extra-fees-woocommerce'); ?></a>
+    </div>
+</div>

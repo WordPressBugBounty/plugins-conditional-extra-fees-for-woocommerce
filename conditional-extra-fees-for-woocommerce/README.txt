@@ -4,7 +4,7 @@ Donate link: piwebsolution.com
 Tags: cart fee, Extra Charge, additional fee, service charge, woocommerce extra fee, woocommerce additional fees, woocommerce fees, woocommerce extra cost, woocommerce additional cost, Woocommerce advanced fees, extra fee, woocommerce extra cost
 Requires at least: 3.0.1
 Tested up to: 6.7.1
-Stable tag: 1.1.49
+Stable tag: 1.1.49.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,7 @@ WooCommerce extra fees plugin is very simple to use, and you can create complex 
 &#9989; Set order amount based extra fee
 &#9989; Set weight-based extra fee
 &#9989; Set shipping class-based extra fee
+&#9989; Postcode: You can apply an extra charge based on the specific postcode or range of postcode
 &#9989; Charge extra fees by user role
 &#9989; Apply charge based on the product quantity multiple of
 &#9989; Apply charge if product quantity is not a multiple of  
@@ -66,8 +67,6 @@ Compatible with [Order date and time plugin](https://wordpress.org/plugins/pi-wo
 * Charge different fees based on the quantity of different product in the cart
 
 == PRO features ==
-
-&#9989; Postcode: You can apply an extra charge based on the specific postcode or range of postcode
 
 &#9989; Product Tags: So you can add an extra charge if the specific tag of the product are present in the cart
 
@@ -227,6 +226,9 @@ Yes, you can do that by in the pro version, in the Extra setting tab you can set
 Yes, you can do that by in the pro version, in the Extra setting tab you can set the Percentage to be based on (Subtotal - Discount + Shipping cost)
 
 == Changelog ==
+
+= 1.1.49.1 =
+* UX improvement
 
 = 1.1.49 =
 * Tested with WC 9.5.0

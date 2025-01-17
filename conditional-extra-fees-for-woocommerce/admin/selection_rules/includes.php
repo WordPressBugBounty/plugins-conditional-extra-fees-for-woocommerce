@@ -6,6 +6,7 @@ require_once 'rules/pro_rules.php';
 
 require_once 'pisol_method.php';
 require_once 'rules/country.php';
+require_once 'rules/postcode.php';
 require_once 'rules/product.php';
 require_once 'rules/product_quantity.php';
 require_once 'rules/category_product.php';
