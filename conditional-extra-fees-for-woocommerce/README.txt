@@ -4,7 +4,7 @@ Donate link: piwebsolution.com
 Tags: cart fee, Extra Charge, additional fee, service charge, woocommerce extra fee, woocommerce additional fees, woocommerce fees, woocommerce extra cost, woocommerce additional cost, Woocommerce advanced fees, extra fee, woocommerce extra cost
 Requires at least: 3.0.1
 Tested up to: 6.7.1
-Stable tag: 1.1.49.1
+Stable tag: 1.1.49.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,10 +61,10 @@ Compatible with [Order date and time plugin](https://wordpress.org/plugins/pi-wo
 
 
 == Change fees amount conditionally ==
-* Charge different fees based on different quantities in the cart
-* Charge different fees based on total weight in the cart
-* Charge different fees based on subtotal in the cart
-* Charge different fees based on the quantity of different product in the cart
+&#9989; Charge different fees based on different quantities in the cart
+&#9989; Charge different fees based on total weight in the cart
+&#9989; Charge different fees based on subtotal in the cart
+&#9989; Charge different fees based on the quantity of different product in the cart
 
 == PRO features ==
 
