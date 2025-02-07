@@ -160,8 +160,8 @@ if ( ! defined( 'ABSPATH' ) ) {
     <div class="col-12 col-sm-5">
         <label for="pi_cost" class="h6"><?php echo __('Fees start Time','conditional-extra-fees-woocommerce'); ?> <span class="text-primary"></span></label>
     </div>
-    <div class="col-12 col-sm d-flex align-items-center">
-        <input type="text" readonly value="<?php echo esc_attr($data['pi_fees_start_time']); ?>" class="form-control" name="pi_fees_start_time" id="pi_fees_start_time" autocomplete="off"><a href="javascript:void(0)" class="pi-clear btn btn-md btn-danger text-nowrap"><?php _e('Clear date','conditional-extra-fees-woocommerce'); ?></a>
+    <div class="col-12 col-sm-2 d-flex align-items-center">
+        <input type="date" value="<?php echo esc_attr($data['pi_fees_start_time']); ?>" class="form-control" name="pi_fees_start_time" id="pi_fees_start_time" autocomplete="off">
     </div>
 </div>
 
@@ -171,8 +171,8 @@ if ( ! defined( 'ABSPATH' ) ) {
     <div class="col-12 col-sm-5">
         <label for="pi_cost" class="h6"><?php _e('Fees end time','conditional-extra-fees-woocommerce'); ?> <span class="text-primary"></span></label>
     </div>
-    <div class="col-12 col-sm d-flex align-items-center">
-        <input type="text" readonly value="<?php echo esc_attr($data['pi_fees_end_time']); ?>" class="form-control" name="pi_fees_end_time" id="pi_fees_end_time" autocomplete="off"><a href="javascript:void(0)" class="pi-clear btn btn-md btn-danger text-nowrap"><?php _e('Clear date','conditional-extra-fees-woocommerce'); ?></a>
+    <div class="col-12 col-sm-2 d-flex align-items-center">
+        <input type="date" value="<?php echo esc_attr($data['pi_fees_end_time']); ?>" class="form-control" name="pi_fees_end_time" id="pi_fees_end_time" autocomplete="off">
     </div>
 </div>
 <div style="border-top:4px solid orange; border-bottom:4px solid orange">

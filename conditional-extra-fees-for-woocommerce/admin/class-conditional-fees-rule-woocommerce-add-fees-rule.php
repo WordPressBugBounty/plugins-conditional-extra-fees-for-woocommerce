@@ -106,8 +106,8 @@ class Class_Pi_cefw_Add_Edit{
             $data['pi_fees_tax_class'] = get_post_meta( $data['post_id'], 'pi_fees_tax_class', true );
 
             $data['pi_fees']                 = get_post_meta( $data['post_id'], 'pi_fees', true );
-            $data['pi_fees_start_time']                 = get_post_meta( $data['post_id'], 'pi_fees_start_time', true );
-            $data['pi_fees_end_time']                 = get_post_meta( $data['post_id'], 'pi_fees_end_time', true );
+            $data['pi_fees_start_time']                 = self::format_date_for_display(get_post_meta( $data['post_id'], 'pi_fees_start_time', true ));
+            $data['pi_fees_end_time']                 = self::format_date_for_display( get_post_meta( $data['post_id'], 'pi_fees_end_time', true ));
             $data['pi_metabox']              = get_post_meta( $data['post_id'], 'pi_metabox', true );
 
             $data['pi_condition_logic'] = empty(get_post_meta( $data['post_id'], 'pi_condition_logic', true )) ? 'and' : get_post_meta( $data['post_id'], 'pi_condition_logic', true ); 
@@ -313,11 +313,19 @@ class Class_Pi_cefw_Add_Edit{
         return sanitize_text_field($values);
     }
 
-    static function validateDate($date, $format = 'Y/m/d'){
+    static function validateDate($date, $format = 'Y-m-d'){
         $d = DateTime::createFromFormat($format, $date);
         if($d && $d->format($format) === $date){
             $formated = $d->format($format);
-            return $d->format($format);
+            return $d->format('Y/m/d');
+        }
+        return "";
+    }
+
+    static function format_date_for_display($date){
+        $d = DateTime::createFromFormat('Y/m/d', $date);
+        if($d && $d->format('Y/m/d') === $date){
+            return $d->format('Y-m-d');
         }
         return "";
     }

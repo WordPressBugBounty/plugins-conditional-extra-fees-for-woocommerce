@@ -29,10 +29,7 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 	jQuery(function ($) {
-		$("#pi_fees_start_time, #pi_fees_end_time").datepicker({
-			dateFormat: 'yy/mm/dd',
-		});
-
+		
 		jQuery(document).on('click', '.pi-cefw-delete', function (e) {
 			//show confirmation dialog
 			var choice = confirm("Are you sure you want to delete it ?");
@@ -167,7 +164,9 @@
 		}
 		taxClass();
 
-		jQuery("#pi_currency").selectWoo();
+		if(jQuery.fn.selectWoo){
+			jQuery("#pi_currency").selectWoo();
+		}
 
 	});
 
