@@ -1,6 +1,9 @@
 <?php
 
 class pi_cefw_products_matching_rule{
+    public $fees_id;
+    public $cart;
+    
     function __construct($fees_id, $cart){
         $this->fees_id = $fees_id;
         $this->cart = $cart;
