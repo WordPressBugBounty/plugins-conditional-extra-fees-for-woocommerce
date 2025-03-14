@@ -67,7 +67,7 @@ class Pi_cefw_selection_rule_main{
         }
 
         $html .= '>';
-        $html .= $rule['name'];
+        $html .= esc_html( $rule['name'] );
         $html .= '</option>';
         }
         $html .= '</optgroup>';
