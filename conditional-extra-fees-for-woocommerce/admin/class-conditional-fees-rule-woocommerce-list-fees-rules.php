@@ -21,7 +21,7 @@ class Class_Pi_cefw_List{
     function __construct($plugin_name){
         $this->plugin_name = $plugin_name;
 
-        $this->tab_name = __("Extra fees rules", 'conditional-extra-fees-woocommerce');
+        $this->tab_name = __("Extra fees rules");
        
         $this->tab = filter_input( INPUT_GET, 'tab' );
         $this->active_tab = $this->tab != "" ? $this->tab : 'default';
