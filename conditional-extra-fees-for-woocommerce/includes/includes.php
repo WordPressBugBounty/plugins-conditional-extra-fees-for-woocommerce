@@ -16,5 +16,6 @@ require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/selection_rules/inc
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/additional-charges/includes.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/option.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/combine-method.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-store-fee.php';
 
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'block/includes.php';
