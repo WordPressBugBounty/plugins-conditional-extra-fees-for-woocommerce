@@ -3,7 +3,7 @@ Contributors: jyotsnasingh520
 Donate link: piwebsolution.com
 Tags: cart fee, Extra Charge, additional fee, service charge, woocommerce extra fee, woocommerce additional fees, woocommerce fees, woocommerce extra cost, woocommerce additional cost, Woocommerce advanced fees, extra fee, woocommerce extra cost
 Requires at least: 3.0.1
-Tested up to: 6.8.0
+Tested up to: 6.8.1
 Stable tag: 1.1.49.12
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -72,33 +72,35 @@ Compatible with [Order date and time plugin](https://wordpress.org/plugins/pi-wo
 
 &#9989; Quantity of product from specific category: When the quantity of product from a specific category is as per your comparison rule then you apply the extra charge
 
+&#9989; Charge extra WooCommerce checkout fees when the customer is making a **first order** on your website
+
 &#9989; Quantity of product from specific tag: When the quantity of product with a specific tag is as per your comparison rule then you apply the extra charge
+
+&#9989; Don't charge extra WooCommerce checkout fees if it is the **first order** of the customer
 
 &#9989; Payment method: Apply extra charge when the user selects a specific payment method
 
 &#9989; Day of the week: Apply extra charge on the specific day of the week
 
+&#9989; Don't charge extra WooCommerce checkout fees if the customer has placed more then 5 orders during the current month
+
 &#9989; Shipping method based extra fees: Apply fees based on the shipping method selected by the customer
 
 &#9989; Charge extra fees based on the Product Attribute, so you can charge extra fees if the user purchases a Large size dore and don't charge extra fees when they purchase small size dore
 
-&#9989; Charge extra fees when the customer is making a **first order** on your website
-
-&#9989; Don't charge extra fees if it is the **first order** of the customer
-
-&#9989; Don't charge extra fees if the customer **last order** total was more then 1000$ 
-
-&#9989; Don't charge extra fees if the customer has placed more then 5 orders during the current month
-
-&#9989; Don't charge extra fees if the customer total purchase from your website over the last one week is of more then $1000
+&#9989; Don't charge extra WooCommerce checkout fees if the customer **last order** total was more then 1000$ 
 
 &#9989; Show optional fees checkbox on the cart page
 
 &#9989; Set a different message for the optional fees checkbox 
 
+&#9989; Don't charge extra WooCommerce checkout fees if the customer total purchase from your website over the last one week is of more then $1000
+
 &#9989; You can add a fee description that will be shown to the customer on the checkout page in the form of a tooltip. So customer will know what is this fee
 
-&#9989; You can add a different fee description to each of the applied fee
+&#9989; checkout fees for woocommerce based on the product attributes, so you can charge extra fees based on the product attributes selected by the customer
+
+&#9989; You can add a different WooCommerce checkout fees description to each of the applied fee
 
 Say you are charging them a installation fees then you can configure the plugin to show 
 
@@ -117,6 +119,7 @@ and once they have selected the checkbox it will show them
 
 &#9989; **Exact set of product or set of category of product not present in the cart** Add extra fees when exact set of product or product belonging to exact set of category are **NOT** present in the cart.
 
+&#9989; checkout fees for woocommerce based on woocommerce subscription product present in the cart
 
 = Combine multiple fees (PRO feature) =
 &#9989; You can combine multiple fees in to a single fees
@@ -141,25 +144,32 @@ https://www.youtube.com/watch?v=lE6ELZ0v_68
 &#9989; Extra cart fees based on the state
 &#9989; Add extra charge based on product in the cart
 &#9989; Extra charge base on product category
+&#9989; add fee to woocommerce checkout
 &#9989; WooCommerce extra cost if user quantity is more then certain limit
-&#9989; Add surcharge based on multiple conditions
+&#9989; Add WooCommerce surcharge based on state
 &#9989; WooCommerce extra fees based on product height
 &#9989; Add a WooCommerce Extra Fees for specific selected delivery date
+&#9989; woocommerce add fee to order
 &#9989; Apply additional fees based on the total weight of product in the cart
 &#9989; Apply Service charge based on product categories
 &#9989; Add Service charge based on Country / State  of the customer
 &#9989; Service charge charge based on product in the cart
+&#9989; woocommerce additional fees on checkout
 &#9989; Product-based fees 
 &#9989; Charge a extra fees to Subscriber or wholesaler 
 &#9989; WooCommerce Conditional Product Fees For Checkout
 &#9989; WooCommerce cash on delivery extra fee
+&#9989; woocommerce advanced extra fees
 &#9989; Payment Gateway Based Fees
 &#9989; Payment processing fees
 &#9989; Pay for Payment for WooCommerce
 &#9989; Apply fee when user is buying in specific currency
+&#9989; woocommerce conditional product fees for checkout
 &#9989; Charge different fee based on the payment currency selected by the customer
 &#9989; Charge a extra 2$ fee if user buys a product less then $10 
 &#9989; if user buys a product less then $10, then charge a fee of 12% of the product price
+&#9989; Add WooCommerce surcharge based on country
+&#9989; woocommerce extra fee per product
 
 == Frequently asked questions ==
 
@@ -223,8 +233,56 @@ Please make sure that you have use one of the following product selection rule (
 = I want percentage of the fees to be based on Subtotal after discount =
 Yes, you can do that by in the pro version, in the Extra setting tab you can set the Percentage to be based on (Subtotal - Discount)
 
+= How do I add fee to woocommerce checkout for express delivery options? =
+You can configure our plugin to automatically add fee to woocommerce checkout when a customer selects express shipping or similar premium services. (Only in PRO version)
+
 = I want percentage of the fees to be based on Subtotal after discount and also consider the shipping price =
 Yes, you can do that by in the pro version, in the Extra setting tab you can set the Percentage to be based on (Subtotal - Discount + Shipping cost)
+
+= Can I set rules to add fee to woocommerce checkout based on total cart weight? =
+Yes, our plugin allows you to add fee to woocommerce checkout conditionally using weight-based logic for accurate pricing.
+
+= Is it possible to apply woocommerce advanced extra fees only when both shipping and payment methods match a rule? =
+Yes, with our plugin, you can configure woocommerce advanced extra fees to trigger when multiple conditions are satisfied simultaneously.
+
+= Can I add a surcharge for specific payment methods like Cash on Delivery or PayPal? =
+Yes, our WooCommerce surcharge plugin lets you apply additional fees for selected payment gateways, helping you cover extra processing or handling costs. (Only in PRO version)
+
+= How does the plugin handle woocommerce extra fee per product? =
+You can define custom rules to apply woocommerce extra fee per product, so each product in the cart can contribute a specific fee at checkout.
+
+= Is it possible to apply a surcharge only when a customer chooses express shipping? =
+You can set conditions based on the selected shipping method and apply surcharges only for options like express or same-day delivery. (Only in PRO version)
+
+= Can I disable woocommerce extra fee per product for certain user roles? =
+Yes, our plugin lets you exclude woocommerce extra fee per product for specific user roles like wholesale or logged-in customers.
+
+= Can I set up woocommerce advanced extra fees using multiple conditions? =
+Our plugin supports complex rules for woocommerce advanced extra fees using product attributes, user roles, cart items, and more.
+
+= Does this plugin support percentage-based surcharges? =
+Yes, our WooCommerce surcharge plugin supports both fixed and percentage-based fees.
+
+= Is the plugin compatible with the latest version of WooCommerce? =
+Yes, our WooCommerce surcharge plugin is actively maintained and fully compatible with the latest WooCommerce and WordPress versions.
+
+= How does your plugin help with woocommerce add fee to order? =
+Our plugin lets you apply conditional logic to woocommerce add fee to order, such as adding charges based on cart total, user role, or selected shipping method.
+
+= How can I apply woocommerce additional fees on checkout for specific locations? =
+Our plugin allows you to add woocommerce additional fees on checkout based on billing or shipping location of the customer.
+
+= Can I use woocommerce add fee to order based on user role? =
+Yes, you can easily configure a rule where woocommerce add fee to order is triggered only when a specific user role is detected. 
+
+= Does the plugin support woocommerce additional fees on checkout for cart subtotal conditions? =
+Yes, you can create rules to apply woocommerce additional fees on checkout if the cart subtotal crosses a specified threshold.
+
+= What conditions can trigger woocommerce conditional product fees for checkout? =
+You can set woocommerce conditional product fees for checkout based on 20+ conditions like product categories, user roles, cart total, shipping methods, and more. in free version and around 42+ conditions in the PRO version.
+
+= Can I apply woocommerce conditional product fees for checkout only on weekends? =
+The pro version includes time-based rules, so you can apply woocommerce conditional product fees for checkout based on day or time range.
 
 == Changelog ==
 
@@ -235,7 +293,7 @@ Yes, you can do that by in the pro version, in the Extra setting tab you can set
 * fees id are not stored in the fee order item as meta data for the item, like it is done in the pro version 
 
 = 1.1.49.10 =
-* translation error fixed
+* translation error fixed in woocommerce conditional product fees
 * Tested with WC 9.8.0
 * Tested for WP 6.8.0
 
@@ -243,7 +301,7 @@ Yes, you can do that by in the pro version, in the Extra setting tab you can set
 * Tested with WC 9.7.1
 
 = 1.1.49.7 =
-* attribute name braking the condition fixed
+* attribute name braking the condition fixed (in module woocommerce conditional product fees)
 
 = 1.1.49.6 =
 * Tested with WC 9.7.0
@@ -257,6 +315,7 @@ Yes, you can do that by in the pro version, in the Extra setting tab you can set
 
 = 1.1.49.1 =
 * UX improvement
+* You can apply surcharge based on postcode
 
 = 1.1.49 =
 * Tested with WC 9.5.0
@@ -281,7 +340,7 @@ Yes, you can do that by in the pro version, in the Extra setting tab you can set
 
 = 1.1.39 =
 * Tested with WC 9.2.0
-* Date and time block support
+* Date and time block support WooCommerce checkout fees
 * Block improved to instantly show the selection in the checkbox 
 
 = 1.1.37 =
@@ -295,13 +354,13 @@ Yes, you can do that by in the pro version, in the Extra setting tab you can set
 * Tested with WC 8.9.0
 
 = 1.1.32 =
-* feature to round off the fee amount to nearest integer value
+* feature to round off the WooCommerce checkout fees amount to nearest integer value
 
 = 1.1.26 =
 * new short code [selected_product_count] added
 
 = 1.1.24 =
-* WC block can show optional fees checkbox
+* WC block can show optional WooCommerce checkout fees checkbox
 
 = 1.1.19 =
 * Continent option added in the country rule
