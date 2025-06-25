@@ -3,8 +3,8 @@ Contributors: jyotsnasingh520
 Donate link: piwebsolution.com
 Tags: cart fee, Extra Charge, additional fee, service charge, woocommerce extra fee, woocommerce additional fees, woocommerce fees, woocommerce extra cost, woocommerce additional cost, Woocommerce advanced fees, extra fee, woocommerce extra cost
 Requires at least: 3.0.1
-Tested up to: 6.8.1
-Stable tag: 1.1.49.12
+Tested up to: 6.8
+Stable tag: 1.1.49.13
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -286,6 +286,9 @@ The pro version includes time-based rules, so you can apply woocommerce conditio
 
 == Changelog ==
 
+= 1.1.49.13 =
+* WooCommerce extra fees plugin tested with WC 9.9.5
+
 = 1.1.49.12 =
 * Tested with WC 9.8.5
 
@@ -393,3 +396,15 @@ The pro version includes time-based rules, so you can apply woocommerce conditio
 
 = 1.0.93 =
 * Made compatible with the DIVI page builder
+
+== Privacy ==
+
+If you choose to opt in from the plugin settings, or submit optional feedback during deactivation, this plugin may collect basic technical information, including:
+
+- Plugin version  
+- WordPress version  
+- WooCommerce version  
+- Site url
+- Deactivation reason (if submitted)
+
+This data is used solely to improve plugin quality, compatibility, and features. No personal or user-specific data is collected without consent.

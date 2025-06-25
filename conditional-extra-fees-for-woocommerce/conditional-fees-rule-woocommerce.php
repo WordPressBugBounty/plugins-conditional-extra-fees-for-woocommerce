@@ -9,21 +9,21 @@
  * that starts the plugin.
  *
  * @link              piwebsolution.com
- * @since             1.1.49.12
+ * @since             1.1.49.13
  * @package           Conditional_fees_Rule_Woocommerce
  *
  * @wordpress-plugin
  * Plugin Name:       Conditional extra fees for WooCommerce
  * Plugin URI:        piwebsolution.com/conditional-fees-rule-wooCommerce
  * Description:       Conditional extra fees for WooCommerce
- * Version:           1.1.49.12
+ * Version:           1.1.49.13
  * Author:            PI Websolution
  * Author URI:        piwebsolution.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       conditional-extra-fees-woocommerce
  * Domain Path:       /languages
- * WC tested up to: 9.8.5
+ * WC tested up to: 9.9.5
  */
 
 // If this file is called directly, abort.
@@ -60,10 +60,10 @@ if(is_plugin_active( 'conditional-extra-fees-for-woocommerce-pro/conditional-fee
 
 /**
  * Currently plugin version.
- * Start at version 1.1.49.12 and use SemVer - https://semver.org
+ * Start at version 1.1.49.13 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'CONDITIONAL_FEES_RULE_WOOCOMMERCE_VERSION', '1.1.49.12' );
+define( 'CONDITIONAL_FEES_RULE_WOOCOMMERCE_VERSION', '1.1.49.13' );
 define('PI_CEFW_BUY_URL', 'https://www.piwebsolution.com/cart/?add-to-cart=15441&variation_id=15442&utm_campaign=conditional-fee&utm_source=website&utm_medium=direct-buy');
 define('PI_CEFW_PRICE', '$34');
 define('PI_CEFW_DELETE_SETTING', false);
@@ -84,6 +84,8 @@ add_action( 'before_woocommerce_init', function() {
 function activate_conditional_fees_rule_woocommerce() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-conditional-fees-rule-woocommerce-activator.php';
 	Conditional_fees_Rule_Woocommerce_Activator::activate();
+    add_option('pi_cefw_do_activation_redirect', true);
+    add_option('pi_cefw_new_install', true);
 }
 
 /**
@@ -114,6 +116,17 @@ if(!function_exists('pisol_free_conditional_fees_plugin_link')){
         return $links;
     }
 }
+
+
+add_action('admin_init', function (){
+    if (get_option('pi_cefw_do_activation_redirect', false)) {
+        delete_option('pi_cefw_do_activation_redirect');
+        if(!isset($_GET['activate-multi']))
+        {
+            wp_redirect("admin.php?page=pisol-cefw");
+        }
+    }
+});
 
 function run_conditional_fees_rule_woocommerce() {
 
