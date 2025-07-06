@@ -1,8 +1,8 @@
 <div class="row py-3 border-bottom align-items-center">
-    <div class="col-12 col-md-4">
-        <strong class="h4"><?php echo $this->title; ?> <span class="text-primary">*</span><?php pisol_help::inline('selection_rule_help', 'Selection rules'); ?></strong>
+    <div class="col-12 col-md-5">
+        <strong class="h4"><?php echo $this->title; ?> <span class="text-primary">*</span></strong><br><i>This rules decide if this fees will be applied or not</i>
     </div>
-    <div class="col-12 col-md-6">
+    <div class="col-12 col-md-5">
         <select class="form-control" name="pi_condition_logic">
             <option value="and" <?php selected( $this->data['pi_condition_logic'], 'and' ); ?>><?php echo __('All the below rules should match', 'conditional-extra-fees-woocommerce'); ?></option>
             <option value="or" <?php selected( $this->data['pi_condition_logic'], 'or' ); ?>><?php echo __('Any one of the below rule should match', 'conditional-extra-fees-woocommerce'); ?></option>

@@ -2,11 +2,19 @@
 /**
  * v1.0.0
  */
-if(!class_exists('pisol_help')){
-class pisol_help{
+if(!class_exists('pisol_cefw_help')){
+class pisol_cefw_help{
 
     static function inline($id, $title="", $width= 150, $height = 400, $echo = true){
         $msg = sprintf('<a name="%s" href="#TB_inline?width=%s&height=%s&inlineId=%s" class="thickbox"><span class="dashicons dashicons-editor-help"></span></a>', esc_attr($title), esc_attr($width), esc_attr($height), $id);
+
+        if($echo) echo $msg;
+
+        return $msg;
+    }
+
+    static function inline_txt($id, $title="", $text = '', $width= 150, $height = 400, $echo = true){
+        $msg = sprintf('<a name="%s" href="#TB_inline?width=%s&height=%s&inlineId=%s" class="thickbox"><i>%s</i></a>', esc_attr($title), esc_attr($width), esc_attr($height), $id, $text);
 
         if($echo) echo $msg;
 

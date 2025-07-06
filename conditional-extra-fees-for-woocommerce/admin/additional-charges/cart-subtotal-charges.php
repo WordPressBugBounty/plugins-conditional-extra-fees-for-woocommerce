@@ -20,7 +20,7 @@ class pisol_cefw_cart_subtotal_extra_charges_setting{
     }
 
     function addTab($data){
-        pisol_cefw_additional_charges_form::tabName(__('Based on Cart Subtotal', 'conditional-extra-fees-woocommerce'), $this->slug);
+        pisol_cefw_additional_charges_form::tabName(__('Cart Subtotal', 'conditional-extra-fees-woocommerce'), $this->slug);
     }
 
     function addTabContent($data){

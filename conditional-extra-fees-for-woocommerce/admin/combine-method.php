@@ -62,37 +62,16 @@ class pisol_cefw_combine_methods{
         $this->tab_name = __('Combine multiple fees','conditional-extra-fees-woocommerce');
         ?>
         <a class=" px-3 py-2 text-light d-flex align-items-center  border-left border-right  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab ); ?>">
-            <?php echo esc_html( $this->tab_name); ?> 
+           <span class="dashicons dashicons-editor-table"></span> <?php echo esc_html( $this->tab_name); ?> 
         </a>
         <?php
     }
 
     function tab_content(){
         ?>
-        <style>
-            .video-container {
-                overflow: hidden;
-                position: relative;
-                width:100%;
-            }
-
-            .video-container::after {
-                padding-top: 56.25%;
-                display: block;
-                content: '';
-            }
-
-            .video-container iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
-        </style>
-        <div class="alert alert-info my-3"><strong>Combine multiple fees is available in PRO Version watch its working in below Video</strong></div>
+        <div class="alert alert-info my-3">Combine multiple fees is available in PRO Version watch its working in below Video</div>
         <div class="video-container">
-        <iframe style="margin-top:20px;" src="https://www.youtube.com/embed/lE6ELZ0v_68" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/lE6ELZ0v_68?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
        <?php
     }

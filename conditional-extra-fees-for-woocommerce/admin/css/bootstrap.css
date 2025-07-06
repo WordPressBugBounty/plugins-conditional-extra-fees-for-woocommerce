@@ -5,7 +5,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-.bootstrap-wrapper :root {
+:root {
 	--blue: #007bff;
 	--indigo: #6610f2;
 	--purple: #6f42c1;
@@ -27,6 +27,7 @@
 	--danger: #dc3545;
 	--light: #ffffff;
 	--dark: #1a4562;
+	--dark2: rgba(26, 69, 98, 0.75);
 	--breakpoint-xs: 0;
 	--breakpoint-sm: 576px;
 	--breakpoint-md: 768px;
@@ -7104,6 +7105,10 @@
 	background-color: #1a4562 !important;
 }
 
+.bootstrap-wrapper .bg-dark2 {
+	background-color: var(--dark2) !important;
+}
+
 .bootstrap-wrapper a.bg-dark:focus,
 .bootstrap-wrapper a.bg-dark:hover,
 .bootstrap-wrapper button.bg-dark:focus,
@@ -11325,12 +11330,6 @@
 
 /* end tooltip */
 
-.bootstrap-wrapper .pi-shadow{
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-	position:relative;
-	z-index:1;
-	border-radius: 15px;
-}
 
 #pi-promotion-banner{
 	max-width:70%;
@@ -11340,13 +11339,33 @@
 
 h2#pi-banner-tagline{
 padding:10px;
-background:#1a4562;
 color:#fff !important;
-font-size:1.5rem !important;
+font-size:1.2rem !important;
 text-align:center;
 }
 
 .pisol-pro-feature-list li{
 	list-style-type: none;
 	padding:10px 15px;
+}
+
+.bootstrap-wrapper .pi-shadow{
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	position:relative;
+	background: linear-gradient(135deg, #1a4562 0%, #2c6a89 50%, #163f59 100%);
+	z-index:1;
+}
+
+.bootstrap-wrapper .pi-shadow li, .bootstrap-wrapper .pi-shadow h6, .bootstrap-wrapper .pi-shadow h4{
+	color:#fff !important;
+}
+
+.bootstrap-wrapper .pi-shadow hr{
+	border-color:#1a4562 !important;
+}
+
+h4.pi-bottom-banner{
+	font-size: 18px;
+	margin-bottom:15px;
+	text-align: center;
 }

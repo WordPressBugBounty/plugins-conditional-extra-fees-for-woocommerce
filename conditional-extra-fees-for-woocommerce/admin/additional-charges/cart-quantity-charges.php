@@ -19,7 +19,7 @@ class pisol_cefw_cart_quantity_extra_charges_setting{
     }
 
     function addTab($data){
-        pisol_cefw_additional_charges_form::tabName(__('Based on Cart Quantity', 'conditional-extra-fees-woocommerce'), $this->slug, 'pi-active-tab');
+        pisol_cefw_additional_charges_form::tabName(__('Cart Quantity', 'conditional-extra-fees-woocommerce'), $this->slug, 'pi-active-tab');
     }
 
     function addTabContent($data){

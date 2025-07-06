@@ -8,7 +8,7 @@
 }
 
 .bootstrap-wrapper .select2-selection__choice {
-    background: #ee6443 !important;
+    background: var(--dark2) !important;
     padding: 7px !important;
     color: #fff;
 }
@@ -136,4 +136,238 @@
 
 #pisol-cefw-fees-list-view table td{
     vertical-align: middle;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.bg-dark, .bg-dark2{
+    & .dashicons{
+        color:#fff !important;
+    }
+}
+
+/* NEW NAVIGATION BAR */
+#pisol-navbar .navbar-nav{
+    background:transparent !important;
+    display:flex;
+    gap:10px;
+}
+
+#pisol-navbar a{
+    background:#fff !important;
+    color:var(--dark) !important;
+    border-radius:60px !important;
+    font-weight:600;
+    letter-spacing:1px;
+    transition: all 0.3s ease;
+}
+
+#pisol-navbar a .dashicons{
+    margin-right:4px;
+    color:var(--dark) !important;
+}
+
+#pisol-navbar a.bg-primary .dashicons{
+    color:var(--primary) !important;
+}
+
+#pisol-navbar a.bg-primary, #pisol-navbar a:hover{
+    background:#fff !important;
+    color:var(--primary) !important;
+    text-decoration:none;
+}
+
+@media(max-width:1400px){
+    #pisol-navbar a{
+        letter-spacing:inherit;
+        padding:7px 7px !important;
+    }
+}
+
+@media(max-width:1200px){
+    #pisol-navbar .navbar-nav{
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        grid-gap:10px;
+        & a{
+            width:100%;
+        }
+    }
+}
+
+@media(max-width:576px){
+    #pisol-navbar{
+        margin-left:auto !important;
+        margin-right:auto !important;
+    }
+    
+    #pisol-navbar .container-fluid{
+        width:100% !important;
+    }
+
+    #pi-logo{
+        width:90%;
+    }
+}
+
+
+.afrsm-head{
+    background-color: var(--dark) !important;
+    color:#FFF;
+    position:sticky;
+    top:32px;
+    z-index:10000
+}
+
+.pisol-form-element-row small{
+	color:var(--dark2);
+	margin-top:10px;
+	display:block;
+    font-style:italic;
+    font-size:0.8rem;
+}
+
+.bootstrap-wrapper a.pi-used-rule.text-light{
+    font-weight:bold !important;
+    color:#ccc !important;
+}
+
+.bootstrap-wrapper a.pi-used-rule.text-light.pi-active-tab{
+    color:#fff !important;
+}
+
+/* close side bar */
+.pi-cefw-arrow-circle {
+  width: 30px;
+  height: 30px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  border:2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index:1000;
+  position:absolute;
+  top: -16px;
+  right: -15px;
+  transform: rotate(180deg);
+}
+
+.pi-cefw-arrow-icon {
+  width: 20px !important;
+  height: 20px !important;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Flip the arrow horizontally for "open" state (→) */
+.pi-cefw-arrow-circle.open .pi-cefw-arrow-icon {
+  transform: rotate(180deg);
+}
+
+
+/* Step */
+.pi-step-container {
+   padding: 20px 0px;
+   border-bottom: 1px solid #eee;
+}
+
+.pi-step-container.pi-closed .pi-step-description {
+   display: none;
+}
+
+.pi-step-container .dashicons-minus {
+   display: block;
+}
+
+.pi-step-container .dashicons-plus-alt2 {
+   display: none;
+}
+
+.pi-step-container.pi-closed .dashicons-plus-alt2 {
+   display: block;
+}
+
+.pi-step-container.pi-closed .dashicons-minus {
+   display: none;
+}
+
+.status-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: var(--primary);
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1;
+    margin-right: 60px;
+}
+
+.pi-step-content {
+   padding:0px;
+   border-radius: 5px;
+   border:2px solid #ccc;
+}
+
+.pi-step-content:has(.pi-step-header.bg-primary) {
+    border:2px solid var(--primary);
+}
+
+.pi-step-content:has(.pi-step-header.bg-dark) {
+    border:2px solid var(--dark);
+}
+
+.pi-step-header{
+    padding:1rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor:pointer;
+}
+
+.pi-step-header p{
+    margin-bottom:0px !important;
+}
+
+.pi-step-description{
+    padding:0 15px ;
+}
+
+.pi-step-title {
+    font-size: 1.2rem !important;
+    color: #fff !important;
+    margin-bottom:10px !important;
+    display: block;
+}
+
+.pi-step-title > small{
+    font-size: 0.8rem !important;
+    color: #fff !important;
+    margin-left: 5px;
+    font-style: italic;
+}
+
+.select2-container {
+    width: 100% !important;
 }

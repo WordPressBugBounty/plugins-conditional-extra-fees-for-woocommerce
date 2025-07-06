@@ -164,10 +164,10 @@ class pisol_class_form_sn{
     function bootstrap($label, $field, $desc = "", $links = ""){
         if($this->setting['type'] != 'hidden'){
         ?>
-        <div id="row_<?php echo esc_attr($this->setting['field']); ?>"  class="row py-4 border-bottom align-items-center <?php echo esc_attr($this->pro); ?> <?php echo !empty($this->setting['class']) ? esc_attr($this->setting['class']) : ''; ?>">
+        <div id="row_<?php echo esc_attr($this->setting['field']); ?>"  class="pisol-form-element-row row py-4 border-bottom align-items-center <?php echo esc_attr($this->pro); ?> <?php echo !empty($this->setting['class']) ? esc_attr($this->setting['class']) : ''; ?>">
             <div class="col-12 col-md-5">
             <?php echo wp_kses($label, $this->allowed_tags); ?>
-            <?php echo wp_kses($desc != "" ? $desc.'<br>': "", $this->allowed_tags); ?>
+            <?php echo wp_kses($desc != "" ? $desc : "", $this->allowed_tags); ?>
             <?php echo wp_kses($links != "" ? $links: "", $this->allowed_tags); ?>
             </div>
             <div class="col-12 col-md-7">
@@ -189,10 +189,10 @@ class pisol_class_form_sn{
 
     function bootstrap_switch_category($label, $field, $desc = "", $links = ""){
         ?>
-        <div id="row_<?php echo esc_attr($this->setting['field']); ?>" class="row py-4 border-bottom align-items-center <?php echo ( isset($this->setting['class']) ? esc_attr($this->setting['class']) : "" ); ?>">
+        <div id="row_<?php echo esc_attr($this->setting['field']); ?>" class="pisol-form-element-row row py-4 border-bottom align-items-center <?php echo ( isset($this->setting['class']) ? esc_attr($this->setting['class']) : "" ); ?>">
             <div class="col-9">
             <?php echo wp_kses($label, $this->allowed_tags) ; ?>
-            <?php echo wp_kses($desc != "" ? $desc.'<br>': "", $this->allowed_tags); ?>
+            <?php echo wp_kses($desc != "" ? $desc : "", $this->allowed_tags); ?>
             <?php echo wp_kses($links != "" ? $links: "", $this->allowed_tags); ?>
             </div>
             <div class="col-3">

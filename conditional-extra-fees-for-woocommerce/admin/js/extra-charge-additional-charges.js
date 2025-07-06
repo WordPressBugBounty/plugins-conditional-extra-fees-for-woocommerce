@@ -89,6 +89,21 @@
                 this.validateSubmit();
 
                 this.onfocusValidation();
+
+                this.usedRule();
+            }
+
+            this.usedRule = function () {
+                var parent = this;
+                jQuery(document).on('change', this.group, function () {
+                    var val = $(this).is(":checked");
+                    if (val) {
+                        $('#add-charges-tab-' + parent.slug).addClass('pi-used-rule');
+                    } else {
+                        $('#add-charges-tab-' + parent.slug).removeClass('pi-used-rule');
+                    }
+                });
+                jQuery(parent.group).trigger('change');
             }
 
             this.onfocusValidation = function () {

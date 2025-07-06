@@ -4,7 +4,7 @@ Donate link: piwebsolution.com
 Tags: cart fee, Extra Charge, additional fee, service charge, woocommerce extra fee, woocommerce additional fees, woocommerce fees, woocommerce extra cost, woocommerce additional cost, Woocommerce advanced fees, extra fee, woocommerce extra cost
 Requires at least: 3.0.1
 Tested up to: 6.8
-Stable tag: 1.1.49.13
+Stable tag: 1.1.49.14
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -170,6 +170,54 @@ https://www.youtube.com/watch?v=lE6ELZ0v_68
 &#9989; if user buys a product less then $10, then charge a fee of 12% of the product price
 &#9989; Add WooCommerce surcharge based on country
 &#9989; woocommerce extra fee per product
+&#9989; Give option for Gift and collect extra fees for that
+&#9989; Offer Extended Warranty as an upsell during checkout
+&#9989; Add Express Delivery option with higher delivery charge
+&#9989; Provide Setup or Installation service for an extra fee
+&#9989; Add Shipping or Product Insurance as optional add-on
+&#9989; Allow Priority Processing with extra handling fee
+&#9989; Include option to add Donation to Charity
+&#9989; Add optional Tip or Service Fee field
+&#9989; Offer Furniture Assembly or Fitting Service with charge
+&#9989; Provide Old Furniture Removal as paid service
+&#9989; Allow booking for Room Measurement service
+&#9989; Offer Wall Mounting as optional extra
+&#9989; Upsell Interior Consultation service
+&#9989; Add Electronics Installation as a service fee
+&#9989; Provide Demo or Training Session as paid extra
+&#9989; Offer E-waste Pickup for additional charge
+&#9989; Bundle Voltage Converter/Adapter as optional add-on
+&#9989; Include Surge Protector as recommended paid extra
+&#9989; Offer Custom Tailoring or Alteration for fashion items
+&#9989; Add Try-at-Home option with refundable deposit
+&#9989; Provide Shoe Cleaning Service at checkout
+&#9989; Upsell Garment Care Kit as optional item
+&#9989; Offer Chiller Box Rental for groceries
+&#9989; Add Reusable Bag option with small fee
+&#9989; Include Recipe Booklet Add-on during checkout
+&#9989; Provide Express Packaging as premium service
+&#9989; Offer At-home Service (like beauty or massage)
+&#9989; Add Product Sampling Kit as optional add-on
+&#9989; Allow Gift Box Preparation with extra fee
+&#9989; Include Subscription Box Trial as upsell
+&#9989; Provide Auto/Bike Part Fitting Service
+&#9989; Add Old Parts Disposal as chargeable option
+&#9989; Offer Tire Balancing or Alignment service
+&#9989; Include Roadside Assistance as paid add-on
+&#9989; Offer Book Covering as optional extra
+&#9989; Add Personalized Message to stationery orders
+&#9989; Provide Notebook Customization service
+&#9989; Offer Author Signature (if available) for fee
+
+
+== Screenshots ==
+1. Configuring a WooCommerce checkout fees
+2. List of WooCommerce checkout fees rules
+3. Additional charge section to adjust the final checkout fee amount
+4. Create a optional service on checkout page, user can select this option service and get charged for that service
+5. WooCommerce checkout fees applied on the checkout page
+6. WooCommerce extra fees plugin allows you to combine multiple fees and show it under one label
+7. Add a description of the fee using, so customer can know what he is getting charged for
 
 == Frequently asked questions ==
 
@@ -285,6 +333,9 @@ You can set woocommerce conditional product fees for checkout based on 20+ condi
 The pro version includes time-based rules, so you can apply woocommerce conditional product fees for checkout based on day or time range.
 
 == Changelog ==
+
+= 1.1.49.14 =
+* UI improved for WooCommerce extra fees plugin
 
 = 1.1.49.13 =
 * WooCommerce extra fees plugin tested with WC 9.9.5

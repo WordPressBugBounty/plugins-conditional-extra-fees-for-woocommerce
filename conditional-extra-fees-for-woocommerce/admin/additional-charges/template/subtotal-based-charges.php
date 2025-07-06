@@ -3,7 +3,7 @@
 </script>
 <div class="p-3 bg-dark">
 <div class="row">
-    <div class="col-6"><label for="pi_enable_additional_charges_cart_subtotal" class="mb-0 text-light"><?php _e('Change Fees based on Cart Subtotal', 'conditional-extra-fees-woocommerce'); ?></label> <?php //pisol_help::youtube('30tS78nMk40','Know more about the Cart Subtotal based charge'); ?></div>
+    <div class="col-6"><label for="pi_enable_additional_charges_cart_subtotal" class="mb-0 text-light"><?php _e('Change Fees based on Cart Subtotal', 'conditional-extra-fees-woocommerce'); ?></label> <?php //pisol_cefw_help::youtube('30tS78nMk40','Know more about the Cart Subtotal based charge'); ?></div>
     <div class="col-6">
         <div class="custom-control custom-switch">
             <input type="checkbox" value="1" <?php echo $data['pi_enable_additional_charges_cart_subtotal']; ?> class="custom-control-input" name="pi_enable_additional_charges_cart_subtotal" id="pi_enable_additional_charges_cart_subtotal">
@@ -36,7 +36,7 @@
             <th><?php _e('Category', 'conditional-extra-fees-woocommerce'); ?></th>
             <th class="pi-min-col"><?php _e('Min Subtotal', 'conditional-extra-fees-woocommerce'); ?></th>
             <th class="pi-min-col"><?php _e('Max Subtotal', 'conditional-extra-fees-woocommerce'); ?></th>
-            <th class="pi-fee-col"><?php _e('Fees', 'conditional-extra-fees-woocommerce'); ?> <?php pisol_help::inline('subtotal_short_code_help', 'Using short code'); ?></th>
+            <th class="pi-fee-col"><?php _e('Fees', 'conditional-extra-fees-woocommerce'); ?> <?php pisol_cefw_help::inline('subtotal_short_code_help', 'Using short code'); ?></th>
             <th></th>
         </tr>
     </thead>

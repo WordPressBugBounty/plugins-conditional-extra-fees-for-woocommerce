@@ -3,7 +3,7 @@
 </script>
 <div class="p-3 bg-dark">
 <div class="row">
-    <div class="col-6"><label for="pi_enable_additional_charges_product_weight" class="mb-0 text-light">Change Fees based on Product Weight</label> <?php //pisol_help::youtube('aOjKK5LfR04','Know more about the Product weight based charge'); ?></div>
+    <div class="col-6"><label for="pi_enable_additional_charges_product_weight" class="mb-0 text-light">Change Fees based on Product Weight</label> <?php //pisol_cefw_help::youtube('aOjKK5LfR04','Know more about the Product weight based charge'); ?></div>
     <div class="col-6">
         <div class="custom-control custom-switch">
             <input type="checkbox" value="1" <?php echo $data['pi_enable_additional_charges_product_weight']; ?> class="custom-control-input" name="pi_enable_additional_charges_product_weight" id="pi_enable_additional_charges_product_weight">
@@ -37,7 +37,7 @@
             <th>Product</th>
             <th class="pi-min-col">Min Weight</th>
             <th class="pi-min-col">Max Weight</th>
-            <th class="pi-fee-col">Fees <?php pisol_help::inline('product_weight_charge_short_code_help', 'Using short code'); ?></th>
+            <th class="pi-fee-col">Fees <?php pisol_cefw_help::inline('product_weight_charge_short_code_help', 'Using short code'); ?></th>
             <th></th>
         </tr>
     </thead>

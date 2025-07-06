@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-12 py-3 text-right"><a class="btn btn-primary btn-sm mr-3" href="<?php echo admin_url( 'admin.php?page=pisol-cefw&tab=pi_cefw_add_rule' ); ?>"><span class="dashicons dashicons-plus"></span><?php _e('Add fees rule','conditional-extra-fees-woocommerce'); ?></a>
+    <div class="col-12 py-3 text-right"><a class="btn btn-primary btn-sm mr-3" href="<?php echo admin_url( 'admin.php?page=pisol-cefw&tab=pi_cefw_add_rule' ); ?>"><span class="dashicons dashicons-plus mr-2" style="margin-top:3px;"></span><?php _e('Add fees rule','conditional-extra-fees-woocommerce'); ?></a>
     </div>
 </div>
 <?php
@@ -49,7 +49,7 @@ foreach($shipping_methods as $method){
     echo '</td>';
     echo '<td>';
     echo '<a href="'.admin_url( '/admin.php?page=pisol-cefw&tab=pi_cefw_add_rule&action=edit&id='.$method->ID ).'" class="btn btn-primary btn-sm mr-2" title="Edit"><span class="dashicons dashicons-admin-customizer"></span></a>';
-    echo '<a href="'.wp_nonce_url(admin_url( '/admin.php?page=pisol-cefw&action=cefw_delete&id='.$method->ID ), 'cefw-delete').'" class="btn btn-warning btn-sm pi-cefw-delete" title="Delete"><span class="dashicons dashicons-trash"></span></a>';
+    echo '<a href="'.wp_nonce_url(admin_url( '/admin.php?page=pisol-cefw&action=cefw_delete&id='.$method->ID ), 'cefw-delete').'" class="btn btn-primary btn-sm pi-cefw-delete" title="Delete"><span class="dashicons dashicons-trash"></span></a>';
     echo '</td>';
     echo '</tr>';
 }

@@ -72,12 +72,17 @@ class Pi_cefw_Menu{
                     <div class="col-12">
                         <div class='bg-dark'>
                         <div class="pisol-row">
-                            <div class="col-12 col-sm-2 py-2">
-                                    <a href="https://www.piwebsolution.com/" target="_blank"><img class="img-fluid ml-2" src="<?php echo plugin_dir_url( __FILE__ ); ?>img/pi-web-solution.png"></a>
+                            <div class="col-12 col-sm-2 py-3 d-flex align-items-center justify-content-center">
+                                    <a href="https://www.piwebsolution.com/" target="_blank"><img id="pi-logo" class="img-fluid ml-2" src="<?php echo plugin_dir_url( __FILE__ ); ?>img/pi-web-solution.png"></a>
                             </div>
                             <div class="col-12 col-sm-10 d-flex text-center small">
-                                <?php do_action($this->plugin_name.'_tab'); ?>
-                                
+                                <nav id="pisol-navbar" class="navbar navbar-expand-lg navbar-light mr-0 ml-auto">
+                                    <div>
+                                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                            <?php do_action($this->plugin_name.'_tab'); ?>
+                                        </ul>
+                                    </div>
+                                </nav>
                             </div>
                         </div>
                         </div>
@@ -85,10 +90,18 @@ class Pi_cefw_Menu{
             </div>
             <div class="pisol-row">
                 <div class="col-12">
-                <div class="bg-light border pl-3 pr-3 pb-3 pt-0">
+                <div class="bg-light border pl-3 pr-3 pt-0">
                     <div class="pisol-row">
                         <div class="col">
-                        <?php do_action($this->plugin_name.'_tab_content'); ?>
+                            <div class="pi-cefw-arrow-circle closed" title="Open / Close sidebar">
+                                <svg class="pi-cefw-arrow-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- First arrow -->
+                                    <path d="M13 6l-6 6 6 6" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <!-- Second arrow (slightly right-shifted) -->
+                                    <path d="M17 6l-6 6 6 6" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <?php do_action($this->plugin_name.'_tab_content'); ?>
                         </div>
                         <?php do_action($this->plugin_name.'_promotion'); ?>
                     </div>
@@ -102,48 +115,55 @@ class Pi_cefw_Menu{
     }
 
     function promotion(){
-        if(isset($_GET['tab']) && $_GET['tab'] === 'pi_cefw_add_rule') return;
         ?>
-        <div class="col-12 col-md-4 mt-3">
+        <div class="col-12 col-sm-12 col-md-4 pt-3 pb-3 border-left" id="pi-cefw-sidebar-container">
 
-       <div class="pi-shadow">
-                <div class="pisol-row justify-content-center">
-                    <div class="col-md-9 col-sm-12">
-                        <div class="p-2  text-center">
-                            <img class="img-fluid" src="<?php echo esc_url(plugin_dir_url( __FILE__ )); ?>img/bg.svg">
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center py-2">
-                    <a class="btn btn-success btn-sm text-uppercase mb-2 " href="<?php echo esc_url(PI_CEFW_BUY_URL); ?>&utm_ref=top_link" target="_blank">Buy Now !!</a>
-                    <a class="btn btn-sm mb-2 btn-secondary text-uppercase" href="https://websitemaintenanceservice.in/con_fees_demo/" target="_blank">Try Demo</a>
-                </div>
-                <h2 id="pi-banner-tagline" class="mb-0">Get Pro for <?php echo esc_html(PI_CEFW_PRICE); ?> Only</h2>
+        <div class="pi-shadow rounded px-2 py-3">
+                <h2 id="pi-banner-tagline" class="mb-0" style="color:#ccc !important;">
+                        <span class="d-block mb-4">⭐️⭐️⭐️⭐️⭐️</span>
+                        <span class="d-block mb-2">🚀 Trusted by <span style="color:#fff;">3,000+</span> WooCommerce Stores</span>
+                        <span class="d-block mb-2">Rated <span style="color:#fff;">4.9/5</span> – Users love it</span>
+                    </h2>
                 <div class="inside">
                     <ul class="text-left pisol-pro-feature-list">
-                    <li class="border-top font-weight-light h6"><strong class="text-primary">Postcode:</strong> You can apply an extra charge based on the specific postcode or range of postcode</li>
-                    <li class="border-top font-weight-light h6"><strong class="text-primary">Product Tags:</strong> So you can add an extra charge if the specific tag of the product are present in the cart</li>
-                    <li class="border-top font-weight-light h6"><strong class="text-primary">Quantity of product from specific category:</strong> When the quantity of product from a specific category is as per your comparison rule then you apply the extra charge
-</li>
-                    <li class="border-top font-weight-light h6"><strong class="text-primary">Quantity of product from specific tag:</strong> When the quantity of product with a specific tag is as per your comparison rule then you apply the extra charge</li>
-                    <li class="border-top font-weight-light h6"><strong class="text-primary">Payment method:</strong> Apply extra charge when the user selects a specific payment method</li>
-                    <li class="border-top font-weight-light h6"><strong class="text-primary">Day of the week:</strong> Apply extra charge on the specific day of the week</li>
-                    <li class="border-top font-weight-light h6"><strong class="text-primary">Shipping method based extra fees:</strong> Apply fees based on the shipping method selected by the customer</li>
-                    <li class="border-top font-weight-light h6"><strong class="text-primary">First order:</strong> Don't charge fees if its customer first order on your site</li>
-                    <li class="border-top font-weight-light h6"><strong class="text-primary">Last order total:</strong> Don't charge fees if its customer last order total was of more then $100 </li>
-                    <li class="border-top font-weight-light h6"><strong class="text-primary">Number of order placed in period:</strong> Don't charge fees if its customer has placed more then 5 order during the current month</li>
-                    <li class="border-top font-weight-light h6"><strong class="text-primary">Total amount spend during period:</strong> Don't charge fees if its customer has spend more then 500$ order during the current month</li>
-                    <li class="border-top font-weight-light h6"><strong class="text-primary">Combine multiple fees</strong> in to a single fees
-                    </li>
-                    <li class="border-top font-weight-light h6">Add <strong class="text-primary">Tool tip</strong> to describe the fee so user know what is this extra amount for
-                    </li>
+                        <li><b>✔ Location-based rules</b><br>
+                        <i>Target specific country, state, city or postcodes ranges</i></li>
+
+                        <li><b>✔ Product & tag logic</b><br>
+                        <i>Apply fees by product tags or categories</i></li>
+
+                        <li><b>✔ Quantity-based triggers</b><br>
+                        <i>Set rules by quantity from tags or categories</i></li>
+
+                        <li><b>✔ Payment method conditions</b><br>
+                        <i>Charge based on chosen payment option</i></li>
+
+                        <li><b>✔ Day-based fees</b><br>
+                        <i>Apply charges on selected weekdays</i></li>
+
+                        <li><b>✔ Shipping method rules</b><br>
+                        <i>Apply fees by shipping method selected</i></li>
+
+                        <li><b>✔ Customer order history</b><br>
+                        <i>Skip fees for first order or loyal customers</i></li>
+
+                        <li><b>✔ Spending-based exclusions</b><br>
+                        <i>No fee if past order or total spend qualifies</i></li>
+
+                        <li><b>✔ Merge multiple fees</b><br>
+                        <i>Combine several fees into one charge</i></li>
+
+                        <li><b>✔ Tooltip for charges</b><br>
+                        <i>Help customers understand each extra charge</i></li>
                     </ul>
+                    <h4 class="pi-bottom-banner">💰 Just <?php echo esc_html(PI_CEFW_PRICE); ?></h4>
+                        <h4 class="pi-bottom-banner">🔥 Unlock all 50+ features and grow your sales!</h4>
                     <div class="text-center pb-3 pt-2">
-                    <a class="btn btn-primary btn-lg" href="<?php echo PI_CEFW_BUY_URL; ?>&utm_ref=bottom_link" target="_blank">BUY PRO VERSION</a>
+                    <a class="btn btn-primary btn-md" href="<?php echo PI_CEFW_BUY_URL; ?>&utm_ref=bottom_link" target="_blank">🔓 Unlock Pro Now – Limited Time Price!</a>
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
         <?php
     }
 

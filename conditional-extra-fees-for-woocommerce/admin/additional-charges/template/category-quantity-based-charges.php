@@ -3,7 +3,7 @@
 </script>
 <div class="p-3 bg-dark">
 <div class="row">
-    <div class="col-6"><label for="pi_enable_additional_charges_category_quantity" class="mb-0 text-light">Change Fees based on Category Quantity</label> <?php ////pisol_help::youtube('6S1eVLuR6b8','Know more about the Category Quantity based charge'); ?></div>
+    <div class="col-6"><label for="pi_enable_additional_charges_category_quantity" class="mb-0 text-light">Change Fees based on Category Quantity</label> <?php ////pisol_cefw_help::youtube('6S1eVLuR6b8','Know more about the Category Quantity based charge'); ?></div>
     <div class="col-6">
         <div class="custom-control custom-switch">
             <input type="checkbox" value="1" <?php echo $data['pi_enable_additional_charges_category_quantity']; ?> class="custom-control-input" name="pi_enable_additional_charges_category_quantity" id="pi_enable_additional_charges_category_quantity">
@@ -37,7 +37,7 @@
             <th>Category</th>
             <th class="pi-min-col">Min Qty</th>
             <th class="pi-min-col">Max Qty</th>
-            <th class="pi-fee-col">Fees <?php pisol_help::inline('category_quantity_charge_short_code_help', 'Using short code'); ?></th>
+            <th class="pi-fee-col">Fees <?php pisol_cefw_help::inline('category_quantity_charge_short_code_help', 'Using short code'); ?></th>
             <th></th>
         </tr>
     </thead>

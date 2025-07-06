@@ -72,7 +72,7 @@ class pisol_cefw_options{
         $this->tab_name = __('Extra settings','conditional-extra-fees-woocommerce');
         ?>
         <a class=" px-3 py-2 text-light d-flex align-items-center  border-left border-right  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab ); ?>">
-            <?php echo esc_html( $this->tab_name); ?> 
+           <span class="dashicons dashicons-admin-settings"></span> <?php echo esc_html( $this->tab_name); ?> 
         </a>
         <?php
     }
@@ -87,7 +87,7 @@ class pisol_cefw_options{
                 new pisol_class_form_sn($setting, $this->setting_key);
             }
         ?>
-        <input type="submit" class="mt-3 btn btn-primary btn-sm" value="Save Option" />
+        <input type="submit" class="my-3 btn btn-primary btn-md" value="Save Option" />
         </form>
        <?php
     }

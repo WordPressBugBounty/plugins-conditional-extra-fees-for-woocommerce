@@ -3,7 +3,7 @@
 </script>
 <div class="p-3 bg-dark">
 <div class="row">
-    <div class="col-7"><label for="pi_enable_additional_charges_shippingclass_subtotal" class="mb-0 text-light">Change Fees based on Shipping Class Subtotal</label> <?php //pisol_help::youtube('GFuvQlEiELE','Know more about the Shipping class Subtotal based charge'); ?></div>
+    <div class="col-7"><label for="pi_enable_additional_charges_shippingclass_subtotal" class="mb-0 text-light">Change Fees based on Shipping Class Subtotal</label> <?php //pisol_cefw_help::youtube('GFuvQlEiELE','Know more about the Shipping class Subtotal based charge'); ?></div>
     <div class="col-5">
         <div class="custom-control custom-switch">
             <input type="checkbox" value="1" <?php echo $data['pi_enable_additional_charges_shippingclass_subtotal']; ?> class="custom-control-input" name="pi_enable_additional_charges_shippingclass_subtotal" id="pi_enable_additional_charges_shippingclass_subtotal">
@@ -44,7 +44,7 @@
             <th>Shipping class</th>
             <th class="pi-min-col">Min Subtotal</th>
             <th class="pi-min-col">Max Subtotal</th>
-            <th class="pi-fee-col">Fees <?php pisol_help::inline('shippingclass_subtotal_charge_short_code_help', 'Using short code'); ?></th>
+            <th class="pi-fee-col">Fees <?php pisol_cefw_help::inline('shippingclass_subtotal_charge_short_code_help', 'Using short code'); ?></th>
             <th></th>
         </tr>
     </thead>

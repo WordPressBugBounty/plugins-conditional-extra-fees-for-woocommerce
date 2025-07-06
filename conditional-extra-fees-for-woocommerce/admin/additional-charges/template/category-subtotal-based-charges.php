@@ -3,7 +3,7 @@
 </script>
 <div class="p-3 bg-dark">
 <div class="row">
-    <div class="col-6"><label for="pi_enable_additional_charges_category_subtotal" class="mb-0 text-light">Change Fees based on Category Subtotal</label> <?php //pisol_help::youtube('XPNsq5U6FHA','Know more about the Category Subtotal based charge'); ?></div>
+    <div class="col-6"><label for="pi_enable_additional_charges_category_subtotal" class="mb-0 text-light">Change Fees based on Category Subtotal</label> <?php //pisol_cefw_help::youtube('XPNsq5U6FHA','Know more about the Category Subtotal based charge'); ?></div>
     <div class="col-6">
         <div class="custom-control custom-switch">
             <input type="checkbox" value="1" <?php echo $data['pi_enable_additional_charges_category_subtotal']; ?> class="custom-control-input" name="pi_enable_additional_charges_category_subtotal" id="pi_enable_additional_charges_category_subtotal">
@@ -37,7 +37,7 @@
             <th>Category</th>
             <th class="pi-min-col">Min Subtotal</th>
             <th class="pi-min-col">Max Subtotal</th>
-            <th class="pi-fee-col">Fees <?php pisol_help::inline('category_subtotal_charge_short_code_help', 'Using short code'); ?></th>
+            <th class="pi-fee-col">Fees <?php pisol_cefw_help::inline('category_subtotal_charge_short_code_help', 'Using short code'); ?></th>
             <th></th>
         </tr>
     </thead>

@@ -18,7 +18,7 @@ class pisol_cefw_weight_based_extra_charges_setting{
     }
 
     function addTab($data){
-        pisol_cefw_additional_charges_form::tabName(__('Based on Cart Weight', 'conditional-extra-fees-woocommerce'), $this->slug);
+        pisol_cefw_additional_charges_form::tabName(__('Cart Weight', 'conditional-extra-fees-woocommerce'), $this->slug);
     }
 
     function addTabContent($data){
