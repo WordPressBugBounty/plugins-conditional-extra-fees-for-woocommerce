@@ -126,34 +126,34 @@ class Pi_cefw_Menu{
                     </h2>
                 <div class="inside">
                     <ul class="text-left pisol-pro-feature-list">
-                        <li><b>✔ Location-based rules</b><br>
+                        <li><b><span style="color:white;">&#10003;</span> Location-based rules</b><br>
                         <i>Target specific country, state, city or postcodes ranges</i></li>
 
-                        <li><b>✔ Product & tag logic</b><br>
+                        <li><b><span style="color:white;">&#10003;</span> Product & tag logic</b><br>
                         <i>Apply fees by product tags or categories</i></li>
 
-                        <li><b>✔ Quantity-based triggers</b><br>
+                        <li><b><span style="color:white;">&#10003;</span> Quantity-based triggers</b><br>
                         <i>Set rules by quantity from tags or categories</i></li>
 
-                        <li><b>✔ Payment method conditions</b><br>
+                        <li><b><span style="color:white;">&#10003;</span> Payment method conditions</b><br>
                         <i>Charge based on chosen payment option</i></li>
 
-                        <li><b>✔ Day-based fees</b><br>
+                        <li><b><span style="color:white;">&#10003;</span> Day-based fees</b><br>
                         <i>Apply charges on selected weekdays</i></li>
 
-                        <li><b>✔ Shipping method rules</b><br>
+                        <li><b><span style="color:white;">&#10003;</span> Shipping method rules</b><br>
                         <i>Apply fees by shipping method selected</i></li>
 
-                        <li><b>✔ Customer order history</b><br>
+                        <li><b><span style="color:white;">&#10003;</span> Customer order history</b><br>
                         <i>Skip fees for first order or loyal customers</i></li>
 
-                        <li><b>✔ Spending-based exclusions</b><br>
+                        <li><b><span style="color:white;">&#10003;</span> Spending-based exclusions</b><br>
                         <i>No fee if past order or total spend qualifies</i></li>
 
-                        <li><b>✔ Merge multiple fees</b><br>
+                        <li><b><span style="color:white;">&#10003;</span> Merge multiple fees</b><br>
                         <i>Combine several fees into one charge</i></li>
 
-                        <li><b>✔ Tooltip for charges</b><br>
+                        <li><b><span style="color:white;">&#10003;</span> Tooltip for charges</b><br>
                         <i>Help customers understand each extra charge</i></li>
                     </ul>
                     <h4 class="pi-bottom-banner">💰 Just <?php echo esc_html(PI_CEFW_PRICE); ?></h4>
