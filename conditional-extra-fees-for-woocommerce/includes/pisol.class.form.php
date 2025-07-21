@@ -1,16 +1,19 @@
 <?php
 /**
-* version 3.6
+* version 3.1
 * work with bootstrap
 */
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-if(!class_exists('pisol_class_form_sn')):
-class pisol_class_form_sn{
+if(!class_exists('pisol_class_form_cefw')):
+class pisol_class_form_cefw{
 
     private $setting;
     private $saved_value; 
     private $pro;
+    public $allowed_tags;
+    public $allowed_atts;
+
     function __construct($setting){
 
         $this->setting = $setting;
@@ -69,8 +72,11 @@ class pisol_class_form_sn{
             'readonly'   => array(),
         );
         $this->allowed_tags['form']     = $allowed_atts;
+        $this->allowed_tags['br']     = $allowed_atts;
         $this->allowed_tags['label']    = $allowed_atts;
         $this->allowed_tags['input']    = $allowed_atts;
+        $this->allowed_tags['select']    = $allowed_atts;
+        $this->allowed_tags['option']    = $allowed_atts;
         $this->allowed_tags['textarea'] = $allowed_atts;
         $this->allowed_tags['iframe']   = $allowed_atts;
         $this->allowed_tags['script']   = $allowed_atts;
@@ -102,15 +108,11 @@ class pisol_class_form_sn{
         $this->allowed_tags['a']        = $allowed_atts;
         $this->allowed_tags['b']        = $allowed_atts;
         $this->allowed_tags['i']        = $allowed_atts;
-        $this->allowed_tags['select']        = $allowed_atts;
-        $this->allowed_tags['option']        = $allowed_atts;
+        
         
         $this->check_field_type();
     }
 
-    
-
-    
     function check_field_type(){
         if(isset($this->setting['type'])):
             switch ($this->setting['type']){
@@ -123,6 +125,10 @@ class pisol_class_form_sn{
                 break;
 
                 case 'text':
+                    $this->text_box();
+                break;
+
+                case 'text_html':
                     $this->text_box();
                 break;
                     
@@ -157,20 +163,26 @@ class pisol_class_form_sn{
                 case 'image':
                     $this->image();
                 break;
+
+                default:
+                    $this->custom_field();
+                break;
             }
         endif;
     }
 
-    function bootstrap($label, $field, $desc = "", $links = ""){
+    function bootstrap($label, $field, $desc = "", $links = "", $title_col = 5){
+        $title_col = 5;
+        $setting_col = 12 - $title_col;
         if($this->setting['type'] != 'hidden'){
         ?>
         <div id="row_<?php echo esc_attr($this->setting['field']); ?>"  class="pisol-form-element-row row py-4 border-bottom align-items-center <?php echo esc_attr($this->pro); ?> <?php echo !empty($this->setting['class']) ? esc_attr($this->setting['class']) : ''; ?>">
-            <div class="col-12 col-md-5">
+            <div class="col-12 col-md-<?php echo esc_attr($title_col); ?>">
             <?php echo wp_kses($label, $this->allowed_tags); ?>
-            <?php echo wp_kses($desc != "" ? $desc : "", $this->allowed_tags); ?>
+            <?php echo wp_kses($desc != "" ? $desc.'<br>': "", $this->allowed_tags); ?>
             <?php echo wp_kses($links != "" ? $links: "", $this->allowed_tags); ?>
             </div>
-            <div class="col-12 col-md-7">
+            <div class="col-12 col-md-<?php echo esc_attr($setting_col); ?>">
             <?php echo wp_kses($field, $this->allowed_tags); ?>
             </div>
         </div>
@@ -186,13 +198,38 @@ class pisol_class_form_sn{
         }
     }
 
+    function bootstrap_image($label, $field, $desc = "", $links = "", $title_col = 5){
+        $setting_col = 12 - $title_col;
+        if($this->setting['type'] != 'hidden'){
+        ?>
+        <div id="row_<?php echo esc_attr($this->setting['field']); ?>"  class="row py-4 border-bottom align-items-center <?php echo esc_attr($this->pro); ?> <?php echo !empty($this->setting['class']) ? esc_attr($this->setting['class']) : ''; ?>">
+            <div class="col-12 col-md-<?php echo esc_attr($title_col); ?>">
+            <?php echo wp_kses($label, $this->allowed_tags); ?>
+            <?php echo wp_kses($desc != "" ? $desc.'<br>': "", $this->allowed_tags); ?>
+            <?php echo wp_kses($links != "" ? $links: "", $this->allowed_tags); ?>
+            </div>
+            <div class="col-12 col-md-<?php echo esc_attr($setting_col); ?>">
+            <?php echo wp_kses($field, $this->allowed_tags, ['https', 'http', 'javascript']); ?>
+            </div>
+        </div>
+        <?php
+        }else{
+            ?>
+            <div id="row_<?php echo esc_attr($this->setting['field']); ?>" class="row align-items-center <?php echo esc_attr($this->pro); ?>">
+            <div class="col-12 col-md-12">
+            <?php echo wp_kses($field, $this->allowed_tags); ?>
+            </div>
+            </div>
+            <?php
+        }
+    }
 
     function bootstrap_switch_category($label, $field, $desc = "", $links = ""){
         ?>
-        <div id="row_<?php echo esc_attr($this->setting['field']); ?>" class="pisol-form-element-row row py-4 border-bottom align-items-center <?php echo ( isset($this->setting['class']) ? esc_attr($this->setting['class']) : "" ); ?>">
+        <div id="row_<?php echo esc_attr($this->setting['field']); ?>" class="row py-4 border-bottom align-items-center <?php echo ( isset($this->setting['class']) ? esc_attr($this->setting['class']) : "" ); ?>">
             <div class="col-9">
             <?php echo wp_kses($label, $this->allowed_tags) ; ?>
-            <?php echo wp_kses($desc != "" ? $desc : "", $this->allowed_tags); ?>
+            <?php echo wp_kses($desc != "" ? $desc.'<br>': "", $this->allowed_tags); ?>
             <?php echo wp_kses($links != "" ? $links: "", $this->allowed_tags); ?>
             </div>
             <div class="col-3">
@@ -207,20 +244,20 @@ class pisol_class_form_sn{
     */
     function select_box(){
 
-        $label = '<label class="h6 mb-0" for="'.esc_attr($this->setting['field']).'">'.esc_html($this->setting['label']).'</label>';
+        $label = '<label class="h6 mb-0" for="'.esc_attr($this->setting['field']).'">'.wp_kses_post($this->setting['label']).'</label>';
         $desc = (isset($this->setting['desc'])) ? '<br><small>'.wp_kses($this->setting['desc'], $this->allowed_tags).'</small>' : "";
         
         $field = '<select class="form-control '.esc_attr($this->pro).'" name="'.esc_attr($this->setting['field']).'" id="'.esc_attr($this->setting['field']).'"'
-         .(isset($this->setting['multiple']) ? ' multiple="'.esc_attr($this->setting['multiple']).'"': '')
+            .(isset($this->setting['multiple']) ? ' multiple="'.esc_attr($this->setting['multiple']).'"': '')
         .'>';
             foreach($this->setting['value'] as $key => $val){
-               $field .= '<option value="'.esc_attr($key).'" '.( ( $this->saved_value == $key) ? " selected=\"selected\" " : "" ).'>'.esc_html($val).'</option>';
+                $field .= '<option value="'.esc_attr($key).'" '.( ( $this->saved_value == $key) ? " selected=\"selected\" " : "" ).'>'.esc_html($val).'</option>';
             }
         $field .= '</select>';
 
         $links = $this->generateLinks($this->setting);
 
-        $this->bootstrap($label, $field, $desc, $links);
+        $this->bootstrap($label, $field, $desc, $links, 7);
 
     }
 
@@ -245,7 +282,7 @@ class pisol_class_form_sn{
         Field type: select box
     */
     function multiselect_box(){
-        $label = '<label class="h6 mb-0" for="'.esc_attr($this->setting['field']).'">'.esc_html($this->setting['label']).'</label>';
+        $label = '<label class="h6 mb-0" for="'.esc_attr($this->setting['field']).'">'.wp_kses_post($this->setting['label']).'</label>';
         $desc = ((isset($this->setting['desc'])) ? '<br><small>'.wp_kses($this->setting['desc'], $this->allowed_tags).'</small>' : "");
         $field = '<select style="min-height:100px;" class="form-control multiselect '.esc_attr($this->pro).'" name="'.esc_attr($this->setting['field']).'[]" id="'.esc_attr($this->setting['field']).'" multiple'. '>';
             foreach($this->setting['value'] as $key => $val){
@@ -268,7 +305,7 @@ class pisol_class_form_sn{
     */
     function number_box(){
 
-        $label = '<label class="h6 mb-0" for="'.esc_attr($this->setting['field']).'">'.esc_html($this->setting['label']).'</label>';
+        $label = '<label class="h6 mb-0" for="'.esc_attr($this->setting['field']).'">'.wp_kses_post($this->setting['label']).'</label>';
         $desc =  (isset($this->setting['desc'])) ? '<br><small>'.wp_kses($this->setting['desc'], $this->allowed_tags).'</small>' : "";
         $field = '<input type="number" class="form-control '.esc_attr($this->pro).'" name="'.esc_attr($this->setting['field']).'" id="'.esc_attr($this->setting['field']).'" value="'.esc_attr($this->saved_value).'"'
         .(isset($this->setting['min']) ? ' min="'.esc_attr($this->setting['min']).'"': '')
@@ -280,7 +317,7 @@ class pisol_class_form_sn{
 
         $links = $this->generateLinks($this->setting);
 
-        $this->bootstrap($label, $field, $desc, $links);
+        $this->bootstrap($label, $field, $desc, $links, 7);
     }
 
     /*
@@ -288,7 +325,7 @@ class pisol_class_form_sn{
     */
     function text_box(){
 
-        $label = '<label class="h6 mb-0" for="'.esc_attr($this->setting['field']).'">'.esc_html($this->setting['label']).'</label>';
+        $label = '<label class="h6 mb-0" for="'.esc_attr($this->setting['field']).'">'.wp_kses_post($this->setting['label']).'</label>';
         $desc =  (isset($this->setting['desc'])) ? '<br><small>'.wp_kses($this->setting['desc'], $this->allowed_tags).'</small>' : "";
         $field = '<input type="text" class="form-control '.esc_attr($this->pro).'" name="'.esc_attr($this->setting['field']).'" id="'.esc_attr($this->setting['field']).'" value="'.esc_attr($this->saved_value).'"'
         .(isset($this->setting['required']) ? ' required="'.esc_attr($this->setting['required']).'"': '')
@@ -297,14 +334,14 @@ class pisol_class_form_sn{
 
         $links = $this->generateLinks($this->setting);
 
-        $this->bootstrap($label, $field, $desc, $links);
+        $this->bootstrap($label, $field, $desc, $links, 7);
     }
     
     /*
     Textarea field
     */
     function textarea_box(){
-        $label = '<label class="h6 mb-0" for="'.esc_attr($this->setting['field']).'">'.esc_html($this->setting['label']).'</label>';
+        $label = '<label class="h6 mb-0" for="'.esc_attr($this->setting['field']).'">'.wp_kses_post($this->setting['label']).'</label>';
         $desc =  (isset($this->setting['desc'])) ? '<br><small>'.wp_kses($this->setting['desc'], $this->allowed_tags).'</small>' : "";
         $field = '<textarea style="height:auto !important; min-height:200px;" type="text" class="form-control '.esc_attr($this->pro).'" name="'.esc_attr($this->setting['field']).'" id="'.esc_attr($this->setting['field']).'"'
         .(isset($this->setting['required']) ? ' required="'.esc_attr($this->setting['required']).'"': '')
@@ -315,10 +352,10 @@ class pisol_class_form_sn{
 
         $links = $this->generateLinks($this->setting);
 
-        $this->bootstrap($label, $field, $desc, $links);
+        $this->bootstrap($label, $field, $desc, $links, 12);
     }
 
-     /*
+        /*
         Field type: color
     */
     function color_box(){
@@ -327,9 +364,9 @@ class pisol_class_form_sn{
         wp_add_inline_script('wp-color-picker','
         jQuery(document).ready(function($) {
             $(".color-picker").wpColorPicker();
-          });
+            });
         ');
-        $label = '<label class="h6 mb-0" for="'.esc_attr($this->setting['field']).'">'.esc_html($this->setting['label']).'</label>';
+        $label = '<label class="h6 mb-0" for="'.esc_attr($this->setting['field']).'">'.wp_kses_post($this->setting['label']).'</label>';
         $desc =  (isset($this->setting['desc'])) ? '<br><small>'.wp_kses($this->setting['desc'], $this->allowed_tags).'</small>' : "";
         $field = '<input type="text" class="color-picker pisol_select '.esc_attr($this->pro).'" name="'.esc_attr($this->setting['field']).'" id="'.esc_attr($this->setting['field']).'" value="'.esc_attr($this->saved_value).'"'
         .(isset($this->setting['required']) ? ' required="'.esc_attr($this->setting['required']).'"': '')
@@ -338,11 +375,11 @@ class pisol_class_form_sn{
 
         $links = $this->generateLinks($this->setting);
 
-        $this->bootstrap($label, $field, $desc, $links);
+        $this->bootstrap($label, $field, $desc, $links, 7);
     }
 
     function hidden_box(){
-        $label =  '<label class="h6 mb-0" for="'.esc_attr($this->setting['field']).'">'.esc_html($this->setting['label']).'</label>';
+        $label =  '<label class="h6 mb-0" for="'.esc_attr($this->setting['field']).'">'.wp_kses_post($this->setting['label']).'</label>';
         $desc =   (isset($this->setting['desc'])) ? '<br><small>'.wp_kses($this->setting['desc'], $this->allowed_tags).'</small>' : "";
         $field ='<input type="hidden" class="pisol_select '.esc_attr($this->pro).'" name="'.esc_attr($this->setting['field']).'" id="'.esc_attr($this->setting['field']).'" value="'.esc_attr($this->saved_value).'"'
         .(isset($this->setting['required']) ? ' required="'.esc_attr($this->setting['required']).'"': '')
@@ -359,7 +396,7 @@ class pisol_class_form_sn{
     */
     function switch_display(){
 
-        $label = '<label class="h6 mb-0" for="'.esc_attr($this->setting['field']).'">'.esc_html($this->setting['label']).'</label>';
+        $label = '<label class="h6 mb-0" for="'.esc_attr($this->setting['field']).'">'.wp_kses_post($this->setting['label']).'</label>';
         $desc = (isset($this->setting['desc'])) ? '<br><small>'.wp_kses($this->setting['desc'], $this->allowed_tags).'</small>' : "";
         
         $field = '<div class="custom-control custom-switch">
@@ -369,16 +406,16 @@ class pisol_class_form_sn{
 
         $links = $this->generateLinks($this->setting);
 
-        $this->bootstrap($label, $field, $desc, $links);
+        $this->bootstrap($label, $field, $desc, $links, 9);
     }
 
     function switch_category_display(){
 
-        $label = '<label class="h6 mb-0" for="'.esc_attr($this->setting['field']).'">'.esc_html($this->setting['label']).'</label>';
+        $label = '<label class="h6 mb-0" for="'.esc_attr($this->setting['field']).'">'.wp_kses_post($this->setting['label']).'</label>';
         $desc = (isset($this->setting['desc'])) ? '<br><small>'.wp_kses($this->setting['desc'], $this->allowed_tags).'</small>' : "";
         
         $field = '<div class="custom-control custom-switch">
-        <input type="checkbox" value="1" class="custom-control-input" name="'.esc_attr($this->setting['field']).'" id="'.esc_attr($this->setting['field']).'"'.(($this->saved_value == true) ? "checked='checked'": "").' >
+        <input type="checkbox" value="1" class="custom-control-input" name="'.esc_attr($this->setting['field']).'" id="'.esc_attr($this->setting['field']).'" '.(!empty($this->saved_value) ? "checked='checked'": "").' >
         <label class="custom-control-label" for="'.esc_attr($this->setting['field']).'"></label>
         </div>';
 
@@ -395,7 +432,7 @@ class pisol_class_form_sn{
         ?>
         <div id="row_<?php echo esc_attr($this->setting['field']); ?>" class="row py-4 border-bottom align-items-center <?php echo ( isset($this->setting['class']) ? esc_attr($this->setting['class']) : "" ); ?>">
             <div class="col-12">
-            <h2 class="mt-0 mb-0 <?php echo ( isset($this->setting['class_title']) ? esc_attr($this->setting['class_title']) : "" ); ?>"><?php echo $this->setting['label']; ?></h2>
+            <h2 class="mt-0 mb-0 <?php echo ( isset($this->setting['class_title']) ? esc_attr($this->setting['class_title']) : "" ); ?>"><?php echo wp_kses_post($this->setting['label']); ?></h2>
             </div>
         </div>
         <?php
@@ -405,7 +442,7 @@ class pisol_class_form_sn{
     function image(){
         wp_enqueue_media();
         add_action( 'admin_footer', array($this,'media_selector_scripts') );
-        $label = '<label class="h6 mb-0" for="'.esc_attr($this->setting['field']).'">'.esc_html($this->setting['label']).'</label>';
+        $label = '<label class="h6 mb-0" for="'.esc_attr($this->setting['field']).'">'.wp_kses_post($this->setting['label']).'</label>';
         $desc = (isset($this->setting['desc'])) ? '<br><small>'.wp_kses($this->setting['desc'], $this->allowed_tags).'</small>' : "";
         $field = '
         <div class="row align-items-center">
@@ -423,62 +460,186 @@ class pisol_class_form_sn{
         ';
         $links = $this->generateLinks($this->setting);
 
-        $this->bootstrap($label, $field, $desc, $links);
+        $this->bootstrap_image($label, $field, $desc, $links);
     }
 
     function media_selector_scripts(){
         $my_saved_attachment_post_id = get_option($this->setting['field'], 0 );
-	    ?><script type='text/javascript'>
-		jQuery( document ).ready( function( $ ) {
-			// Uploading files
-			var file_frame;
-			var wp_media_post_id = wp.media.model.settings.post.id; // Store the old id
-			var set_to_post_id = <?php echo esc_attr($my_saved_attachment_post_id == 0 || $my_saved_attachment_post_id =="" ? "''" : $my_saved_attachment_post_id) ; ?>; // Set this
-			jQuery('#<?php echo esc_attr($this->setting['field']); ?>_button').on('click', function( event ){
-				event.preventDefault();
-				// If the media frame already exists, reopen it.
-				if ( file_frame ) {
-					// Set the post ID to what we want
-					file_frame.uploader.uploader.param( 'post_id', set_to_post_id );
-					// Open frame
-					file_frame.open();
-					return;
-				} else {
-					// Set the wp.media post id so the uploader grabs the ID we want when initialised
-					wp.media.model.settings.post.id = set_to_post_id;
-				}
-				// Create the media frame.
-				file_frame = wp.media.frames.file_frame = wp.media({
-					title: 'Select a image to upload',
-					button: {
-						text: 'Use this image',
-					},
-					multiple: false	// Set to true to allow multiple files to be selected
-				});
-				// When an image is selected, run a callback.
-				file_frame.on( 'select', function() {
-					// We set multiple to false so only get one image from the uploader
-					attachment = file_frame.state().get('selection').first().toJSON();
-					// Do something with attachment.id and/or attachment.url here
-					$( '#<?php echo esc_attr($this->setting['field']); ?>_preview' ).attr( 'src', attachment.url ).css( 'width', 'auto' );
-					$( '#<?php echo esc_attr($this->setting['field']); ?>' ).val( attachment.id );
-					// Restore the main post ID
-					wp.media.model.settings.post.id = wp_media_post_id;
-				});
-					// Finally, open the modal
-					file_frame.open();
-			});
-			// Restore the main ID when the add media button is pressed
-			jQuery( 'a.add_media' ).on( 'click', function() {
-				wp.media.model.settings.post.id = wp_media_post_id;
-			});
+        ?><script type='text/javascript'>
+        jQuery( document ).ready( function( $ ) {
+            // Uploading files
+            var file_frame;
+            var wp_media_post_id = wp.media.model.settings.post.id; // Store the old id
+            var set_to_post_id = <?php echo esc_attr($my_saved_attachment_post_id == 0 || $my_saved_attachment_post_id =="" ? "0" : $my_saved_attachment_post_id) ; ?>; // Set this
+            jQuery('#<?php echo esc_attr($this->setting['field']); ?>_button').on('click', function( event ){
+                event.preventDefault();
+                // If the media frame already exists, reopen it.
+                if ( file_frame ) {
+                    // Set the post ID to what we want
+                    file_frame.uploader.uploader.param( 'post_id', set_to_post_id );
+                    // Open frame
+                    file_frame.open();
+                    return;
+                } else {
+                    // Set the wp.media post id so the uploader grabs the ID we want when initialised
+                    wp.media.model.settings.post.id = set_to_post_id;
+                }
+                // Create the media frame.
+                file_frame = wp.media.frames.file_frame = wp.media({
+                    title: 'Select a image to upload',
+                    button: {
+                        text: 'Use this image',
+                    },
+                    multiple: false	// Set to true to allow multiple files to be selected
+                });
+                // When an image is selected, run a callback.
+                file_frame.on( 'select', function() {
+                    // We set multiple to false so only get one image from the uploader
+                    attachment = file_frame.state().get('selection').first().toJSON();
+                    // Do something with attachment.id and/or attachment.url here
+                    $( '#<?php echo esc_attr($this->setting['field']); ?>_preview' ).attr( 'src', attachment.url ).css( 'width', 'auto' );
+                    $( '#<?php echo esc_attr($this->setting['field']); ?>' ).val( attachment.id );
+                    // Restore the main post ID
+                    wp.media.model.settings.post.id = wp_media_post_id;
+                });
+                    // Finally, open the modal
+                    file_frame.open();
+            });
+            // Restore the main ID when the add media button is pressed
+            jQuery( 'a.add_media' ).on( 'click', function() {
+                wp.media.model.settings.post.id = wp_media_post_id;
+            });
             jQuery( 'a.clear-image-<?php echo esc_attr($this->setting['field']); ?>' ).on( 'click', function() {
                 $( '#<?php echo esc_attr($this->setting['field']); ?>_preview' ).attr("src","");
                 $( '#<?php echo esc_attr($this->setting['field']); ?>' ).val("");
             });
-		});
-	</script>
+        });
+    </script>
     <?php
     }
+
+    function custom_field(){
+        do_action('pisol_custom_field_'.$this->setting['type'], $this->setting, $this->saved_value);
+    }
+
+
+
+    /**
+     *  if a field don't want to do any sanitization then they will set 
+     * 'validation' => false
+     * and if they want to add there custom sanitization function then they will do 
+     * 'sanitize_callback' => 'function_name' OR
+     * 'sanitize_callback' => array('class_name', 'function_name')
+     * if they want to use different sanitization function that is other then the one defined for them then they will use 
+     * 'sanitize_callback' => 'sanitize_text_field' => directly add the sanitization function name
+     */
+    static function register_setting($group, $setting){
+        
+        $validation_function = self::getValidationFunction($setting);
+        
+
+        if($validation_function !== false){
+            if(!is_array($validation_function) && method_exists(__CLASS__, $validation_function)){
+                register_setting($group, $setting['field'], [
+                    'sanitize_callback' => [__CLASS__, $validation_function]
+                ]);
+                return;
+            }else{
+                if(is_array($validation_function) && count($validation_function) == 2 && method_exists($validation_function[0], $validation_function[1])){
+                    register_setting($group, $setting['field'], [
+                        'sanitize_callback' => $validation_function
+                    ]);
+                    return;
+                }elseif(!is_array($validation_function) && function_exists($validation_function)){  
+                    register_setting($group, $setting['field'], [
+                        'sanitize_callback' => $validation_function
+                    ]);
+                    return;
+                }
+            }
+        }
+        
+        register_setting($group, $setting['field']);
+        
+    }
+
+    static function getValidationFunction($setting){
+        if(isset($setting['validation']) && $setting['validation'] === false) return false;
+
+        if(isset($setting['sanitize_callback'])){
+            return $setting['sanitize_callback'];
+        }
+
+        $sanitize_text_allow_basic_html_field_types = ['text_html'];
+        
+        $sanitize_text_field_types = ['select', 'text', 'multiselect', 'color', 'hidden', 'switch', 'switch_category'];
+
+        $sanitize_textarea_field_types = ['textarea'];
+
+        $sanitize_number_field_types = ['number'];
+
+        if(isset($setting['type']) && in_array($setting['type'], $sanitize_text_field_types)){
+            return 'sanitize_text_field';
+        }
+
+        if(isset($setting['type']) && in_array($setting['type'], $sanitize_textarea_field_types)){
+            return 'sanitize_textarea_field';
+        }
+
+        if(isset($setting['type']) && in_array($setting['type'], $sanitize_number_field_types)){
+            return 'sanitize_numeric_values';
+        }
+
+        if(isset($setting['type']) && in_array($setting['type'], $sanitize_text_allow_basic_html_field_types)){
+            return 'sanitize_text_allow_basic_html';
+        }
+
+        return false;
+            
+    }
+
+    static function sanitize_text_field($input) {
+        
+        $sanitized_input = is_array($input) ? array_map([__CLASS__,'sanitize_text_field'], $input) : sanitize_text_field($input);
+        
+        return $sanitized_input;
+    }
+
+    static function sanitize_textarea_field($input) {
+        $sanitized_input = sanitize_textarea_field($input);
+
+        return $sanitized_input;
+        
+    }
+
+    static function sanitize_text_allow_basic_html($input) {
+        $allowed_tags = array(
+            'span' => array(),
+            'strong' => array(),
+            'b' => array(),
+            'i' => array(),
+            'br' => array(),
+        );
+
+        $sanitized_input = wp_kses($input, $allowed_tags);
+
+        return $sanitized_input;
+    }
+
+    // Sanitize numeric input (supports both integer and float)
+    static function sanitize_numeric_values($input) {
+        if (is_numeric($input)) {
+            if (ctype_digit($input)) {
+                $sanitized_input = intval($input);
+            } else {
+                $sanitized_input = floatval($input);
+            }
+        } else {
+            $sanitized_input = 0; // You can change this to any default value
+        }
+
+        return $sanitized_input;
+    }
+
 }
 endif;

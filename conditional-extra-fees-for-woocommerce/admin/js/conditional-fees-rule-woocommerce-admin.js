@@ -187,6 +187,17 @@
 		$("#close-all").on('click', function() {
 			$('.pi-step-container').addClass('pi-closed');
 		});
+
+		$(".apply-processing-fee").on('change', function() {
+			if ($(this).is(":checked")) {
+				var parent = $(this).parent().parent().parent();
+				$('.processing-fields', parent).fadeIn();
+			} else {
+				var parent = $(this).parent().parent().parent();
+				$('.processing-fields', parent).fadeOut();
+			}
+		});
+		$(".apply-processing-fee").trigger('change'); // Initialize state on page load
 	});
 
 })(jQuery);

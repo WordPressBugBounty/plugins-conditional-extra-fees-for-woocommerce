@@ -2,6 +2,7 @@
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-apply-fees.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-products-matching-rule.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-fees.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-apply-payment-processing-fee.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/pisol.class.form.php';
 
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/pisol.class.promotion.php';
@@ -18,5 +19,7 @@ require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/option.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/combine-method.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-store-fee.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-analytics.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-customfields.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-payment-processing-fee.php';
 
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'block/includes.php';

@@ -4,11 +4,11 @@ Donate link: piwebsolution.com
 Tags: cart fee, Extra Charge, additional fee, service charge, woocommerce extra fee, woocommerce additional fees, woocommerce fees, woocommerce extra cost, woocommerce additional cost, Woocommerce advanced fees, extra fee, woocommerce extra cost
 Requires at least: 3.0.1
 Tested up to: 6.8
-Stable tag: 1.1.49.16
+Stable tag: 1.1.49.17
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Add conditional cart fee / Extra charge / Extra cost / Extra fees plugin for WooCommerce / Additional fees / Service charge on the checkout for WooCommerce based on Conditional fees rule like product fees, product category fees, bulk fees, WooCommerce extra fees..
+Add conditional cart fee / Payment processing fee / Extra cost / Extra fees plugin for WooCommerce / Additional fees / Service charge on the checkout for WooCommerce based on Conditional fees rule like product fees, product category fees, bulk fees, WooCommerce extra fees..
 
 == Description ==
 
@@ -218,6 +218,8 @@ https://www.youtube.com/watch?v=lE6ELZ0v_68
 5. WooCommerce checkout fees applied on the checkout page
 6. WooCommerce extra fees plugin allows you to combine multiple fees and show it under one label
 7. Add a description of the fee using, so customer can know what he is getting charged for
+8. Payment processing fees option given in settings
+9. Payment processing fee option so you can directly apply the payment fees without creating complex rules
 
 == Frequently asked questions ==
 
@@ -333,6 +335,9 @@ You can set woocommerce conditional product fees for checkout based on 20+ condi
 The pro version includes time-based rules, so you can apply woocommerce conditional product fees for checkout based on day or time range.
 
 == Changelog ==
+
+= 1.1.49.17 =
+* Payment processing fees option given in settings
 
 = 1.1.49.16 =
 * Payment processing fee module tested with WC 10.0.0

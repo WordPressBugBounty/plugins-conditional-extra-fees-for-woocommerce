@@ -84,7 +84,7 @@ class pisol_cefw_options{
         <?php settings_fields( $this->setting_key ); ?>
         <?php
             foreach($this->settings as $setting){
-                new pisol_class_form_sn($setting, $this->setting_key);
+                new pisol_class_form_cefw($setting, $this->setting_key);
             }
         ?>
         <input type="submit" class="my-3 btn btn-primary btn-md" value="Save Option" />
