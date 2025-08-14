@@ -69,7 +69,7 @@ class pisol_cefw_combine_methods{
 
     function tab_content(){
         ?>
-        <div class="alert alert-info my-3">Combine multiple fees is available in PRO Version watch its working in below Video</div>
+    <div class="alert alert-info my-3">Combining multiple fees is available in the PRO Version. Watch how it works in the video below:</div>
         <div class="video-container">
         <iframe src="https://www.youtube.com/embed/lE6ELZ0v_68?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>

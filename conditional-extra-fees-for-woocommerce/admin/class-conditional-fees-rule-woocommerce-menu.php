@@ -157,7 +157,7 @@ class Pi_cefw_Menu{
                         <i>Help customers understand each extra charge</i></li>
                     </ul>
                     <h4 class="pi-bottom-banner">💰 Just <?php echo esc_html(PI_CEFW_PRICE); ?></h4>
-                        <h4 class="pi-bottom-banner">🔥 Unlock all 50+ features and grow your sales!</h4>
+                        <h4 class="pi-bottom-banner">🔥 Unlock all features and grow your revenue!</h4>
                     <div class="text-center pb-3 pt-2">
                     <a class="btn btn-primary btn-md" href="<?php echo PI_CEFW_BUY_URL; ?>&utm_ref=bottom_link" target="_blank">🔓 Unlock Pro Now – Limited Time Price!</a>
                     </div>

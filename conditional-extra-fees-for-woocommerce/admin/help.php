@@ -181,7 +181,7 @@
 
 <div id="fee_charge_short_code_help"  style="display:none;">
     <div class="bootstrap-wrapper">
-    <h2>Available short codes</h2>
+    <h2>Available shortcodes</h2>
     <p>
     E.g: You configured a category based rule (product from category A) and now cart is like this:<br><br>
 

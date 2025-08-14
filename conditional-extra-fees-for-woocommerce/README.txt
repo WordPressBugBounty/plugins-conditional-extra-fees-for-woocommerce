@@ -4,7 +4,7 @@ Donate link: piwebsolution.com
 Tags: cart fee, Extra Charge, additional fee, service charge, woocommerce extra fee, woocommerce additional fees, woocommerce fees, woocommerce extra cost, woocommerce additional cost, Woocommerce advanced fees, extra fee, woocommerce extra cost
 Requires at least: 3.0.1
 Tested up to: 6.8
-Stable tag: 1.1.49.17
+Stable tag: 1.1.49.19
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Add conditional cart fee / Payment processing fee / Extra cost / Extra fees plug
 
 == Description ==
 
-[Try Pro on demo website](https://websitemaintenanceservice.in/con_fees_demo/)
+[Try Pro on demo website](https://websitemaintenanceservice.in/con_fees_demo/) | [Documentation](https://www.piwebsolution.com/user-documentation-conditional-fee-plugin/)
 
 WooCommerce extra fees plugin helps you to Create a dynamic fees for your store, based on various conditions
 
@@ -335,6 +335,9 @@ You can set woocommerce conditional product fees for checkout based on 20+ condi
 The pro version includes time-based rules, so you can apply woocommerce conditional product fees for checkout based on day or time range.
 
 == Changelog ==
+
+= 1.1.49.19 =
+* documentation added
 
 = 1.1.49.17 =
 * Payment processing fees option given in settings

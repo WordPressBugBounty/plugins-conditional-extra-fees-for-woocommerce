@@ -45,7 +45,7 @@ class pisol_cefw_options{
         }
 
 
-        add_action($this->plugin_name.'_tab', array($this,'tab'),10);
+        add_action($this->plugin_name.'_tab', array($this,'tab'),11);
 
        
         $this->register_settings();
@@ -73,6 +73,9 @@ class pisol_cefw_options{
         ?>
         <a class=" px-3 py-2 text-light d-flex align-items-center  border-left border-right  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab ); ?>">
            <span class="dashicons dashicons-admin-settings"></span> <?php echo esc_html( $this->tab_name); ?> 
+        </a>
+        <a class=" px-3 py-2 text-light d-flex align-items-center  border-left border-right  bg-secondary" href="https://www.piwebsolution.com/user-documentation-conditional-fee-plugin/" target="_blank">
+           <span class="dashicons dashicons-book"></span> Documentation 
         </a>
         <?php
     }

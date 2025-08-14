@@ -96,7 +96,7 @@ class pisol_cefw_pro_rules{
         );
 
         $rules['total_of_orders'] = array(
-            'name'=>__('Total amount spend during a period (Available in PRO Version)','conditional-extra-fees-woocommerce'),
+            'name'=>__('Total amount spent during a period (Available in PRO Version)','conditional-extra-fees-woocommerce'),
             'group'=>'purchase_history',
             'condition'=>'total_of_orders',
             'pro'=>true

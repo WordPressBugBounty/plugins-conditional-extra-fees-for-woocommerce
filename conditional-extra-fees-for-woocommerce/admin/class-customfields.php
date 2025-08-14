@@ -131,10 +131,12 @@ class CustomFields{
                 $gateways[$gateway->id] = $gateway->get_title();
             }
         }
-
-        foreach($logged_gateways as $gateway_id => $gateway_title){
-            if(!isset($gateways[$gateway_id])){
-                $gateways[$gateway_id] = $gateway_title;
+        
+        if(is_array($logged_gateways) && !empty($logged_gateways)){
+            foreach($logged_gateways as $gateway_id => $gateway_title){
+                if(!isset($gateways[$gateway_id])){
+                    $gateways[$gateway_id] = $gateway_title;
+                }
             }
         }
 
