@@ -117,7 +117,7 @@ class Pi_cefw_Menu{
 
     function promotion(){
         ?>
-        <div class="col-12 col-sm-12 col-md-4 pt-3 pb-3 border-left" id="pi-cefw-sidebar-container">
+        <div class="col-12 col-sm-12 col-md-3 pt-3 pb-3 border-left" id="pi-cefw-sidebar-container">
 
         <div class="pi-shadow rounded px-2 py-3">
                 <h2 id="pi-banner-tagline" class="mb-0" style="color:#ccc !important;">

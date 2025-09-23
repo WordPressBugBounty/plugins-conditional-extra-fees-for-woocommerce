@@ -9,6 +9,7 @@ require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/pisol.class.prom
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/review.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/help.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-common-cart.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/Pro_Warning.php';
 
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-conditional-fees-rule-woocommerce-menu.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-conditional-fees-rule-woocommerce-add-fees-rule.php';

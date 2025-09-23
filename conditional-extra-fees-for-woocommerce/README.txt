@@ -4,7 +4,7 @@ Donate link: piwebsolution.com
 Tags: cart fee, Extra Charge, additional fee, service charge, woocommerce extra fee, woocommerce additional fees, woocommerce fees, woocommerce extra cost, woocommerce additional cost, Woocommerce advanced fees, extra fee, woocommerce extra cost
 Requires at least: 3.0.1
 Tested up to: 6.8
-Stable tag: 1.1.49.20
+Stable tag: 1.1.49.21
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,8 +31,6 @@ WooCommerce extra fees plugin is very simple to use, and you can create complex 
 &#9989; Set extra fees as optional fees, so user can decide if they want to have this service and pay extra cost. E.g: Assembly charges for product, user can decide if they want to have assembly service and pay extra for that or not have that service
 &#9989; Charge extra fees by Fixed / Percentage
 &#9989; Schedule the extra cart fees, to charge for a certain time period.
-&#9989; Set extra fee as taxable or not taxable
-&#9989; Set tax class for the cart Fees
 &#9989; Charge extra fee based on state
 &#9989; Charge extra fee based on WooCommerce zone
 &#9989; WooCommerce extra fee based on category
@@ -46,10 +44,10 @@ WooCommerce extra fees plugin is very simple to use, and you can create complex 
 &#9989; Charge extra fees by user role
 &#9989; Apply charge based on the product quantity multiple of
 &#9989; Apply charge if product quantity is not a multiple of  
-&#9989; Apply 5$ fee for every unit of product A in the cart (use short code [selected_product_qty] in the fee to achieve this: 5 * [selected_product_qty])
-&#9989; Apply 5$ fee for every unit of product from category A in the cart (use short code [selected_product_qty] in the fee to achieve this: 5 * [selected_product_qty] )
-&#9989; Apply 5$ fee for every unit of product cart (use short code [qty] in the fee to achieve this: 5 * [qty])
-&#9989; Apply 5$ fee for every different product from category A in the cart (use short code [selected_product_count] in the fee to achieve this: 5 * [selected_product_count] )
+&#9989; Apply 5$ fee for every unit of product A in the cart (use shortcode [selected_product_qty] in the fee to achieve this: 5 * [selected_product_qty])
+&#9989; Apply 5$ fee for every unit of product from category A in the cart (use shortcode [selected_product_qty] in the fee to achieve this: 5 * [selected_product_qty] )
+&#9989; Apply 5$ fee for every unit of product cart (use shortcode [qty] in the fee to achieve this: 5 * [qty])
+&#9989; Apply 5$ fee for every different product from category A in the cart (use shortcode [selected_product_count] in the fee to achieve this: 5 * [selected_product_count] )
 
 Compatible with [Order date and time plugin](https://wordpress.org/plugins/pi-woocommerce-order-date-time-and-type/) 
 
@@ -245,7 +243,7 @@ Yes, for this you will have to create different extra fee rules. You can select 
 There are rules that are dependent on the selected delivery date so for that you will need to install our [Order date and time plugin](https://wordpress.org/plugins/pi-woocommerce-order-date-time-and-type/) plugin, this plugin adds the Delivery date field to the checkout page and based on selected delivery/pickup date you can add extra cost 
 
 = I want to charge extra fees for Assembly, but give the option to the customer if they want that service or not =
-Yes, for that you will have to make the fess a optional fess, then user will be given the option to select that fees or not on checkout page. When they select that fees it charges of that fees will be added to the user cart
+Yes, for that you will have to make the fees a optional fees, then user will be given the option to select that fees or not on checkout page. When they select that fees it charges of that fees will be added to the user cart
 
 = Can I change title of custom fee from admin? =
 Yes you can set a different title for different fees
@@ -266,10 +264,10 @@ Yes you can do that in the pro version
 Yes you can do that in the PRO version
 
 = Can I show optional fees checkbox on cart page =
-Yes, you can show it on the woocommerce cart page your cart page must be made using the [woocommerce_cart] short code
+Yes, you can show it on the woocommerce cart page your cart page must be made using the [woocommerce_cart] shortcode
 
 = Can a add a explanation (tooltip) about the fee =
-In the pro version you can add a description of the fee, this description will be shown to the customer on the checkout page as a tool tip 
+In the pro version you can add a description of the fee, this description will be shown to the customer on the checkout page as a tooltip 
 
 = Does this plugin support multi currency =
 Yes it gives option to apply rule for specific currency, so that way you can make fee for different currency type 
@@ -336,6 +334,9 @@ The pro version includes time-based rules, so you can apply woocommerce conditio
 
 == Changelog ==
 
+= 1.1.49.21 =
+* change the way data is provided for block based checkout page for optional fees checkbox, so it works with all themes and page builders
+
 = 1.1.49.19 =
 * documentation added
 
@@ -366,7 +367,7 @@ The pro version includes time-based rules, so you can apply woocommerce conditio
 * Tested with WC 9.7.1
 
 = 1.1.49.7 =
-* attribute name braking the condition fixed (in module woocommerce conditional product fees)
+* attribute name breaking the condition fixed (in module woocommerce conditional product fees)
 
 = 1.1.49.6 =
 * Tested with WC 9.7.0
@@ -422,7 +423,7 @@ The pro version includes time-based rules, so you can apply woocommerce conditio
 * feature to round off the WooCommerce checkout fees amount to nearest integer value
 
 = 1.1.26 =
-* new short code [selected_product_count] added
+* new shortcode [selected_product_count] added
 
 = 1.1.24 =
 * WC block can show optional WooCommerce checkout fees checkbox

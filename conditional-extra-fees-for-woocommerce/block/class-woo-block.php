@@ -3,6 +3,7 @@
 use Automattic\WooCommerce\StoreApi\StoreApi;
 use Automattic\WooCommerce\StoreApi\Schemas\ExtendSchema;
 use Automattic\WooCommerce\StoreApi\Schemas\V1\CartSchema;
+use Automattic\WooCommerce\StoreApi\Schemas\V1\CheckoutSchema;
 //use Automattic\WooCommerce\StoreApi\Schemas\V1\CheckoutSchema;
 //use Automattic\WooCommerce\Blocks\StoreApi\Schemas\CartSchema;
 //use Automattic\WooCommerce\Blocks\StoreApi\Schemas\CheckoutSchema;
@@ -30,15 +31,12 @@ class pisol_cefw_woo_block{
     }
 
     function loadData(){
-        if(!class_exists('\Automattic\WooCommerce\StoreApi\StoreApi') || !class_exists('\Automattic\WooCommerce\StoreApi\Schemas\ExtendSchema') || !class_exists('\Automattic\WooCommerce\StoreApi\Schemas\V1\CartSchema')) return;
-        
-        $this->extend = StoreApi::container()->get( ExtendSchema::class );
 	    $this->extendData();
         $this->callBack();
     }
 
     function extendData(){
-        $this->extend->register_endpoint_data(
+        woocommerce_store_api_register_endpoint_data(
 			array(
 				'endpoint'        => CartSchema::IDENTIFIER,
 				'namespace'       => self::IDENTIFIER,
