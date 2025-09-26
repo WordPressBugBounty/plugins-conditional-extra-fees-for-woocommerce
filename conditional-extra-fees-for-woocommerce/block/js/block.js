@@ -1,12 +1,17 @@
 
 const OptionalFeesComponent = ({ cart, extensions }) => {
+    //console.log(extensions);
+
+    const initialOptions = extensions?.pisol_cefw_fees?.options || [];
 
 
-    const [options, setOptions] = React.useState(extensions.pisol_cefw_fees.options);
+    const [options, setOptions] = React.useState(initialOptions);
 
     React.useEffect(() => {
-        setOptions(extensions.pisol_cefw_fees.options);
-    }, [extensions.pisol_cefw_fees.options]);
+        if (extensions?.pisol_cefw_fees?.options) {
+            setOptions(extensions.pisol_cefw_fees.options);
+        }
+    }, [extensions?.pisol_cefw_fees?.options]);
 
     const handleCheckboxChange = (id, event) => {
 

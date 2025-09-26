@@ -4,7 +4,7 @@ Donate link: piwebsolution.com
 Tags: cart fee, Extra Charge, additional fee, service charge, woocommerce extra fee, woocommerce additional fees, woocommerce fees, woocommerce extra cost, woocommerce additional cost, Woocommerce advanced fees, extra fee, woocommerce extra cost
 Requires at least: 3.0.1
 Tested up to: 6.8
-Stable tag: 1.1.49.21
+Stable tag: 1.1.49.22
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -334,8 +334,8 @@ The pro version includes time-based rules, so you can apply woocommerce conditio
 
 == Changelog ==
 
-= 1.1.49.21 =
-* change the way data is provided for block based checkout page for optional fees checkbox, so it works with all themes and page builders
+= 1.1.49.22 =
+* missing option in block based cart and checkout fees fixed
 
 = 1.1.49.19 =
 * documentation added
