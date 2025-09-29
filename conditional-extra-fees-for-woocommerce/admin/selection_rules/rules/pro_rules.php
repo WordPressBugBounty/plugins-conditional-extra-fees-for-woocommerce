@@ -11,12 +11,20 @@ class pisol_cefw_pro_rules{
     }
 
     function addRule($rules){
-        $rules['state'] = array(
-            'name'=>__('State (Available in PRO Version)','conditional-extra-fees-woocommerce'),
+        $rules['all_matched_zones'] = array(
+            'name'=>__('User address matches with Zones (Available in PRO Version)','conditional-extra-fees-woocommerce'),
             'group'=>'location_related',
-            'condition'=>'state',
+            'condition'=>'all_matched_zones',
             'pro'=>true
         );
+
+        $rules['diff_shipping_add'] = array(
+            'name'=>__('Different shipping address (Available in PRO Version)','conditional-extra-fees-woocommerce'),
+            'group'=>'location_related',
+            'condition'=>'all_matched_zones',
+            'pro'=>true
+        );
+        
         
         $rules['product_tag'] = array(
             'name'=>__('Cart has Product tag (Available in PRO Version)','conditional-extra-fees-woocommerce'),
@@ -24,6 +32,14 @@ class pisol_cefw_pro_rules{
             'condition'=>'product_tag',
             'pro'=>true
         );
+
+        $rules['brand_product'] = array(
+            'name'=>__('Cart has Brand (Available in PRO Version)','conditional-extra-fees-woocommerce'),
+            'group'=>'product_related',
+            'condition'=>'brand_product',
+            'pro'=>true
+        );
+
         $rules['user_role'] = array(
             'name'=>__('User role (Available in PRO Version)','conditional-extra-fees-woocommerce'),
             'group'=>'user_related',
@@ -36,6 +52,13 @@ class pisol_cefw_pro_rules{
             'name'=>__('Payment Method (Available in PRO Version)','conditional-extra-fees-woocommerce'),
             'group'=>'cart_related',
             'condition'=>'payment_method',
+            'pro'=>true
+        );
+
+         $rules['back_order_product_total'] = array(
+            'name'=>__('Back order product total (Available in PRO Version)','conditional-extra-fees-woocommerce'),
+            'group'=>'cart_related',
+            'condition'=>'back_order_product_total',
             'pro'=>true
         );
 

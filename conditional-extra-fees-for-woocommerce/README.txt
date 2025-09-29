@@ -1,10 +1,10 @@
 === Conditional cart fee / Extra charge rule for WooCommerce extra fees ===
-Contributors: jyotsnasingh520
+Contributors: jyotsnasingh520, rajeshsingh520
 Donate link: piwebsolution.com
 Tags: cart fee, Extra Charge, additional fee, service charge, woocommerce extra fee, woocommerce additional fees, woocommerce fees, woocommerce extra cost, woocommerce additional cost, Woocommerce advanced fees, extra fee, woocommerce extra cost
 Requires at least: 3.0.1
 Tested up to: 6.8
-Stable tag: 1.1.49.22
+Stable tag: 1.1.49.23
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -84,7 +84,7 @@ Compatible with [Order date and time plugin](https://wordpress.org/plugins/pi-wo
 
 &#9989; Shipping method based extra fees: Apply fees based on the shipping method selected by the customer
 
-&#9989; Charge extra fees based on the Product Attribute, so you can charge extra fees if the user purchases a Large size dore and don't charge extra fees when they purchase small size dore
+&#9989; Charge extra fees based on the Product Attribute, so you can charge extra fees if the user purchases a Large size door and don't charge extra fees when they purchase small size door
 
 &#9989; Don't charge extra WooCommerce checkout fees if the customer **last order** total was more then 1000$ 
 
