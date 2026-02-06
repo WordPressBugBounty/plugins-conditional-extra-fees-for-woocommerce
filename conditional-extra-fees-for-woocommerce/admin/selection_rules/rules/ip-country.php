@@ -1,12 +1,14 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
-class Pi_cefw_selection_rule_zones{
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+class Pi_cefw_selection_rule_ip_country{
+
     public $slug;
     public $condition;
     
     function __construct($slug){
         $this->slug = $slug;
-        $this->condition = 'zones';
+        $this->condition = 'ip_country';
         /* this adds the condition in set of rules dropdown */
         add_filter("pi_".$this->slug."_condition", array($this, 'addRule'));
         
@@ -17,7 +19,7 @@ class Pi_cefw_selection_rule_zones{
         add_filter('pi_'.$this->slug.'_saved_values_'.$this->condition, array($this, 'savedDropdown'), 10, 3);
 
         /* This perform condition check */
-        add_filter('pi_'.$this->slug.'_condition_check_'.$this->condition, array($this,'conditionCheck'),10,4);
+        add_filter('pi_'.$this->slug.'_condition_check_'.$this->condition,array($this,'conditionCheck'),10,4);
 
         /* This gives out logic dropdown */
         add_action('pi_'.$this->slug.'_logic_'.$this->condition, array($this, 'logicDropdown'));
@@ -28,7 +30,7 @@ class Pi_cefw_selection_rule_zones{
 
     function addRule($rules){
         $rules[$this->condition] = array(
-            'name'=>__('Zones','conditional-extra-fees-woocommerce'),
+            'name'=>__('Customer IP address based country','conditional-extra-fees-woocommerce'),
             'group'=>'location_related',
             'condition'=>$this->condition
         );
@@ -67,66 +69,61 @@ class Pi_cefw_selection_rule_zones{
         }
         $count = filter_input(INPUT_POST,'count',FILTER_VALIDATE_INT);
         //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-        echo Pi_cefw_selection_rule_main::createSelect($this->allZones(),$count, $this->condition,  "multiple",null,'static');
+        echo Pi_cefw_selection_rule_main::createSelect($this->allCountries(), $count, $this->condition,  "multiple",null,'static');
         die;
     }
 
     function savedDropdown($html, $values, $count){
-        $html = Pi_cefw_selection_rule_main::createSelect($this->allZones(), $count, $this->condition,  "multiple", $values,'static');
+        $html = Pi_cefw_selection_rule_main::createSelect($this->allCountries(), $count, $this->condition,  "multiple", $values,'static');
         return $html;
     }
 
-    function allZones(){
-       $zones =  WC_Shipping_Zones::get_zones();
-       $all_zones = array();
-       foreach ((array) $zones as $key => $zone ) {
-        $all_zones[$key] = $zone['zone_name'];
-      }
-       $non_covered_zone =  WC_Shipping_Zones::get_zone_by("zone_id",0);
-       if(is_object($non_covered_zone)){
-            $all_zones[0] = $non_covered_zone->get_zone_name();
-       }
-       return $all_zones;
-    }
-
-    public static function getUserSelectedZone(){
-        global $woocommerce;
-        if(isset(WC()->cart)){
-            $shipping_packages =  WC()->cart->get_shipping_packages();
-        
-            $shipping_zone = wc_get_shipping_zone( reset( $shipping_packages ) );
-
-            if(is_object($shipping_zone)){
-                return $shipping_zone;
-            }
-        }
-        return null;
+    function allCountries(){
+        $countries_obj = new WC_Countries();
+       $countries =  $countries_obj->get_countries();
+       return $countries;
     }
 
     function conditionCheck($result, $package, $logic, $values){
         
                     $or_result = false;
-                    $shipping_zone = self::getUserSelectedZone();
-                    if(is_object($shipping_zone)){
-                        $user_zone = $shipping_zone->get_id();
-                        $rule_zone = $values;
-                        if($logic == 'equal_to'){
-                            if(in_array($user_zone, $rule_zone)){
-                                $or_result = true;
-                            }else{
-                                $or_result = false;
-                            }
+                    $user_country = $this->getIPCountry( $package );
+                    $rule_countries = $values;
+                    if($logic == 'equal_to'){
+                        if(in_array($user_country, $rule_countries)){
+                            $or_result = true;
                         }else{
-                            if(in_array($user_zone, $rule_zone)){
-                                $or_result = false;
-                            }else{
-                                $or_result = true;
-                            }
+                            $or_result = false;
+                        }
+                    }else{
+                        if(in_array($user_country, $rule_countries)){
+                            $or_result = false;
+                        }else{
+                            $or_result = true;
                         }
                     }
                
         return  $or_result;
     }
+
+    function getIPCountry( $package ) {
+        $geo = new WC_Geolocation();
+        $user_ip_data = $geo->geolocate_ip();
+
+        $country = '';
+        if ( isset( $user_ip_data['country'] ) && ! empty( $user_ip_data['country'] ) ) {
+            $country = $user_ip_data['country'];
+        }
+
+        // Fallback to Cloudflare header if WooCommerce gives blank
+        if ( empty( $country ) && isset( $_SERVER['HTTP_CF_IPCOUNTRY'] ) && ! empty( $_SERVER['HTTP_CF_IPCOUNTRY'] ) ) {
+            $country = sanitize_text_field( $_SERVER['HTTP_CF_IPCOUNTRY'] );
+        }
+
+        return apply_filters( 'pi_cefw_get_ip_country', $country );
+    }
+
+
 }
 
-new Pi_cefw_selection_rule_zones(PI_CEFW_SELECTION_RULE_SLUG);
+new Pi_cefw_selection_rule_ip_country(PI_CEFW_SELECTION_RULE_SLUG);

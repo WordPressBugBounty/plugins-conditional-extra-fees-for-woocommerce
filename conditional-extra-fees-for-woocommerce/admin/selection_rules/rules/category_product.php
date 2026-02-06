@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class Pi_cefw_selection_rule_category_product{
     public $slug;
@@ -37,7 +38,7 @@ class Pi_cefw_selection_rule_category_product{
 
     function logicDropdown(){
         $html = "";
-        $html .= 'var pi_logic_'.$this->condition.'= "<select class=\'form-control\' name=\'pi_selection[{count}][pi_'.$this->slug.'_logic]\'>';
+        $html .= 'var pi_logic_'.$this->condition.'= "<select class=\'form-control\' name=\'pi_selection[{count}][pi_'.esc_attr($this->slug).'_logic]\'>';
         
         $html .= '<option value=\'equal_to\' title=\'If any of the selected category product is present (non selected category product can also be there) then the rule is true, if none of the selected category product are there in the cart then it is false\'>Equal to (=)</option>';
 
@@ -55,7 +56,7 @@ class Pi_cefw_selection_rule_category_product{
         $html .= '</select>';
 
         $html .= '<a href=\'https://www.piwebsolution.com/faq-for-conditional-extra-fees/#Cart_has_product_of_category\' target=\'_blank\'>Know more about this</a>";';
-
+        //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo $html;
     }
 
@@ -88,6 +89,7 @@ class Pi_cefw_selection_rule_category_product{
             die;
         }
         $count = filter_input(INPUT_POST,'count',FILTER_VALIDATE_INT);
+        //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo Pi_cefw_selection_rule_main::createSelect($this->allCategories(), $count, $this->condition,  "multiple",null,'static');
         die;
     }

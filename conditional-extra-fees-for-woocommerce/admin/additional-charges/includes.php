@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 require_once 'additional-charges.php';
 require_once 'cart-quantity-charges.php';

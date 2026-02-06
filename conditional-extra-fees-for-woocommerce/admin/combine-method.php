@@ -1,5 +1,5 @@
 <?php
-
+if ( ! defined( 'ABSPATH' ) ) exit;
 class pisol_cefw_combine_methods{
 
     public $plugin_name;
@@ -61,7 +61,7 @@ class pisol_cefw_combine_methods{
         $page = filter_input( INPUT_GET, 'page' );
         $this->tab_name = __('Combine multiple fees','conditional-extra-fees-woocommerce');
         ?>
-        <a class=" px-3 py-2 text-light d-flex align-items-center  border-left border-right  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab ); ?>">
+        <a class=" px-3 py-2 text-light d-flex align-items-center  border-left border-right  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo esc_url( admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab )); ?>">
            <span class="dashicons dashicons-editor-table"></span> <?php echo esc_html( $this->tab_name); ?> 
         </a>
         <?php

@@ -1,3 +1,4 @@
+(() => {
 
 const OptionalFeesComponent = ({ cart, extensions }) => {
     //console.log(extensions);
@@ -67,3 +68,5 @@ wp.plugins.registerPlugin('pisol-cefw-fees', {
     render,
     scope: 'woocommerce-checkout',
 });
+
+})();

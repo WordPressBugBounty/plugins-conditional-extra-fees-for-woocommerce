@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class pi_cefw_products_matching_rule{
     public $fees_id;

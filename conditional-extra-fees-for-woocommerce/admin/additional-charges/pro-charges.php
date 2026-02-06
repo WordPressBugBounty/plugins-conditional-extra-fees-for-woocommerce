@@ -1,5 +1,5 @@
 <?php
-
+if ( ! defined( 'ABSPATH' ) ) exit;
 class pisol_cefw_procharges_tab{
     function __construct(){
         
@@ -29,11 +29,11 @@ class pisol_cefw_procharges_tab{
         foreach($slugs as $slug => $video){
         
         $active = ($slug == 'cart-quantity') ? 'pi-active-tab' : '';
-        echo '<div class="p-2 border additional-charges-tab-content '.$active.'" id="add-charges-tab-content-'.$slug.'">';
+        echo '<div class="p-2 border additional-charges-tab-content '.esc_attr($active).'" id="add-charges-tab-content-'.esc_attr($slug).'">';
         ?>
         <!--<div class="card mb-2 text-center"><strong><?php pisol_cefw_help::youtube($video,'Know more about this Charge'); ?> Click to Know more about this feature </strong></div>-->
         <?php
-            echo sprintf('<div class="free-version"><img src="%s" class="img-fluid "></div>', plugin_dir_url(__FILE__).'/image/'.$slug.'.png');
+            echo sprintf('<div class="free-version"><img src="%s" class="img-fluid "></div>', esc_url(plugin_dir_url(__FILE__).'/image/'.$slug.'.png'));
         echo '</div>';
         }
      }

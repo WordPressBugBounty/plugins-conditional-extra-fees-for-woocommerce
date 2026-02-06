@@ -1,6 +1,6 @@
 <?php 
 namespace PISOL\CEFW;
-
+if ( ! defined( 'ABSPATH' ) ) exit;
 class ExtraFees{
     private $fees_id;
 

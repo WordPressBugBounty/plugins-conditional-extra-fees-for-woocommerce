@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class Pi_cefw_selection_rule_postcode{
     public $slug;
@@ -34,12 +35,13 @@ class Pi_cefw_selection_rule_postcode{
 
     function logicDropdown(){
         $html = "";
-        $html .= 'var pi_logic_'.$this->condition.'= "<select class=\'form-control\' name=\'pi_selection[{count}][pi_'.$this->slug.'_logic]\'>';
+        $html .= 'var pi_logic_'.$this->condition.'= "<select class=\'form-control\' name=\'pi_selection[{count}][pi_'.esc_attr($this->slug).'_logic]\'>';
     
             $html .= '<option value=\'equal_to\'>Equal to ( = )</option>';
 			$html .= '<option value=\'not_equal_to\'>Not Equal to ( != )</option>';
         
         $html .= '</select>";';
+        //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo $html;
     }
 
@@ -61,7 +63,9 @@ class Pi_cefw_selection_rule_postcode{
             die;
         }
         $count = filter_input(INPUT_POST,'count',FILTER_VALIDATE_INT);
+        //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo Pi_cefw_selection_rule_main::createTextField($count, $this->condition, null);
+        //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo $this->description();
         die;
     }

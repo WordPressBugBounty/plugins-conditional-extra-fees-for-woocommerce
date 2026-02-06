@@ -1,5 +1,5 @@
 <?php
-
+if ( ! defined( 'ABSPATH' ) ) exit;
 class pisol_cefw_additional_charges_form{
     function __construct(){
         add_action('pi_cefw_extra_form_fields', array($this, 'mainForm'), 10, 1);
@@ -44,7 +44,7 @@ class pisol_cefw_additional_charges_form{
     }
 
     static function tabName($name, $slug, $active = ""){
-        echo "<a href=\"javascript:void(0)\" class=\"bg-dark2 px-2 py-3 d-block text-left text-light additional-charges-tab border-bottom {$active} \" id=\"add-charges-tab-{$slug}\" data-target=\"#add-charges-tab-content-{$slug}\">{$name}</a>";
+		echo '<a href="javascript:void(0)" class="bg-dark2 px-2 py-3 d-block text-left text-light additional-charges-tab border-bottom ' . esc_attr( $active ) . '" id="add-charges-tab-' . esc_attr( $slug ) . '" data-target="#add-charges-tab-content-' . esc_attr( $slug ) . '">' . wp_kses_post( $name ) . '</a>';
     }
 
     static function additionalChargesEnabled($post_id){
@@ -56,10 +56,10 @@ class pisol_cefw_additional_charges_form{
     static function sumOfCharges($name, $data){
         $val = isset($data[$name]) ? $data[$name] : '';
         ?>
-        <select name="<?php echo $name; ?>" class="form-control">
-            <option value="all" <?php selected($val, 'all'); ?>><?php _e('Sum of all matched charges', 'conditional-extra-fees-woocommerce'); ?></option>
-            <option value="largest" <?php selected($val, 'largest'); ?>><?php _e('Largest of the matched charges', 'conditional-extra-fees-woocommerce'); ?></option>
-            <option value="smallest" <?php selected($val, 'smallest'); ?>><?php _e('Smallest of the matched charges', 'conditional-extra-fees-woocommerce'); ?></option>
+        <select name="<?php echo esc_attr($name); ?>" class="form-control">
+            <option value="all" <?php selected($val, 'all'); ?>><?php esc_html_e('Sum of all matched charges', 'conditional-extra-fees-woocommerce'); ?></option>
+            <option value="largest" <?php selected($val, 'largest'); ?>><?php esc_html_e('Largest of the matched charges', 'conditional-extra-fees-woocommerce'); ?></option>
+            <option value="smallest" <?php selected($val, 'smallest'); ?>><?php esc_html_e('Smallest of the matched charges', 'conditional-extra-fees-woocommerce'); ?></option>
         </select>
         <?php
     }

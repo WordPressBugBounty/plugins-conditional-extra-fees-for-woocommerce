@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 use Automattic\WooCommerce\StoreApi\StoreApi;
 use Automattic\WooCommerce\StoreApi\Schemas\ExtendSchema;
@@ -79,7 +80,7 @@ class pisol_cefw_woo_block{
             $title = $fees_obj->get_title();
 
             $amount = $main_obj->get_fees_amount( $name );
-            $amount = html_entity_decode(strip_tags(wc_price($amount)));
+            $amount = html_entity_decode(wp_strip_all_tags(wc_price($amount)));
             
             $available_fees[] = [
                 'id' => $fees_id,

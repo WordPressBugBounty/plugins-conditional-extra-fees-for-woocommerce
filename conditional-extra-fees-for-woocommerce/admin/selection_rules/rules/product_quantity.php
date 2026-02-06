@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class Pi_cefw_selection_rule_product_quantity{
     public $slug;
@@ -39,7 +40,7 @@ class Pi_cefw_selection_rule_product_quantity{
 
     function logicDropdown(){
         $html = "";
-        $html .= 'var pi_logic_'.$this->condition.'= "<select class=\'form-control\' name=\'pi_selection[{count}][pi_'.$this->slug.'_logic]\'>';
+        $html .= 'var pi_logic_'.$this->condition.'= "<select class=\'form-control\' name=\'pi_selection[{count}][pi_'.esc_attr($this->slug).'_logic]\'>';
     
             $html .= '<option value=\'equal_to\'>Equal to ( = )</option>';
 			$html .= '<option value=\'less_equal_to\'>Less or Equal to ( &lt;= )</option>';
@@ -51,6 +52,7 @@ class Pi_cefw_selection_rule_product_quantity{
             $html .= '<option value=\'not_multiple_of\'>Not Multiple of</option>';
         
         $html .= '</select>";';
+        //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo $html;
     }
 
@@ -79,6 +81,7 @@ class Pi_cefw_selection_rule_product_quantity{
         $count = filter_input(INPUT_POST,'count',FILTER_VALIDATE_INT);
         $html_class = self::createSelect(array(), $count, $this->condition,  "",  array(),'dynamic');
         $html_total =  self::createNumberField($count, $this->condition, null);
+        //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo self::bootstrapRow($html_class, $html_total);
         die;
 
@@ -150,7 +153,7 @@ class Pi_cefw_selection_rule_product_quantity{
     static function createNumberField($count, $condition ="",  $value = "", $step = 'any'){
 
         
-        $html = '<input type="number" step="'.$step.'" class="form-control" data-condition="'.$condition.'" name="pi_selection['.$count.'][pi_'.PI_CEFW_SELECTION_RULE_SLUG.'_condition_value][quantity]" value="'.$value.'" placeholder="'.__('Total Quantity').'" >';
+        $html = '<input type="number" step="'.$step.'" class="form-control" data-condition="'.$condition.'" name="pi_selection['.$count.'][pi_'.PI_CEFW_SELECTION_RULE_SLUG.'_condition_value][quantity]" value="'.$value.'" placeholder="'.__('Total Quantity','conditional-extra-fees-woocommerce').'" >';
         return $html;
     }
 
@@ -297,7 +300,7 @@ class Pi_cefw_selection_rule_product_quantity{
                             if(!is_object($child_prod)) continue;
                             $found_products[] = array(
                                 'id'   => $product_child,
-                                'text' => strip_tags($child_prod->get_formatted_name())
+                                'text' => wp_strip_all_tags($child_prod->get_formatted_name())
                             );
                         }
                     }

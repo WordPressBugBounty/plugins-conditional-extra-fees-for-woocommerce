@@ -1,5 +1,5 @@
 <?php
-
+if ( ! defined( 'ABSPATH' ) ) exit;
 class Class_Pi_cefw_List{
 
     public $plugin_name;
@@ -20,8 +20,6 @@ class Class_Pi_cefw_List{
 
     function __construct($plugin_name){
         $this->plugin_name = $plugin_name;
-
-        $this->tab_name = __("Extra fees rules");
        
         $this->tab = filter_input( INPUT_GET, 'tab' );
         $this->active_tab = $this->tab != "" ? $this->tab : 'default';
@@ -46,7 +44,7 @@ class Class_Pi_cefw_List{
         $page =  filter_input( INPUT_GET, 'page' );
         $this->tab_name = __('Extra fees rules','conditional-extra-fees-woocommerce');
         ?>
-        <a class=" px-3 text-light d-flex align-items-center  border-left border-right  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab ); ?>">
+        <a class=" px-3 text-light d-flex align-items-center  border-left border-right  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo esc_url( admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab ) ); ?>">
            <span class="dashicons dashicons-admin-generic"></span> <?php echo esc_html( $this->tab_name ); ?> 
         </a>
         <?php

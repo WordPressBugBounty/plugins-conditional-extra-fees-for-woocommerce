@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 use PISOL\CEFW\ExtraFees;
 class Pi_cefw_Apply_fees{
@@ -267,6 +268,7 @@ class Pi_cefw_Apply_fees{
                 $html .= sprintf('<li><label><input type="checkbox" value="1" name="%s" class="pi-cefw-optional-fees" %s> %s</label></li>', $name, $checked, $title );
             }
         }
+        //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo !empty($html) ? sprintf('<tr><td colspan="2" class="pi-condition-fees"><strong>%s</strong><ul class="pi-cefw-optional-fees-list">%s</ul></td></tr>', esc_html(get_option('pisol_cefw_optional_services',__('Optional services', 'conditional-extra-fees-woocommerce'))), $html) : '';
     }
 

@@ -1,5 +1,5 @@
 <?php
- 
+if ( ! defined( 'ABSPATH' ) ) exit;
 class pisol_cefw_cart_subtotal_extra_charges_setting{
 
     public $slug;
@@ -24,7 +24,7 @@ class pisol_cefw_cart_subtotal_extra_charges_setting{
     }
 
     function addTabContent($data){
-       echo '<div class="p-2 border additional-charges-tab-content" id="add-charges-tab-content-'.$this->slug.'">';
+       echo '<div class="p-2 border additional-charges-tab-content" id="add-charges-tab-content-'.esc_attr($this->slug).'">';
        include 'template/subtotal-based-charges.php';
        echo '</div>';
     }
@@ -36,9 +36,9 @@ class pisol_cefw_cart_subtotal_extra_charges_setting{
         ?>
         <tr>
         <td>Cart subtotal</td>
-        <td class="pi-min-col"><input type="number" required name="pi_cart_subtotal_charges[<?php echo $count; ?>][min]" value="<?php echo self::value($row,'min'); ?>"  min="1" class="form-control"></td>
-        <td class="pi-max-col"><input type="number" name="pi_cart_subtotal_charges[<?php echo $count; ?>][max]" value="<?php echo self::value($row,'max'); ?>"  min="1" class="form-control"></td>
-        <td class="pi-fee-col"><input type="text" required name="pi_cart_subtotal_charges[<?php echo $count; ?>][charge]" value="<?php echo self::value($row,'charge'); ?>" class="form-control"></td>
+        <td class="pi-min-col"><input type="number" required name="pi_cart_subtotal_charges[<?php echo esc_attr($count); ?>][min]" value="<?php echo esc_attr(self::value($row,'min')); ?>"  min="1" class="form-control"></td>
+        <td class="pi-max-col"><input type="number" name="pi_cart_subtotal_charges[<?php echo esc_attr($count); ?>][max]" value="<?php echo esc_attr(self::value($row,'max')); ?>"  min="1" class="form-control"></td>
+        <td class="pi-fee-col"><input type="text" required name="pi_cart_subtotal_charges[<?php echo esc_attr($count); ?>][charge]" value="<?php echo esc_attr(self::value($row,'charge')); ?>" class="form-control"></td>
         <td><button class="delete-additional-charges btn btn-danger btn-sm"><span class="dashicons dashicons-trash"></span></button></td>
         </tr>
         <?php

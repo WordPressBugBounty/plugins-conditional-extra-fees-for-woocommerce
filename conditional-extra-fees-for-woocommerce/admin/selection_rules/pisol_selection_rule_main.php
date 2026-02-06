@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class Pi_cefw_selection_rule_main{
     
@@ -39,7 +40,7 @@ class Pi_cefw_selection_rule_main{
 
     function group($key, $rules, $saved_values = ""){
         if($key == ""){
-            $html = '<option>'.$rules[0]['name'].'</option>';
+            $html = '<option>'.esc_html($rules[0]['name']).'</option>';
             return $html;
         }
         $group_names = array(
@@ -51,15 +52,16 @@ class Pi_cefw_selection_rule_main{
             'order_date_time_plugin' => 'Deliver date time plugin dependent rules',
             'purchase_history' => 'Purchase History',
             'product_attributes'=>'Product attributes',
+            'other'=>'Other'
         );
         $group_name = isset($group_names[$key]) ? $group_names[$key] : $key;
 
-        $html = '<optgroup label="'.$group_name.'">';
+        $html = '<optgroup label="'.esc_attr($group_name).'">';
         foreach ($rules as $rule){
-            $html .= '<option value="'.$rule['condition'].'" ';
+            $html .= '<option value="'.esc_attr($rule['condition']).'" ';
 
         if($rule['condition'] == $saved_values){
-            $html .= ' selected="selected" ';
+            $html .= ' selected ';
         }
 
         if(isset($rule['pro']) && $rule['pro']){
@@ -200,19 +202,19 @@ class Pi_cefw_selection_rule_main{
     static function createSelect($array, $count, $condition ="",  $multiple = "",  $values = array(), $dynamic = ""){
 
         if($multiple === 'multiple'){
-            $multiple = ' multiple="multiple" ';
+            $multiple = ' multiple ';
         }else{
             $multiple = '';
         }
 
-        $html = '<select class="form-control pi_condition_value pi_values_'.$dynamic.'" data-condition="'.$condition.'" name="pi_selection['.$count.'][pi_'.PI_CEFW_SELECTION_RULE_SLUG.'_condition_value][]" '.$multiple.' placeholder="Select">';
+        $html = '<select class="form-control pi_condition_value pi_values_'.esc_attr($dynamic).'" data-condition="'.esc_attr($condition).'" name="pi_selection['.esc_attr($count).'][pi_'.esc_attr(PI_CEFW_SELECTION_RULE_SLUG).'_condition_value][]" '.esc_attr($multiple).' placeholder="Select">';
         foreach ($array as $key => $value){
                 $selected = "";
                 if(is_array($values) && in_array($key, $values)){
-                    $selected = ' selected="selected" ';
+                    $selected = ' selected ';
                 }
-                $html .= '<option value="'.$key.'" '.$selected.'>';
-            $html .= $value;
+                $html .= '<option value="'.esc_attr($key).'" '.esc_attr($selected).'>';
+            $html .= esc_html($value);
             $html .= '</option>';
         }
         $html .= '</select>';
@@ -222,22 +224,22 @@ class Pi_cefw_selection_rule_main{
     static function createNumberField($count, $condition ="",  $values = array(), $step = 'any'){
 
         if(is_array($values) && $values > 0){
-            $value = ' value="'.$values[0].'" ';
+            $value = $values[0];
         }else{
             $value = "";
         }
-        $html = '<input type="number" step="'.$step.'" class="form-control" data-condition="'.$condition.'" name="pi_selection['.$count.'][pi_'.PI_CEFW_SELECTION_RULE_SLUG.'_condition_value][]" '.$value.' >';
+        $html = '<input type="number" step="'.$step.'" class="form-control" data-condition="'.$condition.'" name="pi_selection['.$count.'][pi_'.PI_CEFW_SELECTION_RULE_SLUG.'_condition_value][]" value="'.$value.'">';
         return $html;
     }
 
     static function createTextField($count, $condition ="",  $values = array()){
 
         if(is_array($values) && $values > 0){
-            $value = ' value="'.$values[0].'" ';
+            $value = $values[0];
         }else{
             $value = "";
         }
-        $html = '<input required type="text" class="form-control" data-condition="'.$condition.'" name="pi_selection['.$count.'][pi_'.PI_CEFW_SELECTION_RULE_SLUG.'_condition_value][]" '.$value.' >';
+        $html = '<input required type="text" class="form-control" data-condition="'.$condition.'" name="pi_selection['.$count.'][pi_'.PI_CEFW_SELECTION_RULE_SLUG.'_condition_value][]" value="'.$value.'">';
         return $html;
     }
 

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class Pi_cefw_selection_rule_product{
     
@@ -34,7 +35,7 @@ class Pi_cefw_selection_rule_product{
 
     function logicDropdown(){
         $html = "";
-        $html .= 'var pi_logic_'.$this->condition.'= "<select class=\'form-control\' name=\'pi_selection[{count}][pi_'.$this->slug.'_logic]\'>';
+        $html .= 'var pi_logic_'.$this->condition.'= "<select class=\'form-control\' name=\'pi_selection[{count}][pi_'.esc_attr($this->slug).'_logic]\'>';
         
         $html .= '<option value=\'equal_to\' title=\'If any of the selected product is present (non selected product can also be there) then the rule is true, if none of the selected product are there in the cart then it is false\'>Equal to (=)</option>';
 
@@ -52,6 +53,7 @@ class Pi_cefw_selection_rule_product{
         $html .= '</select>';
 
         $html .= '<a href=\'https://www.piwebsolution.com/faq-for-conditional-extra-fees/#Cart_has_product_rule\' target=\'_blank\'>Know more about this</a>";';
+        //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo $html;
     }
 
@@ -85,6 +87,7 @@ class Pi_cefw_selection_rule_product{
             die;
         }
         $count = filter_input(INPUT_POST,'count',FILTER_VALIDATE_INT);
+        //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo Pi_cefw_selection_rule_main::createSelect(array(), $count, $this->condition,  "multiple", null,'dynamic');
         die;
     }
@@ -95,7 +98,7 @@ class Pi_cefw_selection_rule_product{
             foreach($values as $value){
                 $prod_obj = wc_get_product($value);
                 if(is_wp_error( $prod_obj ) || !is_object($prod_obj) ) continue;
-                $saved_products[$value] = strip_tags( $prod_obj->get_formatted_name());
+                $saved_products[$value] = wp_strip_all_tags( $prod_obj->get_formatted_name());
             }
         }
         
@@ -140,7 +143,7 @@ class Pi_cefw_selection_rule_product{
                     /** This is for the variable product */
                     $found_products[] = array(
                         'id'   => get_the_ID(),
-                        'text' => strip_tags($prd->get_formatted_name())
+                        'text' => wp_strip_all_tags($prd->get_formatted_name())
                     );;
 					$product_children = $prd->get_children();
 					if ( count( $product_children ) ) {
@@ -149,7 +152,7 @@ class Pi_cefw_selection_rule_product{
                             $child_wc  = wc_get_product( $product_child );
                             $product   = array(
                                 'id'   => $product_child,
-                                'text' => strip_tags($child_wc->get_formatted_name())
+                                'text' => wp_strip_all_tags($child_wc->get_formatted_name())
                             );
 
 							
@@ -162,7 +165,7 @@ class Pi_cefw_selection_rule_product{
 				} else {
 					$product_id    = get_the_ID();
 					$the_product   = new WC_Product( $product_id );
-					$product_title = strip_tags($the_product->get_formatted_name());
+					$product_title = wp_strip_all_tags($the_product->get_formatted_name());
 					$product          = array( 'id' => $product_id, 'text' => $product_title );
 					$found_products[] = $product;
 				}

@@ -1,5 +1,5 @@
 <?php
-
+if ( ! defined( 'ABSPATH' ) ) exit;
 class pisol_cefw_options{
 
     public $plugin_name;
@@ -71,7 +71,7 @@ class pisol_cefw_options{
         $page = filter_input( INPUT_GET, 'page' );
         $this->tab_name = __('Extra settings','conditional-extra-fees-woocommerce');
         ?>
-        <a class=" px-3 py-2 text-light d-flex align-items-center  border-left border-right  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab ); ?>">
+        <a class=" px-3 py-2 text-light d-flex align-items-center  border-left border-right  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo esc_url(admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab )); ?>">
            <span class="dashicons dashicons-admin-settings"></span> <?php echo esc_html( $this->tab_name); ?> 
         </a>
         <a class=" px-3 py-2 text-light d-flex align-items-center  border-left border-right  bg-secondary" href="https://www.piwebsolution.com/user-documentation-conditional-fee-plugin/" target="_blank">

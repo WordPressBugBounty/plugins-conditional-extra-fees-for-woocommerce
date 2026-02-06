@@ -1,5 +1,8 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+?>
 <div class="row">
-    <div class="col-12 py-3 text-right"><a class="btn btn-primary btn-sm" href="<?php echo admin_url( 'admin.php?page=pisol-cefw&tab=pi_cefw_add_rule' ); ?>"><span class="dashicons dashicons-plus mr-2" style="margin-top:3px;"></span><?php _e('Add fees rule','conditional-extra-fees-woocommerce'); ?></a>
+    <div class="col-12 py-3 text-right"><a class="btn btn-primary btn-sm" href="<?php echo esc_url(admin_url( 'admin.php?page=pisol-cefw&tab=pi_cefw_add_rule' )); ?>"><span class="dashicons dashicons-plus mr-2" style="margin-top:3px;"></span><?php esc_html_e('Add fees rule','conditional-extra-fees-woocommerce'); ?></a>
     </div>
 </div>
 <?php
@@ -14,10 +17,10 @@ $shipping_methods = get_posts(array(
 <table class="table text-center table-striped">
 				<thead>
 				<tr class="afrsm-head">
-					<th><?php _e( 'Fees', 'conditional-extra-fees-woocommerce'); ?></th>
-					<th><?php _e( 'Amount', 'conditional-extra-fees-woocommerce'); ?></th>
-					<th><?php _e( 'Status', 'conditional-extra-fees-woocommerce'); ?></th>
-					<th><?php _e( 'Actions', 'conditional-extra-fees-woocommerce'); ?></th>
+					<th><?php esc_html_e( 'Fees', 'conditional-extra-fees-woocommerce'); ?></th>
+					<th><?php esc_html_e( 'Amount', 'conditional-extra-fees-woocommerce'); ?></th>
+					<th><?php esc_html_e( 'Status', 'conditional-extra-fees-woocommerce'); ?></th>
+					<th><?php esc_html_e( 'Actions', 'conditional-extra-fees-woocommerce'); ?></th>
 				</tr>
 				</thead>
                 <tbody >
@@ -30,12 +33,12 @@ foreach($shipping_methods as $method){
     $fees_type   = get_post_meta( $method->ID, 'pi_fees_type', true );
     $fees_title  = get_the_title( $method->ID ) ? get_the_title( $method->ID ) : 'Shipping Method';
     $fees_status = get_post_meta( $method->ID, 'pi_status', true );
-    echo '<tr  id="pisol_tr_container_'.$method->ID.'">';
-    echo '<td><a href="'.admin_url( '/admin.php?page=pisol-cefw&tab=pi_cefw_add_rule&action=edit&id='.$method->ID ).'">'.esc_html($fees_title).'</a></td>';
+    echo '<tr  id="pisol_tr_container_'.esc_attr($method->ID).'">';
+    echo '<td><a href="'.esc_url(admin_url( '/admin.php?page=pisol-cefw&tab=pi_cefw_add_rule&action=edit&id='.$method->ID )).'">'.esc_html($fees_title).'</a></td>';
     echo '<td>';
     
 								if ( $fees_type == 'fixed' ) {
-									echo $fees;
+									echo esc_html($fees);
 								} else {
 									echo esc_html($fees).' %';
 								}
@@ -43,20 +46,20 @@ foreach($shipping_methods as $method){
     echo '</td>';
     echo '<td>';
     echo '<div class="custom-control custom-switch">
-    <input type="checkbox" value="1" '.checked($fees_status,'on', false).' class="custom-control-input pi-cefw-status-change" name="pi_status" id="pi_status_'.$method->ID.'" data-id="'.esc_attr($method->ID).'">
-    <label class="custom-control-label" for="pi_status_'.$method->ID.'"></label>
+    <input type="checkbox" value="1" '.checked($fees_status,'on', false).' class="custom-control-input pi-cefw-status-change" name="pi_status" id="pi_status_'.esc_attr($method->ID).'" data-id="'.esc_attr($method->ID).'">
+    <label class="custom-control-label" for="pi_status_'.esc_attr($method->ID).'"></label>
     </div>';
     echo '</td>';
     echo '<td>';
-    echo '<a href="'.admin_url( '/admin.php?page=pisol-cefw&tab=pi_cefw_add_rule&action=edit&id='.$method->ID ).'" class="btn btn-primary btn-sm mr-2" title="Edit"><span class="dashicons dashicons-admin-customizer"></span></a>';
-    echo '<a href="'.wp_nonce_url(admin_url( '/admin.php?page=pisol-cefw&action=cefw_delete&id='.$method->ID ), 'cefw-delete').'" class="btn btn-primary btn-sm pi-cefw-delete" title="Delete"><span class="dashicons dashicons-trash"></span></a>';
+    echo '<a href="'.esc_url(admin_url( '/admin.php?page=pisol-cefw&tab=pi_cefw_add_rule&action=edit&id='.$method->ID )).'" class="btn btn-primary btn-sm mr-2" title="Edit"><span class="dashicons dashicons-admin-customizer"></span></a>';
+    echo '<a href="'.esc_url(wp_nonce_url(admin_url( '/admin.php?page=pisol-cefw&action=cefw_delete&id='.$method->ID ), 'cefw-delete')).'" class="btn btn-primary btn-sm pi-cefw-delete" title="Delete"><span class="dashicons dashicons-trash"></span></a>';
     echo '</td>';
     echo '</tr>';
 }
 }else{
     echo '<tr>';
     echo '<td colspan="4" class="text-center">';
-    echo __('There are no fees rule added yet, add them first','conditional-extra-fees-woocommerce' );
+    echo esc_html__('There are no fees rule added yet, add them first','conditional-extra-fees-woocommerce' );
     echo '</td>';
     echo '</tr>';
 }

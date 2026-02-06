@@ -1,5 +1,6 @@
 <?php
 namespace PISOL\CEFW\ADMIN;
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 class CustomFields{
 

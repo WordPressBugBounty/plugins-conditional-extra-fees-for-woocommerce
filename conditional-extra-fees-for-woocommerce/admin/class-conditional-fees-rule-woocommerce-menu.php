@@ -1,5 +1,5 @@
 <?php
-
+if ( ! defined( 'ABSPATH' ) ) exit;
 class Pi_cefw_Menu{
 
     public $plugin_name;
@@ -17,8 +17,8 @@ class Pi_cefw_Menu{
         if(apply_filters('pisol_cefw_admin_sub_menu', false)){
             $this->menu = add_submenu_page(
                 'woocommerce',
-                __( 'Conditional fees'),
-                __( 'Conditional fees'),
+                __( 'Conditional fees', 'conditional-extra-fees-woocommerce' ),
+                __( 'Conditional fees', 'conditional-extra-fees-woocommerce' ),
                 'manage_options',
                 'pisol-cefw',
                 array($this, 'menu_option_page'),
@@ -26,8 +26,8 @@ class Pi_cefw_Menu{
             );
         }else{
             $this->menu = add_menu_page(
-                __( 'Conditional fees'),
-                __( 'Conditional fees'),
+                __( 'Conditional fees', 'conditional-extra-fees-woocommerce' ),
+                __( 'Conditional fees', 'conditional-extra-fees-woocommerce' ),
                 'manage_options',
                 'pisol-cefw',
                 array($this, 'menu_option_page'),
@@ -73,7 +73,7 @@ class Pi_cefw_Menu{
                         <div class='bg-dark'>
                         <div class="pisol-row">
                             <div class="col-12 col-sm-2 py-3 d-flex align-items-center justify-content-center">
-                                    <a href="https://www.piwebsolution.com/" target="_blank"><img id="pi-logo" class="img-fluid ml-2" src="<?php echo plugin_dir_url( __FILE__ ); ?>img/pi-web-solution.svg"></a>
+                                    <a href="https://www.piwebsolution.com/" target="_blank"><img id="pi-logo" class="img-fluid ml-2" src="<?php echo esc_url( plugin_dir_url( __FILE__ )."img/pi-web-solution.svg" ); ?>"></a>
                             </div>
                             <div class="col-12 col-sm-10 d-flex text-center small">
                                 <nav id="pisol-navbar" class="navbar navbar-expand-lg navbar-light mr-0 ml-auto">
@@ -157,10 +157,9 @@ class Pi_cefw_Menu{
                         <li><b><span style="color:white;">&#10003;</span> Tooltip for charges</b><br>
                         <i>Help customers understand each extra charge</i></li>
                     </ul>
-                    <h4 class="pi-bottom-banner">💰 Just <?php echo esc_html(PI_CEFW_PRICE); ?></h4>
-                        <h4 class="pi-bottom-banner">🔥 Unlock all features and grow your revenue!</h4>
+                    <h4 class="pi-bottom-banner">💰 Only <?php echo esc_html(PI_CEFW_PRICE); ?> <small>Billed yearly</small></h4>
                     <div class="text-center pb-3 pt-2">
-                    <a class="btn btn-primary btn-md" href="<?php echo PI_CEFW_BUY_URL; ?>&utm_ref=bottom_link" target="_blank">🔓 Unlock Pro Now – Limited Time Price!</a>
+                    <a class="btn btn-primary btn-md" href="<?php echo esc_url(PI_CEFW_BUY_URL); ?>&utm_ref=bottom_link" target="_blank">🔓 Unlock Pro Now – Limited Time Price!</a>
                     </div>
                 </div>
             </div>
@@ -169,7 +168,7 @@ class Pi_cefw_Menu{
     }
 
     function isWeekend() {
-        return (date('N', strtotime(date('Y/m/d'))) >= 6);
+        return ( (int) wp_date('N') >= 6 );
     }
 
     function support(){

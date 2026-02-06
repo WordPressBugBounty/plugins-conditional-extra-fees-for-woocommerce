@@ -34,12 +34,6 @@ class Conditional_fees_Rule_Woocommerce_i18n {
 	 */
 	public function load_plugin_textdomain() {
 
-		load_plugin_textdomain(
-			'conditional-extra-fees-woocommerce',
-			false,
-			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
-		);
-
 	}
 
 

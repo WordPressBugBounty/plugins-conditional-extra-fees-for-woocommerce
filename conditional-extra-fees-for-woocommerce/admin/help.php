@@ -1,3 +1,6 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+?>
 <div id="weight_short_code_help" style="display:none;">
     <div class="bootstrap-wrapper">
     <p>This fees will be added in the main fees set at the top</p><p>You can use short code <kbd>[weight]</kbd><br>

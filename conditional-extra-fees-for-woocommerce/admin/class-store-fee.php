@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * It stores the fees id in the table woocommerce_order_itemmeta so we can track back fees to our fees
  */
@@ -32,6 +33,7 @@ class pisol_cefw_store_fee_id_order_meta{
                     'meta_key' => '_legacy_fee_key',
                     'meta_value' => $item->legacy_fee_key
                 ];
+                // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- Direct query is safe and intentional.
                 $wpdb->insert($table, $data);
             }
 
@@ -43,6 +45,7 @@ class pisol_cefw_store_fee_id_order_meta{
                     'meta_key' => '_fee_is_combination_of',
                     'meta_value' => $combination_of
                 ];
+                // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- Direct query is safe and intentional.
                 $wpdb->insert($table, $data);
             }
 
@@ -51,6 +54,7 @@ class pisol_cefw_store_fee_id_order_meta{
                 'meta_key' => '_fee_order_id',
                 'meta_value' => $order_id
             ];
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- Direct query is safe and intentional.
             $wpdb->insert($table, $data2);
         }
        

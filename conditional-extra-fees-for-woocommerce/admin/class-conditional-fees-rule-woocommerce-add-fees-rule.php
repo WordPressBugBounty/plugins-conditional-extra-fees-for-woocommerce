@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Class_Pi_cefw_Add_Edit{
 
@@ -39,7 +40,7 @@ class Class_Pi_cefw_Add_Edit{
         $page =  filter_input( INPUT_GET, 'page' );
         $this->tab_name = __('Add fees rule','conditional-extra-fees-woocommerce');
         ?>
-        <a class=" px-3 text-light d-flex align-items-center  border-left border-right  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab ); ?>">
+        <a class=" px-3 text-light d-flex align-items-center  border-left border-right  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo esc_url(admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab )); ?>">
             <?php echo esc_html( $this->tab_name); ?> 
         </a>
         <?php
@@ -352,7 +353,7 @@ class Class_Pi_cefw_Add_Edit{
         $all_currencies = get_woocommerce_currencies();
         foreach($all_currencies as $currency => $name){
             $selected = in_array($currency, $saved_currency) ? 'selected' : '';
-            echo '<option value="'.$currency.'" '.$selected.'>'.$name.'</option>';
+            echo '<option value="'.esc_attr($currency).'" '.esc_attr($selected).'>'.esc_html($name).'</option>';
         }
     }
     

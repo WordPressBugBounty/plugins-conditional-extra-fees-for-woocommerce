@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 class pisol_cefw_pro_rules{
     
@@ -137,6 +138,13 @@ class pisol_cefw_pro_rules{
             'group'=>'product_attributes',
             'condition'=>'custom_attr_text',
             'pro'=>true
+        );
+
+        $rules['between_time'] = array(
+            'name'=>__('Time-Based Availability (Available in PRO Version)','conditional-extra-fees-woocommerce'),
+            'group'=>'other',
+            'condition'=>'between_time',
+            'pro'=> true
         );
 
         if(function_exists('wc_get_attribute_taxonomies')){

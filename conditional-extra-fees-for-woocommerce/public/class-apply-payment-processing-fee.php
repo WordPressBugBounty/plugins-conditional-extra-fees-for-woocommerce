@@ -25,7 +25,7 @@ class Apply_Payment_Processing_Fee{
 
         // Get selected payment method from session
         $chosen_gateway = null;
-        if (isset(WC()->session)) {
+        if (isset(WC()->session) && WC()->session->has_session()) {
             $chosen_payment_methods = WC()->session->get('chosen_payment_method');
             if (is_array($chosen_payment_methods)) {
                 $chosen_gateway = reset($chosen_payment_methods);
