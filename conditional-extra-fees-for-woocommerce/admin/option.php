@@ -62,7 +62,7 @@ class pisol_cefw_options{
     function register_settings(){   
 
         foreach($this->settings as $setting){
-            register_setting( $this->setting_key, $setting['field']);
+            pisol_class_form_cefw::register_setting( $this->setting_key, $setting);
         }
     
     }

@@ -559,7 +559,9 @@ class pisol_class_form_cefw{
             }
         }
         
-        register_setting($group, $setting['field']);
+        register_setting($group, $setting['field'], [
+            'sanitize_callback' => [__CLASS__, 'sanitize_text_field']
+        ]);
         
     }
 
