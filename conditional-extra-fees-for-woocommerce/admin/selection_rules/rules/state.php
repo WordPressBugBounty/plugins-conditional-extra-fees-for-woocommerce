@@ -98,7 +98,7 @@ class Pi_cefw_selection_rule_state{
     function conditionCheck($result, $package, $logic, $values){
         
                     $or_result = false;
-                    $user_state = WC()->customer->get_shipping_state();
+                    $user_state = ( WC()->customer instanceof WC_Customer ) ? WC()->customer->get_shipping_state() : '';
                     $rule_states = $this->separateState($values);
                     if($logic == 'equal_to'){
                         if(in_array($user_state, $rule_states)){

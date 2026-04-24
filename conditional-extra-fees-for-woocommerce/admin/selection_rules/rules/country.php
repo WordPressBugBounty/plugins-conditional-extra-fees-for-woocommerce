@@ -112,7 +112,7 @@ class Pi_cefw_selection_rule_country{
     function conditionCheck($result, $package, $logic, $values){
                     
                     $or_result = false;
-                    $user_country = WC()->customer->get_shipping_country();
+                    $user_country = ( WC()->customer instanceof WC_Customer ) ? WC()->customer->get_shipping_country() : '';
                     $user_continent = $this->get_country_continent($user_country);
                     $user_continent = 'continent:'.$user_continent;
                     $rule_countries = $values;

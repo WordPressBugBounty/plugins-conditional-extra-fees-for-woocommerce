@@ -137,7 +137,7 @@ class Pi_cefw_selection_rule_postcode{
     }
 
     function postCodeMatched( $post_code, $rules){
-        
+        $country = apply_filters('pisol_cefw_postcode_country', ( WC()->customer instanceof WC_Customer ) ? WC()->customer->get_shipping_country() : '');
         foreach($rules as $rule){
 
             $object[] = (object)array(
@@ -145,7 +145,7 @@ class Pi_cefw_selection_rule_postcode{
                 'location_code'=> $rule
             );
 
-            $country = apply_filters('pisol_cefw_postcode_country',WC()->customer->get_shipping_country());
+            
             /**
              * this is woocommerce location matcher function
              */
@@ -162,7 +162,7 @@ class Pi_cefw_selection_rule_postcode{
         
         $postcode = '';
         if(is_a($package, 'WC_Cart')){
-            $postcode = WC()->customer->get_shipping_postcode();
+            $postcode = ( WC()->customer instanceof WC_Customer ) ? WC()->customer->get_shipping_postcode() : '';
         }elseif(is_a($package, 'WC_Order')){
             $billing_postcode = $package->get_billing_postcode();
             $shipping_postcode = $package->get_shipping_postcode();
