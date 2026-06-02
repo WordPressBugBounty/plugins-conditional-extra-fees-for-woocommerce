@@ -118,6 +118,7 @@ class pisol_cefw_payment_processing_option{
     function tab_content(){
         
        ?>
+       <?php do_action( 'pisol_cefw_dependency_install' ); ?>
         <form method="post" action="options.php"  class="pisol-setting-form">
         <?php settings_fields( $this->setting_key ); ?>
         <?php

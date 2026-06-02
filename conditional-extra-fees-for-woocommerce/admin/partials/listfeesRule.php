@@ -13,6 +13,7 @@ $shipping_methods = get_posts(array(
 ));
 
 ?>
+<?php do_action( 'pisol_cefw_dependency_install' ); ?>
 <div id="pisol-cefw-fees-list-view">
 <table class="table text-center table-striped">
 				<thead>

@@ -34,6 +34,8 @@ class pisol_cefw_options{
 
             array('field'=>'pisol_cefw_optional_services', 'label'=>__('Optional services label', 'conditional-extra-fees-woocommerce'), 'desc'=>__('This label is shown above the fees', 'conditional-extra-fees-woocommerce'), 'type'=>'text', 'default'=>__('Optional services', 'conditional-extra-fees-woocommerce')),
 
+            array('field'=>'pisol_cefw_move_to_submenu', 'label'=>__('Move to Woocommerce submenu'), 'desc'=>__('It will move the plugin options in the WooCommerce submenu'), 'type'=>'switch', 'default'=>"0"),
+
             array('field'=>'pisol_cefw_fees_option_cart', 'label'=>__('Show optional fees checkbox on cart page', 'conditional-extra-fees-woocommerce'), 'desc'=>__('If enabled it will show the optional fees checkbox on the cart page as well', 'conditional-extra-fees-woocommerce'), 'type'=>'switch', 'default'=>"0", 'pro'=>true),
         );
         
@@ -83,6 +85,7 @@ class pisol_cefw_options{
     function tab_content(){
         
        ?>
+       <?php do_action( 'pisol_cefw_dependency_install' ); ?>
         <form method="post" action="options.php"  class="pisol-setting-form">
         <?php settings_fields( $this->setting_key ); ?>
         <?php

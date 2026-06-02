@@ -14,7 +14,9 @@ class Pi_cefw_Menu{
     }
 
     function plugin_menu(){
-        if(apply_filters('pisol_cefw_admin_sub_menu', false)){
+
+        $submenu = get_option('pisol_cefw_move_to_submenu', 0);
+        if(apply_filters('pisol_cefw_admin_sub_menu', $submenu)){
             $this->menu = add_submenu_page(
                 'woocommerce',
                 __( 'Conditional fees', 'conditional-extra-fees-woocommerce' ),

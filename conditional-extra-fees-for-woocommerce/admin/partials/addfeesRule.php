@@ -1,4 +1,5 @@
 <?php
+/** @var array $data */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -12,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         <a href="javascript:void(0)" id="close-all" class="text-light small"><?php echo esc_html__('Close All ▲','conditional-extra-fees-woocommerce'); ?></a>
     </div>
 </div>
-
+<?php do_action( 'pisol_cefw_dependency_install' ); ?>
 <form method="post" id="pisol-cefw-new-method">
 
 <div class="pi-step-container">

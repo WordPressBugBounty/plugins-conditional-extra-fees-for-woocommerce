@@ -25,6 +25,8 @@ require_once 'rules/weight.php';
 require_once 'rules/width.php';
 require_once 'rules/zone.php';
 
+require_once 'rules/advance-shipping.php';
+
 require_once 'rules/pickup_location.php';
 require_once 'rules/delivery_type.php';
 require_once 'rules/selected_delivery_date.php';

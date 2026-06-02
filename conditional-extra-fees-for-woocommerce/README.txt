@@ -4,7 +4,7 @@ Donate link: https://piwebsolution.com
 Tags: cart fee, Extra Charge, additional fee, service charge, woocommerce extra fee, woocommerce additional fees, woocommerce fees, woocommerce extra cost, woocommerce additional cost, Woocommerce advanced fees, extra fee, woocommerce extra cost
 Requires at least: 3.0.1
 Tested up to: 7.0
-Stable tag: 1.1.49.47
+Stable tag: 1.1.49.49
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -342,6 +342,9 @@ You can set WooCommerce conditional product fees for checkout based on 20+ condi
 The Pro version includes time-based rules, so you can apply WooCommerce conditional product fees for checkout based on day or time range.
 
 == Changelog ==
+
+= 1.1.49.49 =
+* [added] Shipping dependency installation option added
 
 = 1.1.49.47 =
 * Tested with WP 7.0

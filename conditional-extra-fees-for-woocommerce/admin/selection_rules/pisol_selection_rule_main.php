@@ -52,6 +52,7 @@ class Pi_cefw_selection_rule_main{
             'order_date_time_plugin' => 'Deliver date time plugin dependent rules',
             'purchase_history' => 'Purchase History',
             'product_attributes'=>'Product attributes',
+            'advance_shipping'=>'Advance Shipping plugin',
             'other'=>'Other'
         );
         $group_name = isset($group_names[$key]) ? $group_names[$key] : $key;
