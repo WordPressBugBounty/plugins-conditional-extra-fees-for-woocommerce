@@ -104,6 +104,8 @@ class pisol_cefw_free_dependency{
 
         activate_plugin($this->plugin_file);
 
+        delete_option('pi_efrs_do_activation_redirect');
+
         wp_send_json_success(['message' => 'Module installed and activated successfully.']);
     }
 }
