@@ -40,18 +40,18 @@ class pisol_cefw_free_dependency{
         ?>
         <div class="notice notice-error d-flex align-items-center my-3 justify-content-between">
             <p class="my-0"><?php esc_html_e( 'Shipping module is missing, Activate/Install the missing shipping modules to ensure all functionality is available.', 'conditional-extra-fees-woocommerce' ); ?></p>
-            <p class="my-0"><a href="<?php echo esc_url( $install_url ); ?>" id="install-dependency-plugin-<?php echo $this->plugin_page; ?>" class="button button-primary"><?php esc_html_e( 'Activate/Install', 'conditional-extra-fees-woocommerce' ); ?></a></p>
+            <p class="my-0"><a href="<?php echo esc_url( $install_url ); ?>" id="install-dependency-plugin-<?php echo esc_attr( $this->plugin_page ); ?>" class="button button-primary"><?php esc_html_e( 'Activate/Install', 'conditional-extra-fees-woocommerce' ); ?></a></p>
         </div>
         <script type="text/javascript">
             document.addEventListener('DOMContentLoaded', function() {
-                document.getElementById('install-dependency-plugin-<?php echo $this->plugin_page; ?>').addEventListener('click', function(e) {
+                document.getElementById('install-dependency-plugin-<?php echo esc_attr( $this->plugin_page ); ?>').addEventListener('click', function(e) {
                     e.preventDefault();
                     var button = this;
                     button.disabled = true;
                     button.innerText = 'Installing...';
 
                     jQuery.post(ajaxurl, {
-                        action: 'install_dependency_plugin_<?php echo $this->plugin_page; ?>',
+                        action: 'install_dependency_plugin_<?php echo esc_attr( $this->plugin_page ); ?>',
                         nonce: '<?php echo esc_js( wp_create_nonce( 'install_dependency_nonce_' . $this->plugin_page ) ); ?>',
                     }, function(response) {
                         location.reload();
@@ -101,6 +101,7 @@ class pisol_cefw_free_dependency{
         }
 
         update_option('pisol_affsw_move_to_submenu', '1');
+        update_option('pisol_advanced-free-flat-shipping-woocommerce', 'disable');
 
         activate_plugin($this->plugin_file);
 

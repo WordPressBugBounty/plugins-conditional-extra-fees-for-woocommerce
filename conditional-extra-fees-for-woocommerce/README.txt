@@ -2,21 +2,20 @@
 Contributors: jyotsnasingh520, rajeshsingh520
 Donate link: https://piwebsolution.com
 Tags: cart fee, Extra Charge, additional fee, service charge, woocommerce extra fee, woocommerce additional fees, woocommerce fees, woocommerce extra cost, woocommerce additional cost, Woocommerce advanced fees, extra fee, woocommerce extra cost
-Requires at least: 3.0.1
+Requires at least: 5.3
 Tested up to: 7.0
-Stable tag: 1.1.49.49
+Stable tag: 1.1.60
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Add conditional cart fee / Payment processing fee / Extra cost / Extra fees plugin for WooCommerce / Additional fees / Service charge at checkout for WooCommerce based on conditional fees rules like product fees, product category fees, bulk fees, WooCommerce extra fees.
 
 == Description ==
-
-[Try Pro on demo website](https://websitemaintenanceservice.in/con_fees_demo/) | [Documentation](https://www.piwebsolution.com/user-documentation-conditional-fee-plugin/)
-
 WooCommerce extra fees plugin helps you to create dynamic fees for your store based on various conditions
 
 WooCommerce extra fees plugin is very simple to use, and you can create complex fees very quickly
+
+[Try Pro on demo website](https://websitemaintenanceservice.in/con_fees_demo/) | [Documentation](https://www.piwebsolution.com/user-documentation-conditional-fee-plugin/)
 
 == Key features for WooCommerce Extra fees Plugin ==
 
@@ -37,7 +36,7 @@ WooCommerce extra fees plugin is very simple to use, and you can create complex 
 &#9989; Additional cart fees apply per quantity with cart-based
 &#9989; Charge extra fee-based specific user
 &#9989; Set coupons based extra fee
-&#9989; Set order amount based extra fee
+&#9989; Set minimum order amount based extra fee
 &#9989; Set weight-based extra fee
 &#9989; Set shipping class-based extra fee
 &#9989; Postcode: You can apply an extra charge based on the specific postcode or a range of postcodes
@@ -140,7 +139,8 @@ https://www.youtube.com/watch?v=lE6ELZ0v_68
 &#9989; Charge extra fee for several product categories
 &#9989; Charge extra fees based on Country / State of the customer
 &#9989; Add extra fees based on the total weight of the cart.
-&#9989; Charge extra fees if minimum purchase amount is not satisfied
+&#9989; Charge extra fees if minimum purchase amount is not satisfied (small order surcharge)
+&#9989; Charge a minimum order fee, if the order amount is less than a certain amount
 &#9989; Add extra cart fee based on user country
 &#9989; Extra cart fees based on the state
 &#9989; Add extra charge based on product in the cart
@@ -342,6 +342,10 @@ You can set WooCommerce conditional product fees for checkout based on 20+ condi
 The Pro version includes time-based rules, so you can apply WooCommerce conditional product fees for checkout based on day or time range.
 
 == Changelog ==
+
+= 1.1.60 =
+* content change 
+* code improvement
 
 = 1.1.49.49 =
 * [added] Shipping dependency installation option added

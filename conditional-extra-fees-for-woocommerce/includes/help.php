@@ -1,4 +1,5 @@
 <?php
+defined('ABSPATH') || exit;
 /**
  * v1.0.0
  */
