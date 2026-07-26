@@ -159,7 +159,7 @@ class Pi_cefw_Menu{
                         <li><b><span style="color:white;">&#10003;</span> Tooltip for charges</b><br>
                         <i>Help customers understand each extra charge</i></li>
                     </ul>
-                    <h4 class="pi-bottom-banner">💰 Only <?php echo esc_html(PI_CEFW_PRICE); ?> <small>Billed yearly</small></h4>
+                    <h4 class="pi-bottom-banner">💰 Only <?php echo esc_html(PI_CEFW_PRICE); ?></h4>
                     <div class="text-center pb-3 pt-2">
                     <a class="btn btn-primary btn-md" href="<?php echo esc_url(PI_CEFW_BUY_URL); ?>&utm_ref=bottom_link" target="_blank">🔓 Unlock Pro Now – Limited Time Price!</a>
                     </div>
