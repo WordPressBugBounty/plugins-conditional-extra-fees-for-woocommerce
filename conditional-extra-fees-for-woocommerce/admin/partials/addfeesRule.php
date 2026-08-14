@@ -17,8 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <form method="post" id="pisol-cefw-new-method">
 
 <div class="pi-step-container">
-    <div class="pi-step-content">
-        <div class="pi-step-header bg-primary text-light">
+    <details class="pi-step-content" open>
+        <summary class="pi-step-header bg-primary text-light">
             <div>
             <strong class="pi-step-title"><?php echo esc_html__('Step 1: Basic Settings','conditional-extra-fees-woocommerce'); ?><small>(Required)</small></strong>
             <p>Basic setting of the fee, like Fee amount, Optional fee, and Tax status.</p>
@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <span class="dashicons dashicons-plus-alt2 mr-4"></span>
                 <span class="dashicons dashicons-minus mr-4"></span>
             </div>
-        </div>
+        </summary>
         <div class="pi-step-description">
             <!-- Basic start -->
             <!-- Staturs -->
@@ -47,7 +47,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             <!-- Title -->
             <div class="row py-3 border-bottom align-items-center">
                 <div class="col-12 col-sm-5">
-                    <label for="pi_title" class="h6"><?php echo esc_html__('Fees rule title','conditional-extra-fees-woocommerce'); ?> <span class="text-primary">*</span></label>
+                    <label for="pi_title" class="h6"><?php echo esc_html__('Fee title','conditional-extra-fees-woocommerce'); ?> <span class="text-primary">*</span></label>
                     <br><i>Name of the fee rule shown to the customer (required).</i>
                 </div>
                 <div class="col-12 col-sm">
@@ -58,7 +58,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             <!-- Fees type -->
             <div class="row py-3 border-bottom align-items-center">
                 <div class="col-12 col-sm-5">
-                    <label for="pi_is_taxable" class="h6"><?php echo esc_html__('Fees type','conditional-extra-fees-woocommerce'); ?></label>
+                    <label for="pi_is_taxable" class="h6"><?php echo esc_html__('Fee type','conditional-extra-fees-woocommerce'); ?></label>
                     <br><i>Choose how the fee is calculated — Fixed amount or Percentage of cart total.</i>
                 </div>
                 <div class="col-12 col-sm">
@@ -82,7 +82,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             <!-- IS Taxable -->
             <div class="row py-3 border-bottom align-items-center">
                 <div class="col-12 col-sm-5">
-                    <label for="pi_fees_taxable" class="h6"><?php echo esc_html__('Is fees taxable','conditional-extra-fees-woocommerce'); ?> <span class="text-primary">*</span></label>
+                    <label for="pi_fees_taxable" class="h6"><?php echo esc_html__('Is fee taxable','conditional-extra-fees-woocommerce'); ?> <span class="text-primary">*</span></label>
                     <br><i>Should this fee be considered taxable?</i>
                 </div>
                 <div class="col-12 col-sm">
@@ -134,8 +134,8 @@ if ( ! defined( 'ABSPATH' ) ) {
             <!-- Is optional fees -->
             <div class="row py-3 border-bottom align-items-center">
                 <div class="col-12 col-sm-5">
-                    <label for="pi_is_optional_fees" class="h6"><?php echo esc_html__('Is optional fees','conditional-extra-fees-woocommerce'); ?> <span class="text-primary">*</span></label><br>
-                    <i><?php echo esc_html__('Customer will be having the option to select this fees or not','conditional-extra-fees-woocommerce'); ?></i>
+                    <label for="pi_is_optional_fees" class="h6"><?php echo esc_html__('Is this fee optional','conditional-extra-fees-woocommerce'); ?> <span class="text-primary">*</span></label><br>
+                    <i><?php echo esc_html__('Customer will be having the option to select this fee or not','conditional-extra-fees-woocommerce'); ?></i>
                 </div>
                 <div class="col-12 col-sm">
                     <select class="form-control" name="pi_is_optional_fees" id="pi_is_optional_fees">
@@ -148,8 +148,8 @@ if ( ! defined( 'ABSPATH' ) ) {
             <!-- Optional Fees Title -->
             <div class="row py-3 border-bottom align-items-center free-version" id="row_pi_optional_title">
                 <div class="col-12 col-sm-5">
-                    <label for="pi_checkbox_title" class="h6"><?php echo esc_html__('Text shown next to the optional fees checkbox','conditional-extra-fees-woocommerce'); ?></label>
-                    <br><i><?php echo esc_html__('If left blank then Fees title will be used in the checkbox','conditional-extra-fees-woocommerce'); ?></i>
+                    <label for="pi_checkbox_title" class="h6"><?php echo esc_html__('Text shown next to the optional fee checkbox','conditional-extra-fees-woocommerce'); ?></label>
+                    <br><i><?php echo esc_html__('If left blank then Fee title will be used in the checkbox','conditional-extra-fees-woocommerce'); ?></i>
                 </div>
                 <div class="col-12 col-sm-7">
                     <input type="text" value="" class="form-control" name="pi_checkbox_title" id="pi_checkbox_title">
@@ -160,7 +160,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             <div class="row py-3 border-bottom align-items-center free-version" id="row_pi_selected_by_default">
                 <div class="col-12 col-sm-5">
                     <label for="pi_selected_by_default" class="h6"><?php echo esc_html__('Auto selected the fees by default','conditional-extra-fees-woocommerce'); ?></label>
-                    <br><i><?php echo esc_html__('When the fees is optional, The fees checkbox will be auto selected on the checkout page initially, if customer don\'t want to pay for that fees they can unselect that checkbox and remove that fees','conditional-extra-fees-woocommerce'); ?></i>
+                    <br><i><?php echo esc_html__('When the fee is optional, The fee checkbox will be auto selected on the checkout page initially, if customer don\'t want to pay for that fee they can unselect that checkbox and remove that fee','conditional-extra-fees-woocommerce'); ?></i>
                 </div>
                 <div class="col-12 col-sm">
                     <select class="form-control" name="pi_selected_by_default" id="pi_selected_by_default">
@@ -173,7 +173,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             <!-- Tool tip -->
             <div class="row py-3 border-bottom align-items-center free-version" id="row_pi_tooltip">
                 <div class="col-12 col-sm-5">
-                    <label for="pi_tooltip" class="h6"><?php echo esc_html__('Tool tip shown next to the fees amount','conditional-extra-fees-woocommerce'); ?> </label>
+                    <label for="pi_tooltip" class="h6"><?php echo esc_html__('Tool tip shown next to the fee amount','conditional-extra-fees-woocommerce'); ?> </label>
                     <br><i><?php echo esc_html__('Plain text (no HTML) tooltip shown beside the fee on the frontend.','conditional-extra-fees-woocommerce'); ?></i>
                 </div>
                 <div class="col-12 col-sm-7">
@@ -210,12 +210,12 @@ if ( ! defined( 'ABSPATH' ) ) {
             </div>
             <!-- Basic end -->
         </div>
-    </div>
+    </details>
 </div>
 
 <div class="pi-step-container">
-    <div class="pi-step-content">
-        <div class="pi-step-header bg-primary text-light">
+    <details class="pi-step-content" open>
+        <summary class="pi-step-header bg-primary text-light">
             <div>
             <strong class="pi-step-title"><?php echo esc_html__('Step 2: When to apply this fee','extended-flat-rate-shipping-woocommerce'); ?><small>(Required)</small></strong>
             <p>Condition that will decide when to apply this fee</p>
@@ -224,7 +224,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <span class="dashicons dashicons-plus-alt2 mr-4"></span>
                 <span class="dashicons dashicons-minus mr-4"></span>
             </div>
-        </div>
+        </summary>
         <div class="pi-step-description">
             <!-- Conditions start -->
             <!-- Conditions -->
@@ -239,13 +239,13 @@ if ( ! defined( 'ABSPATH' ) ) {
             </div>
             <!-- Conditions end -->
         </div>
-    </div>
+    </details>
 </div>
 
 <!-- Step 3: Adjust fee charge -->
 <div class="pi-step-container">
-    <div class="pi-step-content">
-        <div class="pi-step-header bg-dark text-light">
+    <details class="pi-step-content" open>
+        <summary class="pi-step-header bg-dark text-light">
             <div>
             <strong class="pi-step-title"><?php echo esc_html__('Step 3: Adjust fee charge','conditional-extra-fees-woocommerce'); ?><small>(optional)</small></strong>
             <p>Increment/Decrease fee charge by weight, quantity, subtotal etc. ranges.</p>
@@ -254,14 +254,14 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <span class="dashicons dashicons-plus-alt2 mr-4"></span>
                 <span class="dashicons dashicons-minus mr-4"></span>
             </div>
-        </div>
+        </summary>
         <div class="pi-step-description px-0">
             <!-- extra charge setting start -->
             <!-- Extra charge -->
                 <?php do_action('pi_cefw_extra_form_fields', $data); ?>
             <!-- extra charge setting end -->
         </div>
-    </div>
+    </details>
 </div>
 
 

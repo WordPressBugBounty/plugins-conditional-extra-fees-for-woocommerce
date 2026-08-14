@@ -23,5 +23,6 @@ require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-store-fee.php
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-analytics.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-customfields.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-payment-processing-fee.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-sample-fees.php';
 
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'block/includes.php';

@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 <!--<div class="alert alert-info mt-2"><strong><?php //pisol_cefw_help::youtube('oGE6daMXrOk','Know more about the Additional Charges'); ?> Click to Know more about this Additional Charges feature </strong></div>-->
 <div class="border-top bg-dark2 p-3">
 <div class="row">
-    <div class="col-6"><label for="pi_enable_additional_charges" class="text-light mb-0"><?php esc_html_e('Increase / Decrease Fees by this extra rules', 'conditional-extra-fees-woocommerce'); ?></label><?php pisol_cefw_help::inline('inc_dec_fees_help', 'Increase / Decrease Fees '); ?></div>
+    <div class="col-6"><label for="pi_enable_additional_charges" class="text-light mb-0"><?php esc_html_e('Increase / Decrease Fee by these extra rules', 'conditional-extra-fees-woocommerce'); ?></label><?php pisol_cefw_help::inline('inc_dec_fees_help', 'Increase / Decrease Fees '); ?></div>
     <div class="col-6">
         <div class="custom-control custom-switch">
             <input type="checkbox" value="1" <?php echo esc_attr($data['pi_enable_additional_charges']); ?> class="custom-control-input" name="pi_enable_additional_charges" id="pi_enable_additional_charges">

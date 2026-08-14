@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Conditional extra fees for WooCommerce\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-19 06:43+0000\n"
+"POT-Creation-Date: 2026-08-14 10:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -15,295 +15,352 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.4.3; wp-5.7.1"
 
-#: admin/partials/listfeesRule.php:20
+#: admin/partials/listfeesRule.php:24
 msgid "Actions"
 msgstr ""
 
-#: admin/selection_rules/pisol_rule_form.php:12
+#: includes/dependency.php:43
+msgid "Activate/Install"
+msgstr ""
+
+#: admin/selection_rules/pisol_rule_form.php:15
+#: admin/selection_rules/pisol_rule_form.php:33
 msgid "Add Condition"
 msgstr ""
 
-#: admin/class-conditional-fees-rule-woocommerce-add-fees-rule.php:38
-#: admin/partials/listfeesRule.php:2
+#: admin/class-conditional-fees-rule-woocommerce-add-fees-rule.php:41
 msgid "Add fees rule"
 msgstr ""
 
-#: admin/additional-charges/template/quantity-based-charges.php:18
-#: admin/additional-charges/template/subtotal-based-charges.php:18
-#: admin/additional-charges/template/weight-based-charges.php:18
+#: admin/partials/addfeesRule.php:9
+msgid "Add new fee"
+msgstr ""
+
+#: admin/additional-charges/template/quantity-based-charges.php:21
+#: admin/additional-charges/template/subtotal-based-charges.php:21
+#: admin/additional-charges/template/weight-based-charges.php:21
 msgid "Add Rule"
 msgstr ""
 
-#: admin/selection_rules/pisol_rule_form.php:7
+#: admin/selection_rules/rules/advance-shipping.php:38
+msgid "Advance Shipping method"
+msgstr ""
+
+#: admin/selection_rules/pisol_rule_form.php:10
 msgid "All the below rules should match"
 msgstr ""
 
-#: admin/partials/listfeesRule.php:18
+#: admin/partials/listfeesRule.php:22
 msgid "Amount"
 msgstr ""
 
-#: admin/selection_rules/pisol_rule_form.php:8
+#: admin/selection_rules/pisol_rule_form.php:11
 msgid "Any one of the below rule should match"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:140
+#: admin/partials/addfeesRule.php:187
 msgid "Apply for currency (useful for multi currency website only)"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:118
+#: admin/partials/addfeesRule.php:162
 msgid "Auto selected the fees by default"
 msgstr ""
 
-#: admin/additional-charges/cart-quantity-charges.php:20
-msgid "Based on Cart Quantity"
+#: admin/selection_rules/rules/pro_rules.php:60
+msgid "Back order product total (Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/additional-charges/cart-subtotal-charges.php:21
-msgid "Based on Cart Subtotal"
+#: admin/selection_rules/rules/pro_rules.php:38
+msgid "Cart has Brand (Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/additional-charges/weight-based-charges.php:19
-msgid "Based on Cart Weight"
-msgstr ""
-
-#: admin/selection_rules/rules/product.php:24
+#: admin/selection_rules/rules/product.php:29
 msgid "Cart has Product"
 msgstr ""
 
-#: admin/selection_rules/rules/category_product.php:28
+#: admin/selection_rules/rules/category_product.php:32
 msgid "Cart has product of category"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:25
-msgid "Cart has Product tag (Available in PRO Version)"
+#: admin/selection_rules/rules/pro_rules.php:31
+msgid "Cart has Product tag (Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/additional-charges/template/quantity-based-charges.php:26
+#: admin/additional-charges/cart-quantity-charges.php:22
+#: admin/additional-charges/template/quantity-based-charges.php:29
 msgid "Cart Quantity"
 msgstr ""
 
-#: admin/additional-charges/template/subtotal-based-charges.php:26
+#: admin/additional-charges/cart-subtotal-charges.php:23
+#: admin/additional-charges/template/subtotal-based-charges.php:29
 msgid "Cart Subtotal"
 msgstr ""
 
-#: admin/selection_rules/rules/cart-subtotal-before-discount.php:25
+#: admin/selection_rules/rules/cart-subtotal-before-discount.php:29
 msgid "Cart Subtotal (Before discount)"
 msgstr ""
 
-#: admin/additional-charges/template/weight-based-charges.php:26
-msgid "Cart weight"
+#: admin/additional-charges/weight-based-charges.php:21
+#: admin/additional-charges/template/weight-based-charges.php:29
+msgid "Cart Weight"
 msgstr ""
 
-#: admin/additional-charges/template/quantity-based-charges.php:36
-#: admin/additional-charges/template/subtotal-based-charges.php:36
-#: admin/additional-charges/template/weight-based-charges.php:36
+#: admin/additional-charges/template/quantity-based-charges.php:39
+#: admin/additional-charges/template/subtotal-based-charges.php:39
+#: admin/additional-charges/template/weight-based-charges.php:39
 msgid "Category"
 msgstr ""
 
-#: admin/additional-charges/template/quantity-based-charges.php:6
-msgid "Change Fees based on Cart Quantity"
+#: admin/additional-charges/template/quantity-based-charges.php:9
+msgid "Change Fee based on Cart Quantity"
 msgstr ""
 
-#: admin/additional-charges/template/subtotal-based-charges.php:6
+#: admin/additional-charges/template/weight-based-charges.php:9
+msgid "Change Fee based on Cart Weight"
+msgstr ""
+
+#: admin/additional-charges/template/subtotal-based-charges.php:9
 msgid "Change Fees based on Cart Subtotal"
 msgstr ""
 
-#: admin/additional-charges/template/weight-based-charges.php:6
-msgid "Change Fees based on Cart Weight"
+#: admin/partials/addfeesRule.php:13
+msgid "Close All ▲"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:164 admin/partials/addfeesRule.php:175
-msgid "Clear date"
-msgstr ""
-
-#: admin/combine-method.php:60
+#: admin/combine-method.php:62
 msgid "Combine multiple fees"
 msgstr ""
 
-#. Name of the plugin
 #. Description of the plugin
 msgid "Conditional extra fees for WooCommerce"
 msgstr ""
 
-#: admin/selection_rules/rules/country.php:28
+#: admin/class-conditional-fees-rule-woocommerce-menu.php:22
+#: admin/class-conditional-fees-rule-woocommerce-menu.php:23
+#: admin/class-conditional-fees-rule-woocommerce-menu.php:31
+#: admin/class-conditional-fees-rule-woocommerce-menu.php:32
+msgid "Conditional fees"
+msgstr ""
+
+#: admin/selection_rules/rules/country.php:33
 msgid "Country/Continent"
 msgstr ""
 
-#: admin/selection_rules/rules/coupon.php:28
+#: admin/selection_rules/rules/coupon.php:32
 msgid "Coupon"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:109
-msgid "Custom product attribute (Number)(Available in PRO Version)"
+#: admin/partials/listfeesRule.php:5
+msgid "Create fee rule"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:116
-msgid "Custom product attribute (Text)(Available in PRO Version)"
+#: admin/selection_rules/rules/pro_rules.php:130
+msgid "Custom product attribute (Number)(Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:97
-msgid "Customer will be having the option to select this fees or not"
+#: admin/selection_rules/rules/pro_rules.php:137
+msgid "Custom product attribute (Text)(Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:46
-msgid "Days of the week (Available in PRO Version)"
+#: admin/selection_rules/rules/ip-country.php:33
+msgid "Customer IP address based country"
 msgstr ""
 
-#: admin/selection_rules/rules/delivery_type.php:34
+#: admin/partials/addfeesRule.php:138
+msgid "Customer will be having the option to select this fee or not"
+msgstr ""
+
+#: admin/selection_rules/rules/pro_rules.php:67
+msgid "Days of the week (Available in PRO Version) 🔒"
+msgstr ""
+
+#: admin/selection_rules/rules/delivery_type.php:38
 msgid "Delivery type (Delivery/Pickup/Dining)"
 msgstr ""
 
-#: admin/class-conditional-fees-rule-woocommerce-list-fees-rules.php:22
+#: admin/selection_rules/rules/pro_rules.php:23
+msgid "Different shipping address (Available in PRO Version) 🔒"
+msgstr ""
+
+#: admin/partials/addfeesRule.php:9
+msgid "Edit fee"
+msgstr ""
+
+#: admin/class-payment-processing-fee.php:42
+msgid ""
+"Enter gateway charge amount for each payment gateway. Leave blank for no "
+"charge."
+msgstr ""
+
 #: admin/class-conditional-fees-rule-woocommerce-list-fees-rules.php:45
 msgid "Extra fees rules"
 msgstr ""
 
-#: admin/option.php:70
+#: admin/option.php:74
 msgid "Extra settings"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:73 admin/partials/listfeesRule.php:17
-#: admin/additional-charges/template/quantity-based-charges.php:39
-#: admin/additional-charges/template/subtotal-based-charges.php:39
-#: admin/additional-charges/template/weight-based-charges.php:39
+#: admin/partials/addfeesRule.php:75
+msgid "Fee Amount"
+msgstr ""
+
+#: admin/partials/addfeesRule.php:50
+msgid "Fee title"
+msgstr ""
+
+#: admin/partials/addfeesRule.php:61
+msgid "Fee type"
+msgstr ""
+
+#: admin/partials/addfeesRule.php:199
+msgid "Fee Validity Period"
+msgstr ""
+
+#: admin/partials/listfeesRule.php:21
+#: admin/additional-charges/template/quantity-based-charges.php:42
+#: admin/additional-charges/template/subtotal-based-charges.php:42
+#: admin/additional-charges/template/weight-based-charges.php:42
 msgid "Fees"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:172
-msgid "Fees end time"
+#: admin/selection_rules/rules/pro_rules.php:102
+msgid "First order (Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:21
-msgid "Fees rule title"
-msgstr ""
-
-#: admin/partials/addfeesRule.php:161
-msgid "Fees start Time"
-msgstr ""
-
-#: admin/partials/addfeesRule.php:30
-msgid "Fees type"
-msgstr ""
-
-#: admin/selection_rules/rules/pro_rules.php:81
-msgid "First order (Available in PRO Version)"
-msgstr ""
-
-#: admin/partials/addfeesRule.php:34
+#: admin/partials/addfeesRule.php:66
 msgid "Fixed"
 msgstr ""
 
-#: admin/option.php:35
+#: admin/class-payment-processing-fee.php:40
+msgid "Gateway Charges"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://piwebsolution.com"
+msgstr ""
+
+#. URI of the plugin
+msgid ""
+"https://www.piwebsolution.com/product/conditional-cart-fee-extra-charge-rule-"
+"for-woocommerce-extra-fees-pro/"
+msgstr ""
+
+#: admin/option.php:39
 msgid ""
 "If enabled it will show the optional fees checkbox on the cart page as well"
 msgstr ""
 
 #: admin/partials/addfeesRule.php:152
-msgid ""
-"In free version fees percent is calculated on Cart total, Where as in pro "
-"version you can make it to calculate based on the total of the product that "
-"are selected based on the Product selection rule set in the fees rule"
+msgid "If left blank then Fee title will be used in the checkbox"
 msgstr ""
 
-#: admin/additional-charges/template/additional-charges.php:4
-msgid "Increase / Decrease Fees by this extra rules"
+#: admin/additional-charges/template/additional-charges.php:7
+msgid "Increase / Decrease Fee by these extra rules"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:42
-msgid "Is fees taxable"
+#: admin/partials/addfeesRule.php:85
+msgid "Is fee taxable"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:96
-msgid "Is optional fees"
+#: admin/partials/addfeesRule.php:137
+msgid "Is this fee optional"
 msgstr ""
 
 #: admin/additional-charges/additional-charges.php:61
 msgid "Largest of the matched charges"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:88
-msgid "Last Order Total (Available in PRO Version)"
+#: admin/selection_rules/rules/pro_rules.php:109
+msgid "Last Order Total (Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:140
-msgid ""
-"Leave empty if you want to apply for all currency OR you have single currency"
+#: admin/selection_rules/rules/pro_rules.php:74
+msgid "Local pickup fees (Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:53
-msgid "Local pickup fees (Available in PRO Version)"
-msgstr ""
-
-#: admin/selection_rules/rules/height.php:25
+#: admin/selection_rules/rules/height.php:29
 msgid "Max Product Height"
 msgstr ""
 
-#: admin/selection_rules/rules/length.php:25
+#: admin/selection_rules/rules/length.php:29
 msgid "Max Product Length"
 msgstr ""
 
-#: admin/selection_rules/rules/width.php:25
+#: admin/selection_rules/rules/width.php:29
 msgid "Max Product Width"
 msgstr ""
 
-#: admin/additional-charges/template/quantity-based-charges.php:38
+#: admin/additional-charges/template/quantity-based-charges.php:41
 msgid "Max Quantity"
 msgstr ""
 
-#: admin/additional-charges/template/subtotal-based-charges.php:38
+#: admin/additional-charges/template/subtotal-based-charges.php:41
 msgid "Max Subtotal"
 msgstr ""
 
-#: admin/additional-charges/template/weight-based-charges.php:38
+#: admin/additional-charges/template/weight-based-charges.php:41
 msgid "Max Weight"
 msgstr ""
 
-#: admin/additional-charges/template/quantity-based-charges.php:37
+#: admin/additional-charges/template/quantity-based-charges.php:40
 msgid "Min Quantity"
 msgstr ""
 
-#: admin/additional-charges/template/subtotal-based-charges.php:37
+#: admin/additional-charges/template/subtotal-based-charges.php:40
 msgid "Min Subtotal"
 msgstr ""
 
-#: admin/additional-charges/template/weight-based-charges.php:37
+#: admin/additional-charges/template/weight-based-charges.php:40
 msgid "Min Weight"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:88
+#: admin/partials/addfeesRule.php:128
 msgid "Nearest higher integer (PRO)"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:87
+#: admin/partials/addfeesRule.php:127
 msgid "Nearest integer"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:89
+#: admin/partials/addfeesRule.php:129
 msgid "Nearest lower integer (PRO)"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:46 admin/partials/addfeesRule.php:86
-#: admin/partials/addfeesRule.php:101 admin/partials/addfeesRule.php:123
+#: admin/partials/addfeesRule.php:90 admin/partials/addfeesRule.php:126
+#: admin/partials/addfeesRule.php:142 admin/partials/addfeesRule.php:167
 msgid "No"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:95
-msgid "Number of Orders during a period (Available in PRO Version)"
+#: admin/selection_rules/rules/pro_rules.php:116
+msgid "Number of Orders during a period (Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/option.php:33 public/class-apply-fees.php:266
+#: admin/partials/addfeesRule.php:12
+msgid "Open All ▼"
+msgstr ""
+
+#: admin/option.php:35 public/class-apply-fees.php:272
 msgid "Optional services"
 msgstr ""
 
-#: admin/option.php:33
+#: admin/option.php:35
 msgid "Optional services label"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:39
-msgid "Payment Method (Available in PRO Version)"
+#: admin/selection_rules/rules/pro_rules.php:53
+msgid "Payment Method (Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:35
+#: admin/class-payment-processing-fee.php:110
+msgid "Payment Processing fee"
+msgstr ""
+
+#: admin/class-payment-processing-fee.php:36
+#: public/class-apply-payment-processing-fee.php:82
+msgid "Payment processing fee"
+msgstr ""
+
+#: admin/partials/addfeesRule.php:67
 msgid "Percentage"
 msgstr ""
 
@@ -311,82 +368,113 @@ msgstr ""
 msgid "PI Websolution"
 msgstr ""
 
-#: admin/selection_rules/rules/pickup_location.php:34
+#: admin/selection_rules/rules/pickup_location.php:38
 msgid "Pickup location"
 msgstr ""
 
-#. Author URI of the plugin
-msgid "piwebsolution.com"
+#. Name of the plugin
+msgid "PiWeb Conditional cart fee / Extra charge rule for WooCommerce"
 msgstr ""
 
-#. URI of the plugin
-msgid "piwebsolution.com/conditional-fees-rule-wooCommerce"
+#: admin/partials/addfeesRule.php:177
+msgid "Plain text (no HTML) tooltip shown beside the fee on the frontend."
 msgstr ""
 
-#: conditional-fees-rule-woocommerce.php:38
+#: conditional-fees-rule-woocommerce.php:39
 msgid ""
 "Please Install and Activate WooCommerce plugin, without that this plugin "
 "cant work"
 msgstr ""
 
-#: conditional-fees-rule-woocommerce.php:51
+#: conditional-fees-rule-woocommerce.php:52
 msgid ""
 "Please uninstall/deactivate the Pro version of Conditional fees rule plugin"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:18
-msgid "Postcode (Available in PRO Version)"
+#: admin/selection_rules/rules/postcode.php:29
+msgid "Postcode"
 msgstr ""
 
-#: admin/selection_rules/rules/quantity.php:25
+#: admin/selection_rules/rules/quantity.php:29
 msgid "Quantity"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:67
-msgid "Quantity of product from category (Available in PRO Version)"
+#: admin/selection_rules/rules/pro_rules.php:88
+msgid "Quantity of product from category (Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:74
-msgid "Quantity of product from Tag (Available in PRO Version)"
+#: admin/selection_rules/rules/pro_rules.php:95
+msgid "Quantity of product from Tag (Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:82
+#: admin/partials/addfeesRule.php:187
+msgid ""
+"Restrict this fee to a specific currency. Leave empty to apply to all "
+"currencies."
+msgstr ""
+
+#: admin/partials/addfeesRule.php:121
 msgid "Round off to integer"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:193
+#: admin/partials/addfeesRule.php:122
+msgid "Round the calculated fee to the nearest whole number."
+msgstr ""
+
+#: admin/class-payment-processing-fee.php:129
+msgid "Save Option"
+msgstr ""
+
+#: admin/partials/addfeesRule.php:272
 msgid "Save Rule"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:54
+#: admin/partials/addfeesRule.php:99
 msgid "Select tax class"
 msgstr ""
 
-#: admin/selection_rules/rules/selected_delivery_date.php:34
+#: admin/partials/addfeesRule.php:100
+msgid ""
+"Select the tax class for this fee. If you are not sure, leave it as Standard."
+msgstr ""
+
+#: admin/selection_rules/rules/selected_delivery_date.php:38
 msgid "Selected delivery date"
 msgstr ""
 
-#: admin/selection_rules/rules/selected_delivery_day.php:34
+#: admin/selection_rules/rules/selected_delivery_day.php:38
 msgid "Selected delivery day"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:181
+#: admin/partials/addfeesRule.php:234
 msgid "Selection Rules"
 msgstr ""
 
-#: conditional-fees-rule-woocommerce.php:112
+#: admin/partials/addfeesRule.php:200
+msgid ""
+"Set a start and end date for this fee. If left empty, the fee will be valid "
+"indefinitely."
+msgstr ""
+
+#: conditional-fees-rule-woocommerce.php:116
 msgid "Settings"
 msgstr ""
 
-#: admin/selection_rules/rules/shipping_class.php:28
+#: admin/selection_rules/rules/shipping_class.php:32
 msgid "Shipping Class"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:60
-msgid "Shipping method (Available in PRO Version)"
+#: admin/selection_rules/rules/pro_rules.php:81
+msgid "Shipping method (Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/option.php:35
+#: includes/dependency.php:42
+msgid ""
+"Shipping module is missing, Activate/Install the missing shipping modules to "
+"ensure all functionality is available."
+msgstr ""
+
+#: admin/option.php:39
 msgid "Show optional fees checkbox on cart page"
 msgstr ""
 
@@ -394,82 +482,90 @@ msgstr ""
 msgid "Smallest of the matched charges"
 msgstr ""
 
-#: admin/selection_rules/rules/product_quantity.php:30
+#: admin/selection_rules/rules/product_quantity.php:34
 msgid "Specific product quantity (PRO also support Variable Product)"
 msgstr ""
 
-#: admin/selection_rules/rules/state.php:28
+#: admin/selection_rules/rules/state.php:32
 msgid "State"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:12
-msgid "State (Available in PRO Version)"
+#: admin/partials/addfeesRule.php:36 admin/partials/listfeesRule.php:23
+msgid "Status"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:9 admin/partials/listfeesRule.php:19
-msgid "Status"
+#: admin/partials/addfeesRule.php:23
+msgid "Step 1: Basic Settings"
+msgstr ""
+
+#: admin/partials/addfeesRule.php:250
+msgid "Step 3: Adjust fee charge"
 msgstr ""
 
 #: admin/additional-charges/additional-charges.php:60
 msgid "Sum of all matched charges"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:109
-msgid ""
-"Text shown next to the optional fees checkbox <br><small>If left blank then "
-"Fees title will be used in the checkbox</small>"
+#: admin/partials/addfeesRule.php:151
+msgid "Text shown next to the optional fee checkbox"
 msgstr ""
 
-#: admin/partials/listfeesRule.php:59
-msgid "There are no fees rule added yet, add them first"
+#: admin/partials/listfeesRule.php:63
+msgid "There are no fee rule added yet, add them first"
 msgstr ""
 
-#: admin/option.php:33
+#: admin/option.php:35
 msgid "This label is shown above the fees"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:131
-msgid ""
-"This text will be shown in the tooltip next to the fees amount (only use "
-"text no html tag allowed)"
+#: admin/selection_rules/rules/pro_rules.php:144
+msgid "Time-Based Availability (Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:131
-msgid "Tool tip shown next to the fees amount"
+#: admin/partials/addfeesRule.php:176
+msgid "Tool tip shown next to the fee amount"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:102
-msgid "Total amount spend during a period (Available in PRO Version)"
+#: admin/selection_rules/rules/pro_rules.php:123
+msgid "Total amount spent during a period (Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/selection_rules/rules/user.php:24
+#: admin/selection_rules/rules/product_quantity.php:156
+msgid "Total Quantity"
+msgstr ""
+
+#: admin/selection_rules/rules/user.php:28
 msgid "User"
 msgstr ""
 
-#: admin/selection_rules/rules/user_role.php:28
+#: admin/selection_rules/rules/pro_rules.php:16
+msgid "User address matches with Zones (Available in PRO Version) 🔒"
+msgstr ""
+
+#: admin/selection_rules/rules/user_role.php:32
 msgid "User Role"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:31
-msgid "User role (Available in PRO Version)"
+#: admin/selection_rules/rules/pro_rules.php:45
+msgid "User role (Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/selection_rules/rules/weight.php:25
+#: admin/selection_rules/rules/weight.php:29
 msgid "Weight"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:119
+#: admin/partials/addfeesRule.php:163
 msgid ""
-"When the fees is optional, The fees checkbox will be auto selected on the "
-"checkout page initially, if customer don't want to pay for that fees they "
-"can unselect that checkbox and remove that fees"
+"When the fee is optional, The fee checkbox will be auto selected on the "
+"checkout page initially, if customer don't want to pay for that fee they can "
+"unselect that checkbox and remove that fee"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:47 admin/partials/addfeesRule.php:102
-#: admin/partials/addfeesRule.php:124
+#: admin/partials/addfeesRule.php:91 admin/partials/addfeesRule.php:143
+#: admin/partials/addfeesRule.php:168
 msgid "Yes"
 msgstr ""
 
-#: admin/selection_rules/rules/zone.php:28
+#: admin/selection_rules/rules/zone.php:31
 msgid "Zones"
 msgstr ""

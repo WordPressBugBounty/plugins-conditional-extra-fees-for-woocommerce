@@ -289,24 +289,20 @@
    border-bottom: 1px solid #eee;
 }
 
-.pi-step-container.pi-closed .pi-step-description {
-   display: none;
-}
-
-.pi-step-container .dashicons-minus {
+.pi-step-content > .pi-step-header .dashicons-plus-alt2 {
    display: block;
 }
 
-.pi-step-container .dashicons-plus-alt2 {
+.pi-step-content > .pi-step-header .dashicons-minus {
    display: none;
 }
 
-.pi-step-container.pi-closed .dashicons-plus-alt2 {
+.pi-step-content[open] > .pi-step-header .dashicons-plus-alt2 {
+   display: none;
+}
+
+.pi-step-content[open] > .pi-step-header .dashicons-minus {
    display: block;
-}
-
-.pi-step-container.pi-closed .dashicons-minus {
-   display: none;
 }
 
 .status-icon {
@@ -340,7 +336,7 @@
 
 .pi-step-header{
     padding:1rem;
-    display:flex;
+    display:flex !important;
     justify-content: space-between;
     align-items: center;
     cursor:pointer;

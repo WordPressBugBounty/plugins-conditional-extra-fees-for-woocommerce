@@ -15,6 +15,8 @@ class Pi_Cefw_Analytics{
     private $plugin_name;
     private $enable_tracking;
     private $enable_tracking_action;
+    private $analytics_start_date;
+    private $show_after_this_days;
     public function __construct($plugin_name, $plugin_path, $version) {
         $this->plugin_name = $plugin_name;
         $this->plugin_path = $plugin_path;
@@ -25,6 +27,10 @@ class Pi_Cefw_Analytics{
 
         $this->enable_tracking = 'pisol_'.$this->plugin_slug;
         $this->enable_tracking_action = 'pisol_'.$this->plugin_slug.'_action';
+
+        $this->analytics_start_date = 'pisol_analytics_'.$this->plugin_slug.'_start_date';
+
+        $this->show_after_this_days = 7;
         
 
         $this->version = $version;
@@ -42,15 +48,14 @@ class Pi_Cefw_Analytics{
     }
 
     public function show_tracker_notice() {
+        $activation_time = $this->getInstallationDate();
+        if(current_time('timestamp') < strtotime($activation_time." +{$this->show_after_this_days} days")) {
+            return;
+        }
         //delete_option($this->enable_tracking);
         if (!empty(get_option($this->enable_tracking, ''))) {
             return; 
         }
-
-        /**
-         * this make sure we only show this to newly installed sites
-         */
-        if(! get_option('pi_cefw_new_install', false)) return;
 
         $notice = '<div class="notice notice-error is-dismissible">';
         $notice .= '<h4>Help to Improve ' . esc_html($this->plugin_name) . ' plugin</h4>';
@@ -252,6 +257,24 @@ class Pi_Cefw_Analytics{
         // Redirect back to plugins page
         wp_safe_redirect(admin_url('plugins.php'));
         exit;
+    }
+
+    function getInstallationDate(){
+        $get_install_date = get_option($this->analytics_start_date);
+        if(empty($get_install_date) || !$this->validateDate($get_install_date)){
+            $now = current_time( "Y/m/d" );
+            add_option( $this->analytics_start_date, $now );
+            return $now;
+        }
+        return $get_install_date;
+    }
+
+    function validateDate($date, $format = 'Y/m/d'){
+        if ( empty($date) ) return false;
+        
+        $d = DateTime::createFromFormat($format, $date);
+        // The Y ( 4 digits year ) returns TRUE for any integer with any number of digits so changing the comparison from == to === fixes the issue.
+        return $d && $d->format($format) === $date;
     }
 
 

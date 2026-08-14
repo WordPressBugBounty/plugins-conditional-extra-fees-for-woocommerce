@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              piwebsolution.com
- * @since             1.1.63
+ * @since             1.1.64
  * @package           Conditional_fees_Rule_Woocommerce
  *
  * @wordpress-plugin
  * Plugin Name:       PiWeb Conditional cart fee / Extra charge rule for WooCommerce
  * Plugin URI:        https://www.piwebsolution.com/product/conditional-cart-fee-extra-charge-rule-for-woocommerce-extra-fees-pro/
  * Description:       Conditional extra fees for WooCommerce
- * Version:           1.1.63
+ * Version:           1.1.64
  * Author:            PI Websolution
  * Author URI:        https://piwebsolution.com
  * License:           GPL-2.0+
@@ -61,10 +61,10 @@ if(is_plugin_active( 'conditional-extra-fees-for-woocommerce-pro/conditional-fee
 
 /**
  * Currently plugin version.
- * Start at version 1.1.63 and use SemVer - https://semver.org
+ * Start at version 1.1.64 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'CONDITIONAL_FEES_RULE_WOOCOMMERCE_VERSION', '1.1.63' );
+define( 'CONDITIONAL_FEES_RULE_WOOCOMMERCE_VERSION', '1.1.64' );
 define('PI_CEFW_BUY_URL', 'https://www.piwebsolution.com/cart/?add-to-cart=15441&variation_id=15442&utm_campaign=conditional-fee&utm_source=website&utm_medium=direct-buy');
 define('PI_CEFW_PRICE', '$34');
 define('PI_CEFW_DELETE_SETTING', false);
@@ -85,6 +85,7 @@ add_action( 'before_woocommerce_init', function() {
 function activate_conditional_fees_rule_woocommerce() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-conditional-fees-rule-woocommerce-activator.php';
 	Conditional_fees_Rule_Woocommerce_Activator::activate();
+    pisol_cefw_sample_fees::default_fees();
     add_option('pi_cefw_do_activation_redirect', true);
     add_option('pi_cefw_new_install', true);
 }

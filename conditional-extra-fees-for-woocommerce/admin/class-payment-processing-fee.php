@@ -51,7 +51,7 @@ class pisol_cefw_payment_processing_option{
         }
 
 
-        add_action($this->plugin_name.'_tab', array($this,'tab'),10);
+        add_action($this->plugin_name.'_tab', array($this,'tab'),9);
 
        
         $this->register_settings();

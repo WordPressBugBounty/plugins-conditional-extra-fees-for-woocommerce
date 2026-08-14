@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 </script>
 <div class="p-3 bg-dark">
 <div class="row">
-    <div class="col-6"><label for="pi_enable_additional_charges_cart_weight" class="mb-0 text-light"><?php esc_html_e('Change Fees based on Cart Weight', 'conditional-extra-fees-woocommerce'); ?></label> <?php //pisol_cefw_help::youtube('TriQypJAgYI','Know more about the Cart Weight based charge'); ?></div>
+    <div class="col-6"><label for="pi_enable_additional_charges_cart_weight" class="mb-0 text-light"><?php esc_html_e('Change Fee based on Cart Weight', 'conditional-extra-fees-woocommerce'); ?></label> <?php //pisol_cefw_help::youtube('TriQypJAgYI','Know more about the Cart Weight based charge'); ?></div>
     <div class="col-6">
         <div class="custom-control custom-switch">
             <input type="checkbox" value="1" <?php echo esc_attr( $data['pi_enable_additional_charges_cart_weight'] ); ?> class="custom-control-input" name="pi_enable_additional_charges_cart_weight" id="pi_enable_additional_charges_cart_weight">
@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 </div>
 <template id="cart_weight_charges_template" >
     <tr>
-        <td><?php esc_html_e('Cart weight', 'conditional-extra-fees-woocommerce'); ?></td>
+        <td><?php esc_html_e('Cart Weight', 'conditional-extra-fees-woocommerce'); ?></td>
         <td class="pi-min-col"><input type="number" required name="pi_cart_weight_charges[{{count}}][min]" min="0" class="form-control" step="0.0001"></td>
         <td class="pi-max-col"><input type="number" name="pi_cart_weight_charges[{{count}}][max]" min="0" class="form-control" step="0.0001"></td>
         <td class="pi-fee-col"><input type="text" required name="pi_cart_weight_charges[{{count}}][charge]" class="form-control"></td>

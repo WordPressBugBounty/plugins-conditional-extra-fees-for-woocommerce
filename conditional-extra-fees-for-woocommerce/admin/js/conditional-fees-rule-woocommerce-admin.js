@@ -176,18 +176,19 @@
 			$(this).toggleClass('open closed');
 		});
 
-		$(".pi-step-header").on('click', function() {
-			$(this).closest('.pi-step-container').toggleClass('pi-closed');
-		});
+		
 
 		$("#open-all").on('click', function() {
-			$('.pi-step-container').removeClass('pi-closed');
+			$('.pi-step-content').attr('open', 'open');
 		});
 
 		$("#close-all").on('click', function() {
-			$('.pi-step-container').addClass('pi-closed');
+			$('.pi-step-content').removeAttr('open');
 		});
 
+		/**
+		 * used in payment processing fees section to show/hide the processing fee fields based on the checkbox state
+		 */
 		$(".apply-processing-fee").on('change', function() {
 			if ($(this).is(":checked")) {
 				var parent = $(this).parent().parent().parent();

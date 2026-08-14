@@ -2,7 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 ?>
 <div class="row">
-    <div class="col-12 py-3 text-right"><a class="btn btn-primary btn-sm" href="<?php echo esc_url(admin_url( 'admin.php?page=pisol-cefw&tab=pi_cefw_add_rule' )); ?>"><span class="dashicons dashicons-plus mr-2" style="margin-top:3px;"></span><?php esc_html_e('Add fees rule','conditional-extra-fees-woocommerce'); ?></a>
+    <div class="col-12 py-3 text-right"><a class="btn btn-primary btn-sm" href="<?php echo esc_url(admin_url( 'admin.php?page=pisol-cefw&tab=pi_cefw_add_rule' )); ?>"><span class="dashicons dashicons-plus mr-2" style="margin-top:3px;"></span><?php esc_html_e('Create fee rule','conditional-extra-fees-woocommerce'); ?></a>
     </div>
 </div>
 <?php
@@ -35,7 +35,7 @@ foreach($shipping_methods as $method){
     $fees_title  = get_the_title( $method->ID ) ? get_the_title( $method->ID ) : 'Shipping Method';
     $fees_status = get_post_meta( $method->ID, 'pi_status', true );
     echo '<tr  id="pisol_tr_container_'.esc_attr($method->ID).'">';
-    echo '<td><a href="'.esc_url(admin_url( '/admin.php?page=pisol-cefw&tab=pi_cefw_add_rule&action=edit&id='.$method->ID )).'">'.esc_html($fees_title).'</a></td>';
+    echo '<td><a href="'.esc_url(admin_url( '/admin.php?page=pisol-cefw&tab=pi_cefw_add_rule&action=edit&id='.$method->ID )).'" target="_blank">'.esc_html($fees_title).'</a></td>';
     echo '<td>';
     
 								if ( $fees_type == 'fixed' ) {
@@ -60,7 +60,7 @@ foreach($shipping_methods as $method){
 }else{
     echo '<tr>';
     echo '<td colspan="4" class="text-center">';
-    echo esc_html__('There are no fees rule added yet, add them first','conditional-extra-fees-woocommerce' );
+    echo esc_html__('There are no fee rule added yet, add them first','conditional-extra-fees-woocommerce' );
     echo '</td>';
     echo '</tr>';
 }
