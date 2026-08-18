@@ -7102,7 +7102,7 @@
 }
 
 .bootstrap-wrapper .bg-dark {
-	background-color: #1a4562 !important;
+	background: linear-gradient(155deg, #1a1638 0%, #251a4d 45%, #0f0a26 100%) !important;
 }
 
 .bootstrap-wrapper .bg-dark2 {

@@ -24,7 +24,7 @@ class pisol_cefw_extra_fees_review{
         $this->activation_date = "pi_review_activation_date_{$this->slug}";
         $this->saved_value = "pi_review_saved_value_{$this->slug}";
         $this->review_url = "https://wordpress.org/support/plugin/{$this->slug}/reviews/#wp-bbp_topic_content-wrap";
-        $this->review_after = 6;
+        $this->review_after = 14;
         $this->buy_url = $buy_url;
         $this->price = $price;
 

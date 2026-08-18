@@ -47,6 +47,7 @@ class Pi_cefw_Menu{
         wp_enqueue_style( $this->plugin_name."_bootstrap", plugin_dir_url( __FILE__ ) . 'css/bootstrap.css', array(), $this->version, 'all' );
 
         wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/conditional-fees-rule-woocommerce-admin.css', array(), $this->version, 'all' );
+        wp_enqueue_style( $this->plugin_name.'_promotion', plugin_dir_url( __FILE__ ) . 'css/promotion.css', array(), $this->version, 'all' );
         wp_enqueue_script( 'jquery-ui-datepicker' );
         wp_enqueue_style( 'jquery-ui',  plugins_url('css/jquery-ui.css', __FILE__));
 
@@ -121,50 +122,108 @@ class Pi_cefw_Menu{
         ?>
         <div class="col-12 col-sm-12 col-md-3 pt-3 pb-3 border-left" id="pi-cefw-sidebar-container">
 
-        <div class="pi-shadow rounded px-2 py-3">
-                <h2 id="pi-banner-tagline" class="mb-0" style="color:#ccc !important;">
-                        <span class="d-block mb-4">⭐️⭐️⭐️⭐️⭐️</span>
-                        <span class="d-block mb-2">🚀 Trusted by <span style="color:#fff;">3,000+</span> WooCommerce Stores</span>
-                        <span class="d-block mb-2">Rated <span style="color:#fff;">4.9/5</span> – Users love it</span>
-                    </h2>
-                <div class="inside">
-                    <ul class="text-left pisol-pro-feature-list">
-                        <li><b><span style="color:white;">&#10003;</span> Location-based rules</b><br>
-                        <i>Target specific country, state, city or postcodes ranges</i></li>
+        <div class="pisol-v2-banner">
+    
+                <!-- Social Proof Header -->
+                <div class="pisol-v2-header">
+                <div class="pisol-v2-rating-pill">
+                    <span class="pisol-v2-stars">★★★★★</span>
+                    <span class="pisol-v2-rating-text">4.9/5 – Users love it</span>
+                </div>
+                <p class="pisol-v2-title">🚀 Trusted by <strong>3,000+</strong> WooCommerce Stores</p>
+                </div>
 
-                        <li><b><span style="color:white;">&#10003;</span> Product & tag logic</b><br>
-                        <i>Apply fees by product tags or categories</i></li>
-
-                        <li><b><span style="color:white;">&#10003;</span> Quantity-based triggers</b><br>
-                        <i>Set rules by quantity from tags or categories</i></li>
-
-                        <li><b><span style="color:white;">&#10003;</span> Payment method conditions</b><br>
-                        <i>Charge based on chosen payment option</i></li>
-
-                        <li><b><span style="color:white;">&#10003;</span> Day-based fees</b><br>
-                        <i>Apply charges on selected weekdays</i></li>
-
-                        <li><b><span style="color:white;">&#10003;</span> Shipping method rules</b><br>
-                        <i>Apply fees by shipping method selected</i></li>
-
-                        <li><b><span style="color:white;">&#10003;</span> Customer order history</b><br>
-                        <i>Skip fees for first order or loyal customers</i></li>
-
-                        <li><b><span style="color:white;">&#10003;</span> Spending-based exclusions</b><br>
-                        <i>No fee if past order or total spend qualifies</i></li>
-
-                        <li><b><span style="color:white;">&#10003;</span> Merge multiple fees</b><br>
-                        <i>Combine several fees into one charge</i></li>
-
-                        <li><b><span style="color:white;">&#10003;</span> Tooltip for charges</b><br>
-                        <i>Help customers understand each extra charge</i></li>
-                    </ul>
-                    <h4 class="pi-bottom-banner">💰 Only <?php echo esc_html(PI_CEFW_PRICE); ?></h4>
-                    <div class="text-center pb-3 pt-2">
-                    <a class="btn btn-primary btn-md" href="<?php echo esc_url(PI_CEFW_BUY_URL); ?>&utm_ref=bottom_link" target="_blank">🔓 Unlock Pro Now – Limited Time Price!</a>
+                <!-- Feature Cards List -->
+                <div class="pisol-v2-features">
+                <div class="pisol-v2-card">
+                    <span class="pisol-v2-badge">✓</span>
+                    <div class="pisol-v2-info">
+                    <span class="pisol-v2-info-title">Location-based rules</span>
+                    <span class="pisol-v2-info-desc">Target specific country, state, city or postcodes ranges</span>
                     </div>
                 </div>
-            </div>
+
+                <div class="pisol-v2-card">
+                    <span class="pisol-v2-badge">✓</span>
+                    <div class="pisol-v2-info">
+                    <span class="pisol-v2-info-title">Product & tag logic</span>
+                    <span class="pisol-v2-info-desc">Apply fees by product tags or categories</span>
+                    </div>
+                </div>
+
+                <div class="pisol-v2-card">
+                    <span class="pisol-v2-badge">✓</span>
+                    <div class="pisol-v2-info">
+                    <span class="pisol-v2-info-title">Quantity-based triggers</span>
+                    <span class="pisol-v2-info-desc">Set rules by quantity from tags or categories</span>
+                    </div>
+                </div>
+
+                <div class="pisol-v2-card">
+                    <span class="pisol-v2-badge">✓</span>
+                    <div class="pisol-v2-info">
+                    <span class="pisol-v2-info-title">Payment method conditions</span>
+                    <span class="pisol-v2-info-desc">Charge based on chosen payment option</span>
+                    </div>
+                </div>
+
+                <div class="pisol-v2-card">
+                    <span class="pisol-v2-badge">✓</span>
+                    <div class="pisol-v2-info">
+                    <span class="pisol-v2-info-title">Day-based fees</span>
+                    <span class="pisol-v2-info-desc">Apply charges on selected weekdays</span>
+                    </div>
+                </div>
+
+                <div class="pisol-v2-card">
+                    <span class="pisol-v2-badge">✓</span>
+                    <div class="pisol-v2-info">
+                    <span class="pisol-v2-info-title">Shipping method rules</span>
+                    <span class="pisol-v2-info-desc">Apply fees by shipping method selected</span>
+                    </div>
+                </div>
+
+                <div class="pisol-v2-card">
+                    <span class="pisol-v2-badge">✓</span>
+                    <div class="pisol-v2-info">
+                    <span class="pisol-v2-info-title">Customer order history</span>
+                    <span class="pisol-v2-info-desc">Skip fees for first order or loyal customers</span>
+                    </div>
+                </div>
+
+                <div class="pisol-v2-card">
+                    <span class="pisol-v2-badge">✓</span>
+                    <div class="pisol-v2-info">
+                    <span class="pisol-v2-info-title">Spending-based exclusions</span>
+                    <span class="pisol-v2-info-desc">No fee if past order or total spend qualifies</span>
+                    </div>
+                </div>
+
+                <div class="pisol-v2-card">
+                    <span class="pisol-v2-badge">✓</span>
+                    <div class="pisol-v2-info">
+                    <span class="pisol-v2-info-title">Merge multiple fees</span>
+                    <span class="pisol-v2-info-desc">Combine several fees into one charge</span>
+                    </div>
+                </div>
+
+                <div class="pisol-v2-card">
+                    <span class="pisol-v2-badge">✓</span>
+                    <div class="pisol-v2-info">
+                    <span class="pisol-v2-info-title">Tooltip for charges</span>
+                    <span class="pisol-v2-info-desc">Help customers understand each extra charge</span>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Pricing & Action Footer -->
+                <div class="pisol-v2-footer">
+                <div class="pisol-v2-price">💰 Only <?php echo esc_html( PI_CEFW_PRICE ); ?></div>
+                <a href="<?php echo esc_url( PI_CEFW_PRODUCT_PAGE_URL ); ?>" class="pisol-v2-btn" target="_blank">🔒 Unlock Pro Now – Limited Time Price!</a>
+                </div>
+
+        </div>
+
         </div>
         <?php
     }
