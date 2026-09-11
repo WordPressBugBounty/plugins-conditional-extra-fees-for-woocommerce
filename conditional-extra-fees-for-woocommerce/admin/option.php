@@ -30,7 +30,7 @@ class pisol_cefw_options{
 
 
         $this->settings = array(
-           
+            array('field'=>'pi_affsw_moveto_top', 'label'=>__('Extra Settings'), 'desc'=>'', 'type'=>'setting_category', 'default'=>"1"),
 
             array('field'=>'pisol_cefw_optional_services', 'label'=>__('Optional services label', 'conditional-extra-fees-woocommerce'), 'desc'=>__('This label is shown above the fees', 'conditional-extra-fees-woocommerce'), 'type'=>'text', 'default'=>__('Optional services', 'conditional-extra-fees-woocommerce')),
 

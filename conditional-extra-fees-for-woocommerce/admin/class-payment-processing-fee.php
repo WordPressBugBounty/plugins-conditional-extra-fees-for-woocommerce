@@ -12,7 +12,7 @@ class pisol_cefw_payment_processing_option{
 
     private $this_tab = 'payment_processing_option';
 
-    private $tab_name = "Payment Processing fee";
+    private $tab_name = "Payment gateway fee";
 
     private $setting_key = 'cefw_payment_processing_option';
     
@@ -107,7 +107,7 @@ class pisol_cefw_payment_processing_option{
 
     function tab(){
         $page = sanitize_text_field(filter_input( INPUT_GET, 'page'));
-        $this->tab_name = __("Payment Processing fee", 'conditional-extra-fees-woocommerce');
+        $this->tab_name = __("Payment gateway fee", 'conditional-extra-fees-woocommerce');
         ?>
         <a class=" px-3 py-2 text-light d-flex align-items-center  border-left border-right  <?php echo ($this->active_tab == $this->this_tab ? 'bg-primary' : 'bg-secondary'); ?>" href="<?php echo esc_url( admin_url( 'admin.php?page='.$page.'&tab='.$this->this_tab ) ); ?>">
            <span class="dashicons dashicons-cart"></span> <?php echo esc_html( $this->tab_name); ?> 
@@ -126,7 +126,7 @@ class pisol_cefw_payment_processing_option{
                 new pisol_class_form_cefw($setting, $this->setting_key);
             }
         ?>
-        <input type="submit" class="my-3 btn btn-primary btn-md" value="<?php echo esc_attr__('Save Option','conditional-extra-fees-woocommerce'); ?>" />
+        <input type="submit" class="my-3 btn btn-primary btn-md" value="<?php echo esc_attr__('Save Option','conditional-extra-fees-woocommerce'); ?>"  style="margin-left:0;"/>
         </form>
        <?php
     }

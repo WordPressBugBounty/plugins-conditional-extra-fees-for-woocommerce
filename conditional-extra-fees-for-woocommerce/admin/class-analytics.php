@@ -1,6 +1,6 @@
 <?php
 /**
- * v1.0.3
+ * v1.0.12
  */
 
 
@@ -272,7 +272,7 @@ class Pi_Cefw_Analytics{
     function validateDate($date, $format = 'Y/m/d'){
         if ( empty($date) ) return false;
         
-        $d = DateTime::createFromFormat($format, $date);
+        $d = \DateTime::createFromFormat($format, $date);
         // The Y ( 4 digits year ) returns TRUE for any integer with any number of digits so changing the comparison from == to === fixes the issue.
         return $d && $d->format($format) === $date;
     }
