@@ -260,6 +260,9 @@
     width: 100%;
   }
 }
+.pisol-grid-row.align-items-center {
+  align-items: center;
+}
 
 /** Left sidebar closing circle */
 .pi-left-sidebar-closing-circle {
@@ -1644,6 +1647,16 @@ a.additional-charges-tab.pi-active-tab:focus {
 }
 
 /* End */
+/* table processing msg */
+#pisol-cefw-fees-list-view {
+  position: relative;
+}
+
+/* Pro option in condition shown lighter */
+select.pi_condition_rules option:disabled {
+  color: #ccc;
+}
+
 #pisol-license-page-content {
   padding: 20px;
 }

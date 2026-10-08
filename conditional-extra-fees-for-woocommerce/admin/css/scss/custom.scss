@@ -144,3 +144,13 @@ a.additional-charges-tab.pi-active-tab:focus {
 	background: rgba(255, 0, 0, 0.4);
 }
 /* End */
+
+/* table processing msg */
+#pisol-cefw-fees-list-view{
+    position:relative;
+}
+
+/* Pro option in condition shown lighter */
+select.pi_condition_rules option:disabled {
+    color: #ccc;
+}
