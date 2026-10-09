@@ -73,12 +73,19 @@ class Pi_cefw_selection_rule_height{
         $count = filter_input(INPUT_POST,'count',FILTER_VALIDATE_INT);
         //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo Pi_cefw_selection_rule_main::createNumberField($count, $this->condition, null);
+        echo $this->unit();
         die;
     }
 
     function savedDropdown($html, $values, $count){
         $html = Pi_cefw_selection_rule_main::createNumberField($count, $this->condition,  $values);
+        $html .= $this->unit();
         return $html;
+    }
+
+    function unit(){
+        $unit = get_option( 'woocommerce_dimension_unit', 'cm'  );
+        return '<span>(Dimention unit: '.esc_html($unit).')</span>';
     }
 
     function maxProductHeight(){
@@ -100,7 +107,7 @@ class Pi_cefw_selection_rule_height{
     function conditionCheck($result, $package, $logic, $values){
         
                     $or_result = false;
-                    $cart_max_height = $this->maxProductHeight();
+                    $cart_max_height = (float) $this->maxProductHeight();
                     
                     $rule_height = (float)$values[0];
                     switch ($logic){

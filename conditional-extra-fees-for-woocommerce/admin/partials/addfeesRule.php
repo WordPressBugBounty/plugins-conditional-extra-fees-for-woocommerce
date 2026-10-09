@@ -59,7 +59,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             <div class="row py-3 border-bottom align-items-center">
                 <div class="col-12 col-sm-5">
                     <label for="pi_is_taxable" class="h6"><?php echo esc_html__('Fee type','conditional-extra-fees-woocommerce'); ?></label>
-                    <br><i>Choose how the fee is calculated — Fixed amount or Percentage of cart total.</i>
+                    <br><i>Choose how the fee is calculated — Fixed amount or Percentage of cart syb-total.</i>
                 </div>
                 <div class="col-12 col-sm">
                     <select class="form-control" name="pi_fees_type" id="pi_fees_type">
@@ -79,63 +79,12 @@ if ( ! defined( 'ABSPATH' ) ) {
                 </div>
             </div>
 
-            <!-- IS Taxable -->
-            <div class="row py-3 border-bottom align-items-center">
-                <div class="col-12 col-sm-5">
-                    <label for="pi_fees_taxable" class="h6"><?php echo esc_html__('Is fee taxable','conditional-extra-fees-woocommerce'); ?> <span class="text-primary">*</span></label>
-                    <br><i>Should this fee be considered taxable?</i>
-                </div>
-                <div class="col-12 col-sm">
-                    <select class="form-control" name="pi_fees_taxable" id="pi_fees_taxable">
-                        <option value="no" <?php selected( $data['pi_fees_taxable'], "no" ); ?>><?php echo esc_html__('No','conditional-extra-fees-woocommerce'); ?></option>
-                        <option value="yes" <?php selected( $data['pi_fees_taxable'], "yes" ); ?>><?php echo esc_html__('Yes','conditional-extra-fees-woocommerce'); ?></option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Tax Class -->
-            <div class="row py-3 border-bottom align-items-center" id="row_pi_fees_tax_class">
-                <div class="col-12 col-sm-5">
-                    <label for="pi_fees_tax_class" class="h6"><?php echo esc_html__('Select tax class','conditional-extra-fees-woocommerce'); ?> <span class="text-primary">*</span></label>
-                    <br><i><?php echo esc_html__('Select the tax class for this fee. If you are not sure, leave it as Standard.','conditional-extra-fees-woocommerce'); ?></i>
-                </div>
-                <div class="col-12 col-sm">
-                    <select class="form-control" name="pi_fees_tax_class" id="pi_fees_tax_class">
-                    
-                    <?php 
-                    echo '<option value="standard" '.selected( $data['pi_fees_tax_class'], 'standard', true ).' >Standard</option>';
-                    if(!empty($data['tax_classes']) && is_array($data['tax_classes'])){
-                        foreach($data['tax_classes'] as $tax_class){
-                            echo '<option value="'.esc_attr($tax_class->slug).'" '.selected( $data['pi_fees_tax_class'], $tax_class->slug, true ).' >'.esc_html($tax_class->name).'</option>';
-                        }
-                    }
-                    ?>
-                    </select>
-                </div>
-            </div>
-
-
-            <!-- Roundoff -->
-            <div class="row py-3 border-bottom align-items-center">
-                <div class="col-12 col-sm-5">
-                    <label for="pi_cost" class="h6"><?php echo esc_html__('Round off to integer','conditional-extra-fees-woocommerce'); ?></label><?php pisol_cefw_help::tooltip('If the fee amount is a floating number then you can round off final fee amount to integer'); ?>
-                    <br><i><?php echo esc_html__('Round the calculated fee to the nearest whole number.','conditional-extra-fees-woocommerce'); ?></i>
-                </div>
-                <div class="col-12 col-sm">
-                    <select name="round_off" class="form-control">
-                        <option value=""><?php echo esc_html__('No','conditional-extra-fees-woocommerce'); ?></option>
-                        <option value="yes" <?php selected( $data['round_off'], "yes" ); ?> title="E.g: 2.7 = 3, 2.1 = 2, 2.5 = 3"><?php echo esc_html__('Nearest integer','conditional-extra-fees-woocommerce'); ?></option>   
-                        <option value="ceil" <?php selected( $data['round_off'], "ceil" ); ?> title="E.g: 2.7 = 3, 2.1 = 3" disabled="disabled"><?php echo esc_html__('Nearest higher integer (PRO)','conditional-extra-fees-woocommerce'); ?></option> 
-                        <option value="floor" <?php selected( $data['round_off'], "floor" ); ?> title="E.g: 2.7 = 2, 2.1 = 2" disabled="disabled"><?php echo esc_html__('Nearest lower integer (PRO)','conditional-extra-fees-woocommerce'); ?></option>
-                    </select>
-                </div>
-            </div>
-
             <!-- Is optional fees -->
             <div class="row py-3 border-bottom align-items-center">
                 <div class="col-12 col-sm-5">
                     <label for="pi_is_optional_fees" class="h6"><?php echo esc_html__('Is this fee optional','conditional-extra-fees-woocommerce'); ?> <span class="text-primary">*</span></label><br>
                     <i><?php echo esc_html__('Customer will be having the option to select this fee or not','conditional-extra-fees-woocommerce'); ?></i>
+                    <?php pisol_cefw_help::image(CONDITIONAL_FEES_RULE_WOOCOMMERCE_PLUGIN_FOLDER_URL."admin/img/optional-fee.png"); ?>
                 </div>
                 <div class="col-12 col-sm">
                     <select class="form-control" name="pi_is_optional_fees" id="pi_is_optional_fees">
@@ -145,69 +94,151 @@ if ( ! defined( 'ABSPATH' ) ) {
                 </div>
             </div>
 
-            <!-- Optional Fees Title -->
-            <div class="row py-3 border-bottom align-items-center free-version" id="row_pi_optional_title">
-                <div class="col-12 col-sm-5">
-                    <label for="pi_checkbox_title" class="h6"><?php echo esc_html__('Text shown next to the optional fee checkbox','conditional-extra-fees-woocommerce'); ?></label>
-                    <br><i><?php echo esc_html__('If left blank then Fee title will be used in the checkbox','conditional-extra-fees-woocommerce'); ?></i>
-                </div>
-                <div class="col-12 col-sm-7">
-                    <input type="text" value="" class="form-control" name="pi_checkbox_title" id="pi_checkbox_title">
-                </div>
-            </div>
-
-            <!-- Auto selected fees -->
-            <div class="row py-3 border-bottom align-items-center free-version" id="row_pi_selected_by_default">
-                <div class="col-12 col-sm-5">
-                    <label for="pi_selected_by_default" class="h6"><?php echo esc_html__('Auto selected the fees by default','conditional-extra-fees-woocommerce'); ?></label>
-                    <br><i><?php echo esc_html__('When the fee is optional, The fee checkbox will be auto selected on the checkout page initially, if customer don\'t want to pay for that fee they can unselect that checkbox and remove that fee','conditional-extra-fees-woocommerce'); ?></i>
-                </div>
-                <div class="col-12 col-sm">
-                    <select class="form-control" name="pi_selected_by_default" id="pi_selected_by_default">
-                        <option value="no"><?php esc_html_e('No','conditional-extra-fees-woocommerce'); ?></option>
-                        <option value="yes"><?php esc_html_e('Yes','conditional-extra-fees-woocommerce'); ?></option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Tool tip -->
-            <div class="row py-3 border-bottom align-items-center free-version" id="row_pi_tooltip">
-                <div class="col-12 col-sm-5">
-                    <label for="pi_tooltip" class="h6"><?php echo esc_html__('Tool tip shown next to the fee amount','conditional-extra-fees-woocommerce'); ?> </label>
-                    <br><i><?php echo esc_html__('Plain text (no HTML) tooltip shown beside the fee on the frontend.','conditional-extra-fees-woocommerce'); ?></i>
-                </div>
-                <div class="col-12 col-sm-7">
-                    <input type="text" value="" class="form-control" name="pi_tooltip" id="pi_tooltip">
-                </div>
-            </div>
-
-            <!-- currency -->
-            <div class="row py-4 border-bottom align-items-center">
-                <div class="col-12 col-sm-5">
-                    <label for="pi_currency" class="h6"><?php echo esc_html__('Apply for currency (useful for multi currency website only)','conditional-extra-fees-woocommerce'); ?></label><br><i><?php echo esc_html__('Restrict this fee to a specific currency. Leave empty to apply to all currencies.','conditional-extra-fees-woocommerce'); ?></i>
-                </div>
-                <div class="col-12 col-sm">
-                    <select name="pi_currency[]" id="pi_currency" multiple="multiple">
-                            <?php self::get_currency($data['pi_currency']); ?>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Start time -->
+            <!-- IS Taxable -->
             <div class="row py-3 border-bottom align-items-center">
                 <div class="col-12 col-sm-5">
-                    <label for="pi_cost" class="h6"><?php echo esc_html__('Fee Validity Period','conditional-extra-fees-woocommerce'); ?> <span class="text-primary"></span></label>
-                    <br><i><?php echo esc_html__('Set a start and end date for this fee. If left empty, the fee will be valid indefinitely.','conditional-extra-fees-woocommerce'); ?></i>
+                    <label for="pi_fees_taxable" class="h6"><?php echo esc_html__('Is fee taxable','conditional-extra-fees-woocommerce'); ?> <span class="text-primary">*</span></label>
+                    <br><i>Should this fee be considered taxable?</i>
                 </div>
-                <div class="col-12 col-sm-3">
-                    <input type="date" value="<?php echo esc_attr($data['pi_fees_start_time']); ?>" class="form-control" name="pi_fees_start_time" id="pi_fees_start_time" autocomplete="off">
-                    <i class="d-block mt-2">Start date</i>
+                <div class="col-12 col-sm-2">
+                    <select class="form-control" name="pi_fees_taxable" id="pi_fees_taxable">
+                        <option value="no" <?php selected( $data['pi_fees_taxable'], "no" ); ?>><?php echo esc_html__('No','conditional-extra-fees-woocommerce'); ?></option>
+                        <option value="yes" <?php selected( $data['pi_fees_taxable'], "yes" ); ?>><?php echo esc_html__('Yes','conditional-extra-fees-woocommerce'); ?></option>
+                    </select>
                 </div>
-                <div class="col-12 col-sm-3">
-                    <input type="date" value="<?php echo esc_attr($data['pi_fees_end_time']); ?>" class="form-control" name="pi_fees_end_time" id="pi_fees_end_time" autocomplete="off">
-                    <i class="d-block mt-2">End date</i>
+                <div class="col-12 col-sm-3" id="row_pi_fees_tax_class">
+                    <select class="form-control" name="pi_fees_tax_class" id="pi_fees_tax_class" title="Tax class decide the tax rate applied on this fee amount">
+                    <?php 
+                    echo '<option value="standard" '.selected( $data['pi_fees_tax_class'], 'standard', true ).' >Tax class: Standard</option>';
+                    if(!empty($data['tax_classes']) && is_array($data['tax_classes'])){
+                        foreach($data['tax_classes'] as $tax_class){
+                            echo '<option value="'.esc_attr($tax_class->slug).'" '.selected( $data['pi_fees_tax_class'], $tax_class->slug, true ).' >Tax class: '.esc_html($tax_class->name).'</option>';
+                        }
+                    }
+                    ?>
+                    </select>
                 </div>
             </div>
+
+            <div class="pi-step-container">
+                <details class="pi-step-content">
+                    <summary class="pi-step-header bg-dark text-light">
+                        <div>
+                        <strong class="pi-step-title"><?php echo esc_html__('Other basic settigns','conditional-extra-fees-woocommerce'); ?><small>(Non Required)</small></strong>
+                        <p>Roundoff, Currency, Minimum fee, Maximum fee & Valid period</p>
+                        </div>
+                        <div>
+                            <span class="dashicons dashicons-plus-alt2 mr-4"></span>
+                            <span class="dashicons dashicons-minus mr-4"></span>
+                        </div>
+                    </summary>
+                    <div class="pi-step-description">
+                        <!-- Roundoff -->
+                        <div class="row py-3 border-bottom align-items-center">
+                            <div class="col-12 col-sm-5">
+                                <label for="pi_cost" class="h6"><?php echo esc_html__('Round off to integer','conditional-extra-fees-woocommerce'); ?></label><?php pisol_cefw_help::tooltip('If the fee amount is a floating number then you can round off final fee amount to integer'); ?>
+                                <br><i><?php echo esc_html__('Round the calculated fee to the nearest whole number.','conditional-extra-fees-woocommerce'); ?></i>
+                            </div>
+                            <div class="col-12 col-sm">
+                                <select name="round_off" class="form-control">
+                                    <option value=""><?php echo esc_html__('No','conditional-extra-fees-woocommerce'); ?></option>
+                                    <option value="yes" <?php selected( $data['round_off'], "yes" ); ?> title="E.g: 2.7 = 3, 2.1 = 2, 2.5 = 3"><?php echo esc_html__('Nearest integer','conditional-extra-fees-woocommerce'); ?></option>   
+                                    <option value="ceil" <?php selected( $data['round_off'], "ceil" ); ?> title="E.g: 2.7 = 3, 2.1 = 3" disabled="disabled"><?php echo esc_html__('Nearest higher integer (PRO)','conditional-extra-fees-woocommerce'); ?></option> 
+                                    <option value="floor" <?php selected( $data['round_off'], "floor" ); ?> title="E.g: 2.7 = 2, 2.1 = 2" disabled="disabled"><?php echo esc_html__('Nearest lower integer (PRO)','conditional-extra-fees-woocommerce'); ?></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- currency -->
+                        <div class="row py-4 border-bottom align-items-center">
+                            <div class="col-12 col-sm-5">
+                                <label for="pi_currency" class="h6"><?php echo esc_html__('Apply for currency (useful for multi currency website only)','conditional-extra-fees-woocommerce'); ?></label><br><i><?php echo esc_html__('Restrict this fee to a specific currency. Leave empty to apply to all currencies.','conditional-extra-fees-woocommerce'); ?></i>
+                            </div>
+                            <div class="col-12 col-sm">
+                                <select name="pi_currency[]" id="pi_currency" multiple="multiple">
+                                        <?php self::get_currency($data['pi_currency']); ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Start time -->
+                        <div class="row py-3 border-bottom align-items-center">
+                            <div class="col-12 col-sm-5">
+                                <label for="pi_cost" class="h6"><?php echo esc_html__('Fee Validity Period','conditional-extra-fees-woocommerce'); ?> <span class="text-primary"></span></label>
+                                <br><i><?php echo esc_html__('Set a start and end date for this fee. If left empty, the fee will be valid indefinitely.','conditional-extra-fees-woocommerce'); ?></i>
+                            </div>
+                            <div class="col-12 col-sm-3">
+                                <input type="date" value="<?php echo esc_attr($data['pi_fees_start_time']); ?>" class="form-control" name="pi_fees_start_time" id="pi_fees_start_time" autocomplete="off">
+                                <i class="d-block mt-2">Start date</i>
+                            </div>
+                            <div class="col-12 col-sm-3">
+                                <input type="date" value="<?php echo esc_attr($data['pi_fees_end_time']); ?>" class="form-control" name="pi_fees_end_time" id="pi_fees_end_time" autocomplete="off">
+                                <i class="d-block mt-2">End date</i>
+                            </div>
+                        </div>
+
+                        <div class="row py-4 border-bottom align-items-center free-version">
+                            <div class="col-12 col-sm-5">
+                                <label for="pi_min_cost" class="h6">Min fees ($) </label><br><i>Fees can't be less then it's min fees. Leave it blank if you don't want to restrict it.</i>
+                            </div>
+                            <div class="col-12 col-sm">
+                                <input type="number" min="0" step="0.0001" value="" class="form-control" name="pi_min_cost" id="pi_min_cost">
+                            </div>
+                        </div>
+
+                        <div class="row py-4 border-bottom align-items-center free-version">
+                            <div class="col-12 col-sm-5">
+                                <label for="pi_max_cost" class="h6">Max fees ($) </label><br><i>Fees can't be more then it's max fees. Leave it blank if you don't want to restrict it. This is useful as fees can be dynamic and if you want to restrict it to certain amount you can do that using this</i>
+                            </div>
+                            <div class="col-12 col-sm">
+                                <input type="number" min="0" step="0.0001" value="" class="form-control" name="pi_max_cost" id="pi_max_cost">
+                            </div>
+                        </div>
+
+                        <!-- Optional Fees Title -->
+                        <div class="row py-3 border-bottom align-items-center free-version" id="row_pi_optional_title">
+                            <div class="col-12 col-sm-5">
+                                <label for="pi_checkbox_title" class="h6"><?php echo esc_html__('Text shown next to the optional fee checkbox','conditional-extra-fees-woocommerce'); ?></label>
+                                <br><i><?php echo esc_html__('If left blank then Fee title will be used in the checkbox','conditional-extra-fees-woocommerce'); ?></i>
+                            </div>
+                            <div class="col-12 col-sm-7">
+                                <input type="text" value="" class="form-control" name="pi_checkbox_title" id="pi_checkbox_title">
+                            </div>
+                        </div>
+
+                        <!-- Auto selected fees -->
+                        <div class="row py-3 border-bottom align-items-center free-version" id="row_pi_selected_by_default">
+                            <div class="col-12 col-sm-5">
+                                <label for="pi_selected_by_default" class="h6"><?php echo esc_html__('Auto selected the fees by default','conditional-extra-fees-woocommerce'); ?></label>
+                                <br><i><?php echo esc_html__('When the fee is optional, The fee checkbox will be auto selected on the checkout page initially, if customer don\'t want to pay for that fee they can unselect that checkbox and remove that fee','conditional-extra-fees-woocommerce'); ?></i>
+                            </div>
+                            <div class="col-12 col-sm">
+                                <select class="form-control" name="pi_selected_by_default" id="pi_selected_by_default">
+                                    <option value="no"><?php esc_html_e('No','conditional-extra-fees-woocommerce'); ?></option>
+                                    <option value="yes"><?php esc_html_e('Yes','conditional-extra-fees-woocommerce'); ?></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Tool tip -->
+                        <div class="row py-3 border-bottom align-items-center free-version" id="row_pi_tooltip">
+                            <div class="col-12 col-sm-5">
+                                <label for="pi_tooltip" class="h6"><?php echo esc_html__('Tool tip shown next to the fee amount','conditional-extra-fees-woocommerce'); ?> </label>
+                                <br><i><?php echo esc_html__('Plain text (no HTML) tooltip shown beside the fee on the frontend.','conditional-extra-fees-woocommerce'); ?></i>
+                            </div>
+                            <div class="col-12 col-sm-7">
+                                <input type="text" value="" class="form-control" name="pi_tooltip" id="pi_tooltip">
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+
+            
+
+            
+
+            
             <!-- Basic end -->
         </div>
     </details>

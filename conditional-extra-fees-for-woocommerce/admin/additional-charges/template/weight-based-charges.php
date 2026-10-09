@@ -1,5 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+$weight_unit = get_option( 'woocommerce_weight_unit', 'kg' );
 ?>
 <script>
     var pi_cart_weight_charges_count = <?php echo count(!empty($data['pi_cart_weight_charges']) && is_array($data['pi_cart_weight_charges'])? $data['pi_cart_weight_charges'] : array()) ; ?>
@@ -37,8 +39,8 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
     <thead>
         <tr>
             <th><?php esc_html_e('Category', 'conditional-extra-fees-woocommerce'); ?></th>
-            <th class="pi-min-col"><?php esc_html_e('Min Weight', 'conditional-extra-fees-woocommerce'); ?></th>
-            <th class="pi-min-col"><?php esc_html_e('Max Weight', 'conditional-extra-fees-woocommerce'); ?></th>
+            <th class="pi-min-col"><?php esc_html_e('Min Weight', 'conditional-extra-fees-woocommerce'); echo ' ('.$weight_unit.')'; ?></th>
+            <th class="pi-min-col"><?php esc_html_e('Max Weight', 'conditional-extra-fees-woocommerce'); echo ' ('.$weight_unit.')'; ?></th>
             <th class="pi-fee-col"><?php esc_html_e('Fees', 'conditional-extra-fees-woocommerce'); ?> <?php pisol_cefw_help::inline('weight_short_code_help', 'Using short code'); ?></th>
             <th></th>
         </tr>

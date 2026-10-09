@@ -25,7 +25,7 @@ class pisol_cefw_help{
     static function tooltip($msg, $echo = true){
         $msg = '<p class="pisol-tooltip" tooltip="'.esc_html($msg).'"><span class="dashicons dashicons-editor-help"></span></p>';
 
-        if($echo) echo wp_kses_post($msg);
+        if($echo) echo ($msg);
 
         return $msg;
     }
