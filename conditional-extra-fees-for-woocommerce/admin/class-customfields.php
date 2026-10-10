@@ -175,11 +175,11 @@ class CustomFields{
                         </div>
                     </div>
                     <div class="col-12 col-md-12 mb-3">
-                        <p class="font-italic mb-1">Tax class for the processing fee.</p>
+                        <p class="font-italic mb-1">Tax class for the processing fee</p>
                         <?php if($tax_class_dropdown) echo wp_kses($tax_class_dropdown, $this->allowed_tags); ?>
                     </div>
                     <div class="col-12 col-md-12">
-                        <p class="font-italic mb-1">Minimum and maximum amount for the processing fee <span class="text-danger">(PRO).</span></p>
+                        <p class="font-italic mb-1">Minimum and maximum amounts for the processing fee <span class="text-danger">(PRO).</span></p>
                         <div class="d-flex align-items-center free-version">
                             <?php echo wp_kses($min_amount, $this->allowed_tags); ?>
                             <span class="mx-2">to</span>

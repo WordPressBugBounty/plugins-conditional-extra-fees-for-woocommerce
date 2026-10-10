@@ -41,14 +41,6 @@ class pisol_cefw_pro_rules{
             'pro'=>true
         );
 
-        $rules['user_role'] = array(
-            'name'=>__('User role (Available in PRO Version) 🔒','conditional-extra-fees-woocommerce'),
-            'group'=>'user_related',
-            'condition'=>'user_role',
-            'pro'=>true
-        );
-
-
         $rules['payment_method'] = array(
             'name'=>__('Payment Method (Available in PRO Version) 🔒','conditional-extra-fees-woocommerce'),
             'group'=>'cart_related',

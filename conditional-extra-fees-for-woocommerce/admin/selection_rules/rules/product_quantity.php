@@ -66,6 +66,7 @@ class Pi_cefw_selection_rule_product_quantity{
 			$html .= '<option value=\'greater_equal_to\' '.selected($saved_logic , "greater_equal_to",false ).'>Greater or Equal to ( &gt;= )</option>';
 			$html .= '<option value=\'greater_then\' '.selected($saved_logic , "greater_then",false ).'>Greater than ( &gt; )</option>';
 			$html .= '<option value=\'not_equal_to\' '.selected($saved_logic , "not_equal_to",false ).'>Not Equal to ( != )</option>';
+            $html .= '<option value=\'multiple_of\' '.selected($saved_logic , "multiple_of",false ).'>Multiple of</option>';
             $html .= '<option value=\'not_multiple_of\' '.selected($saved_logic , "not_multiple_of",false ).'>Not Multiple of</option>';
         
         

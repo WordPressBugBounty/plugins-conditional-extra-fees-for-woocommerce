@@ -3,12 +3,12 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 ?>
 <div class="row py-3 border-bottom align-items-center">
     <div class="col-12 col-md-5">
-        <strong class="h4"><?php echo esc_html($this->title); ?> <span class="text-primary">*</span></strong><br><i>This rules decide if this fees will be applied or not</i>
+        <strong class="h4"><?php echo esc_html($this->title); ?> <span class="text-primary">*</span></strong><br><i>These rules decide if this fees will be applied or not</i>
     </div>
     <div class="col-12 col-md-5">
         <select class="form-control" name="pi_condition_logic">
             <option value="and" <?php selected( $this->data['pi_condition_logic'], 'and' ); ?>><?php echo esc_html(__('All the below rules should match', 'conditional-extra-fees-woocommerce')); ?></option>
-            <option value="or" <?php selected( $this->data['pi_condition_logic'], 'or' ); ?>><?php echo esc_html(__('Any one of the below rule should match', 'conditional-extra-fees-woocommerce')); ?></option>
+            <option value="or" <?php selected( $this->data['pi_condition_logic'], 'or' ); ?>><?php echo esc_html(__('Any one of the below rules should match', 'conditional-extra-fees-woocommerce')); ?></option>
         </select>
     </div>
     <div class="col-12 col-md-2 text-right">

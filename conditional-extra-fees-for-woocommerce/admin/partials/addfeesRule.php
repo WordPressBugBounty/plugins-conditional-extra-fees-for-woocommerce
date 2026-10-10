@@ -59,7 +59,7 @@ if ( ! defined( 'ABSPATH' ) ) {
             <div class="row py-3 border-bottom align-items-center">
                 <div class="col-12 col-sm-5">
                     <label for="pi_is_taxable" class="h6"><?php echo esc_html__('Fee type','conditional-extra-fees-woocommerce'); ?></label>
-                    <br><i>Choose how the fee is calculated — Fixed amount or Percentage of cart syb-total.</i>
+                    <br><i>Choose how the fee is calculated — Fixed amount or Percentage of cart subtotal.</i>
                 </div>
                 <div class="col-12 col-sm">
                     <select class="form-control" name="pi_fees_type" id="pi_fees_type">
@@ -124,7 +124,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <details class="pi-step-content">
                     <summary class="pi-step-header bg-dark text-light">
                         <div>
-                        <strong class="pi-step-title"><?php echo esc_html__('Other basic settigns','conditional-extra-fees-woocommerce'); ?><small>(Non Required)</small></strong>
+                        <strong class="pi-step-title"><?php echo esc_html__('Other basic settings','conditional-extra-fees-woocommerce'); ?><small>(Non Required)</small></strong>
                         <p>Roundoff, Currency, Minimum fee, Maximum fee & Valid period</p>
                         </div>
                         <div>
@@ -179,7 +179,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
                         <div class="row py-4 border-bottom align-items-center free-version">
                             <div class="col-12 col-sm-5">
-                                <label for="pi_min_cost" class="h6">Min fees ($) </label><br><i>Fees can't be less then it's min fees. Leave it blank if you don't want to restrict it.</i>
+                                <label for="pi_min_cost" class="h6">Min fees ($) </label><br><i>Fees can't be less than its min fees. Leave it blank if you don't want to restrict it.</i>
                             </div>
                             <div class="col-12 col-sm">
                                 <input type="number" min="0" step="0.0001" value="" class="form-control" name="pi_min_cost" id="pi_min_cost">
@@ -188,7 +188,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
                         <div class="row py-4 border-bottom align-items-center free-version">
                             <div class="col-12 col-sm-5">
-                                <label for="pi_max_cost" class="h6">Max fees ($) </label><br><i>Fees can't be more then it's max fees. Leave it blank if you don't want to restrict it. This is useful as fees can be dynamic and if you want to restrict it to certain amount you can do that using this</i>
+                                <label for="pi_max_cost" class="h6">Max fees ($) </label><br><i>Fees can't be more than its max fees. Leave it blank if you don't want to restrict it. This is useful as fees can be dynamic and if you want to restrict it to certain amount you can do that using this</i>
                             </div>
                             <div class="col-12 col-sm">
                                 <input type="number" min="0" step="0.0001" value="" class="form-control" name="pi_max_cost" id="pi_max_cost">
@@ -209,8 +209,8 @@ if ( ! defined( 'ABSPATH' ) ) {
                         <!-- Auto selected fees -->
                         <div class="row py-3 border-bottom align-items-center free-version" id="row_pi_selected_by_default">
                             <div class="col-12 col-sm-5">
-                                <label for="pi_selected_by_default" class="h6"><?php echo esc_html__('Auto selected the fees by default','conditional-extra-fees-woocommerce'); ?></label>
-                                <br><i><?php echo esc_html__('When the fee is optional, The fee checkbox will be auto selected on the checkout page initially, if customer don\'t want to pay for that fee they can unselect that checkbox and remove that fee','conditional-extra-fees-woocommerce'); ?></i>
+                                <label for="pi_selected_by_default" class="h6"><?php echo esc_html__('Auto-select the fees by default','conditional-extra-fees-woocommerce'); ?></label>
+                                <br><i><?php echo esc_html__('When the fee is optional, The fee checkbox will be auto selected on the checkout page initially, if customers don\'t want to pay for that fee they can unselect that checkbox and remove that fee','conditional-extra-fees-woocommerce'); ?></i>
                             </div>
                             <div class="col-12 col-sm">
                                 <select class="form-control" name="pi_selected_by_default" id="pi_selected_by_default">
@@ -223,7 +223,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                         <!-- Tool tip -->
                         <div class="row py-3 border-bottom align-items-center free-version" id="row_pi_tooltip">
                             <div class="col-12 col-sm-5">
-                                <label for="pi_tooltip" class="h6"><?php echo esc_html__('Tool tip shown next to the fee amount','conditional-extra-fees-woocommerce'); ?> </label>
+                                <label for="pi_tooltip" class="h6"><?php echo esc_html__('Tooltip shown next to the fee amount','conditional-extra-fees-woocommerce'); ?> </label>
                                 <br><i><?php echo esc_html__('Plain text (no HTML) tooltip shown beside the fee on the frontend.','conditional-extra-fees-woocommerce'); ?></i>
                             </div>
                             <div class="col-12 col-sm-7">
