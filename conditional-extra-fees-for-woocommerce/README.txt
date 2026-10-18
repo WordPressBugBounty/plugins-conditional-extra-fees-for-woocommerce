@@ -4,7 +4,7 @@ Donate link: https://piwebsolution.com
 Tags: Extra Charge, additional fee, service charge, woocommerce extra fee, woocommerce additional fees
 Requires at least: 5.3
 Tested up to: 7.1
-Stable tag: 1.1.71
+Stable tag: 1.1.72
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,7 +39,7 @@ WooCommerce extra fees plugin is very simple to use, and you can create complex 
 &#9989; Set minimum order amount-based extra fee
 &#9989; Set weight-based extra fee
 &#9989; Set shipping class-based extra fee
-&#9989; Postcode: You can apply an extra charge based on the specific postcode or a range of postcodes.
+&#9989; Postcode: You can apply an extra charge based on a specific postcode or a range of postcodes.
 &#9989; Charge extra fees by user role
 &#9989; Apply charge based on the product quantity being a multiple of
 &#9989; Apply charge if product quantity is not a multiple of  
@@ -149,7 +149,7 @@ https://www.youtube.com/watch?v=lE6ELZ0v_68
 &#9989; WooCommerce extra cost if user quantity is more than certain limit
 &#9989; Add WooCommerce surcharge based on state
 &#9989; WooCommerce extra fees based on product height
-&#9989; Add a WooCommerce Extra Fees for specific selected delivery date
+&#9989; Add WooCommerce Extra Fees for a specific selected delivery date
 &#9989; WooCommerce add fee to order
 &#9989; Apply additional fees based on the total weight of product in the cart
 &#9989; Apply Service charge based on product categories
@@ -218,7 +218,7 @@ https://www.youtube.com/watch?v=lE6ELZ0v_68
 
 
 == Screenshots ==
-1. Configuring a WooCommerce checkout fees
+1. Configuring WooCommerce checkout fees
 2. List of WooCommerce checkout fees rules
 3. Additional charge section to adjust the final checkout fee amount
 4. Create an optional service on checkout page, user can select this optional service and get charged for that service
@@ -230,7 +230,7 @@ https://www.youtube.com/watch?v=lE6ELZ0v_68
 
 == Frequently asked questions ==
 
-=  I want to charge an extra fee for WooCommerce based on the customer country? =
+=  I want to charge an extra fee for WooCommerce based on the customer's country? =
 Yes, you can do that by using our country-based rule.
 
 =  I want to charge a setup fee when a particular product is purchased? =
@@ -343,8 +343,11 @@ The Pro version includes time-based rules, so you can apply WooCommerce conditio
 
 == Changelog ==
 
+= 1.1.72 =
+* Tested for WC 11.2
+
 = 1.1.71 =
-* setting description changes
+* Setting description changes
 
 = 1.1.70 =
 * Re-arrangement of the fields
