@@ -80,33 +80,33 @@ class CustomFields{
         
         $apply_fee = '<label class="mb-0"><input type="checkbox" class="apply-processing-fee" name="'.esc_attr($setting['field']).'['.esc_attr($gateway).'][apply_fee]" id="'.esc_attr($setting['field']).'['.esc_attr($gateway).'][apply_fee]" value="1"'
         .(isset($saved_value[$gateway]['apply_fee']) && $saved_value[$gateway]['apply_fee'] == 1 ? ' checked="checked"' : '')
-        .' /> Enable processing fee</label>';
+        .' /> '.esc_html__('Enable processing fee','conditional-extra-fees-woocommerce').'</label>';
 
         $fee_type = '<select class="form-select form-control" name="'.esc_attr($setting['field']).'['.esc_attr($gateway).'][fee_type]" id="'.esc_attr($setting['field']).'['.esc_attr($gateway).'][fee_type]" required>';
-        $fee_type .= '<option value="fixed" '.selected(isset($saved_value[$gateway]['fee_type']) ? $saved_value[$gateway]['fee_type'] : '', 'fixed', false).' title="'.esc_attr__('Payment processing charge will be fixed amount', 'credit-card-processing-fee-for-woocommerce').'">'.esc_html__('Fixed Amount', 'credit-card-processing-fee-for-woocommerce').'</option>';
-        $fee_type .= '<option value="percentage" '.selected(isset($saved_value[$gateway]['fee_type']) ? $saved_value[$gateway]['fee_type'] : '', 'percentage', false).' title="'.esc_attr__('Payment processing charge will be a percentage of the order total', 'credit-card-processing-fee-for-woocommerce').'">'.esc_html__('Percentage', 'credit-card-processing-fee-for-woocommerce').'</option>';
+        $fee_type .= '<option value="fixed" '.selected(isset($saved_value[$gateway]['fee_type']) ? $saved_value[$gateway]['fee_type'] : '', 'fixed', false).' title="'.esc_attr__('Payment processing charge will be fixed amount', 'conditional-extra-fees-woocommerce').'">'.esc_html__('Fixed Amount', 'conditional-extra-fees-woocommerce').'</option>';
+        $fee_type .= '<option value="percentage" '.selected(isset($saved_value[$gateway]['fee_type']) ? $saved_value[$gateway]['fee_type'] : '', 'percentage', false).' title="'.esc_attr__('Payment processing charge will be a percentage of the order total', 'conditional-extra-fees-woocommerce').'">'.esc_html__('Percentage', 'conditional-extra-fees-woocommerce').'</option>';
         $fee_type .= '</select>';
         
         $field = '<input type="number" class="form-control mr-1" name="'.esc_attr($setting['field']).'['.esc_attr($gateway).'][amount]" id="'.esc_attr($setting['field']).'['.esc_attr($gateway).'][amount]" value="'.esc_attr($value).'"'
         .(isset($setting['required']) ? ' required="'.esc_attr($setting['required']).'"': '')
         .(isset($setting['readonly']) ? ' readonly="'.esc_attr($setting['readonly']).'"': '')
-        .' min="0" step="any" placeholder="'.esc_attr__('Enter amount', 'credit-card-processing-fee-for-woocommerce').'" />';
+        .' min="0" step="any" placeholder="'.esc_attr__('Enter amount', 'conditional-extra-fees-woocommerce').'" />';
     
         $min_amount = '<input type="number" class="form-control" name="'.esc_attr($setting['field']).'['.esc_attr($gateway).'][min_amount]" id="'.esc_attr($setting['field']).'['.esc_attr($gateway).'][min_amount]" value="'.esc_attr($min_amount_val).'"'
         .(isset($setting['required']) ? ' required="'.esc_attr($setting['required']).'"': '')
         .(isset($setting['readonly']) ? ' readonly="'.esc_attr($setting['readonly']).'"': '')
-        .' min="0" step="any" placeholder="'.esc_attr__('Min amount', 'credit-card-processing-fee-for-woocommerce').'" />';
+        .' min="0" step="any" placeholder="'.esc_attr__('Min amount', 'conditional-extra-fees-woocommerce').'" />';
 
         $max_amount = '<input type="number" class="form-control" name="'.esc_attr($setting['field']).'['.esc_attr($gateway).'][max_amount]" id="'.esc_attr($setting['field']).'['.esc_attr($gateway).'][max_amount]" value="'.esc_attr($max_amount_val).'"'
         .(isset($setting['required']) ? ' required="'.esc_attr($setting['required']).'"': '')
         .(isset($setting['readonly']) ? ' readonly="'.esc_attr($setting['readonly']).'"': '')
-        .' min="0" step="any" placeholder="'.esc_attr__('Max amount', 'credit-card-processing-fee-for-woocommerce').'" />';
+        .' min="0" step="any" placeholder="'.esc_attr__('Max amount', 'conditional-extra-fees-woocommerce').'" />';
 
 
         // Tax class dropdown
         $tax_classes = \WC_Tax::get_tax_classes();
-        $tax_class_options = array('' => __('Not taxable', 'credit-card-processing-fee-for-woocommerce'));
-        $tax_class_options['standard'] = __('Standard', 'credit-card-processing-fee-for-woocommerce');
+        $tax_class_options = array('' => __('Not taxable', 'conditional-extra-fees-woocommerce'));
+        $tax_class_options['standard'] = __('Standard', 'conditional-extra-fees-woocommerce');
         foreach ($tax_classes as $tax_class) {
             $tax_class_options[$tax_class] = $tax_class;
         }
@@ -153,7 +153,7 @@ class CustomFields{
             <?php echo wp_kses($desc != "" ? $desc.'<br>': "", $this->allowed_tags); ?>
             <?php if(!empty($shortcode_html)): ?>
                 <div class="mt-2">
-                    <small><?php esc_html_e('Short codes:','credit-card-processing-fee-for-woocommerce'); ?><br> <?php echo wp_kses($shortcode_html, $this->allowed_tags); ?></small>
+                    <small><?php esc_html_e('Short codes:','conditional-extra-fees-woocommerce'); ?><br> <?php echo wp_kses($shortcode_html, $this->allowed_tags); ?></small>
                 </div>
             <?php endif; ?>
             </div>
@@ -164,22 +164,22 @@ class CustomFields{
             <div class="col-12 col-md-7 processing-fields">
                 <div class="row">
                     <div class="col-12 col-md-12 mb-3">
-                        <p class="font-italic mb-1">Label for processing fee</p>
+                        <p class="font-italic mb-1"><?php echo esc_html(__('Label for processing fee', 'conditional-extra-fees-woocommerce')); ?></p>
                         <?php echo wp_kses($name, $this->allowed_tags); ?>
                     </div>
                     <div class="col-12 col-md-12 mb-3">
-                        <p class="font-italic mb-1">Processing fee amount (fixed or percentage of total)</p>
+                        <p class="font-italic mb-1"><?php echo esc_html(__('Processing fee amount (fixed or percentage of total)', 'conditional-extra-fees-woocommerce')); ?></p>
                         <div class="d-flex align-items-center">
                         <?php echo wp_kses($field, $this->allowed_tags); ?>
                         <?php echo wp_kses($fee_type, $this->allowed_tags); ?>
                         </div>
                     </div>
                     <div class="col-12 col-md-12 mb-3">
-                        <p class="font-italic mb-1">Tax class for the processing fee</p>
+                        <p class="font-italic mb-1"><?php echo esc_html(__('Tax class for the processing fee', 'conditional-extra-fees-woocommerce')); ?></p>
                         <?php if($tax_class_dropdown) echo wp_kses($tax_class_dropdown, $this->allowed_tags); ?>
                     </div>
                     <div class="col-12 col-md-12">
-                        <p class="font-italic mb-1">Minimum and maximum amounts for the processing fee <span class="text-danger">(PRO).</span></p>
+                        <p class="font-italic mb-1"><?php echo esc_html(__('Minimum and maximum amounts for the processing fee', 'conditional-extra-fees-woocommerce')); ?> <span class="text-danger">(PRO).</span></p>
                         <div class="d-flex align-items-center free-version">
                             <?php echo wp_kses($min_amount, $this->allowed_tags); ?>
                             <span class="mx-2">to</span>

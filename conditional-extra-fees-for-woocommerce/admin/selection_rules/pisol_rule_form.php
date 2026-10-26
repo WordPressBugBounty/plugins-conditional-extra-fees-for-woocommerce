@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 ?>
 <div class="row py-3 border-bottom align-items-center">
     <div class="col-12 col-md-5">
-        <strong class="h4"><?php echo esc_html($this->title); ?> <span class="text-primary">*</span></strong><br><i>These rules decide if this fees will be applied or not</i>
+        <strong class="h4"><?php echo esc_html($this->title); ?> <span class="text-primary">*</span></strong><br><i><?php echo esc_html(__('These rules decide if this fees will be applied or not', 'conditional-extra-fees-woocommerce')); ?></i>
     </div>
     <div class="col-12 col-md-5">
         <select class="form-control" name="pi_condition_logic">

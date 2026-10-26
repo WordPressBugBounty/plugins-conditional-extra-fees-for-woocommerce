@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Conditional extra fees for WooCommerce\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-14 10:37+0000\n"
+"POT-Creation-Date: 2026-10-26 06:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -38,7 +38,7 @@ msgstr ""
 
 #: admin/additional-charges/template/quantity-based-charges.php:21
 #: admin/additional-charges/template/subtotal-based-charges.php:21
-#: admin/additional-charges/template/weight-based-charges.php:21
+#: admin/additional-charges/template/weight-based-charges.php:23
 msgid "Add Rule"
 msgstr ""
 
@@ -55,19 +55,24 @@ msgid "Amount"
 msgstr ""
 
 #: admin/selection_rules/pisol_rule_form.php:11
-msgid "Any one of the below rule should match"
+msgid "Any one of the below rules should match"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:187
+#: admin/partials/addfeesRule.php:155
 msgid "Apply for currency (useful for multi currency website only)"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:162
-msgid "Auto selected the fees by default"
+#: admin/partials/addfeesRule.php:212
+msgid "Auto-select the fees by default"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:60
+#: admin/selection_rules/rules/pro_rules.php:52
 msgid "Back order product total (Available in PRO Version) 🔒"
+msgstr ""
+
+#: admin/partials/addfeesRule.php:24
+msgid ""
+"Basic setting of the fee, like Fee amount, Optional fee, and Tax status."
 msgstr ""
 
 #: admin/selection_rules/rules/pro_rules.php:38
@@ -101,13 +106,13 @@ msgid "Cart Subtotal (Before discount)"
 msgstr ""
 
 #: admin/additional-charges/weight-based-charges.php:21
-#: admin/additional-charges/template/weight-based-charges.php:29
+#: admin/additional-charges/template/weight-based-charges.php:31
 msgid "Cart Weight"
 msgstr ""
 
 #: admin/additional-charges/template/quantity-based-charges.php:39
 #: admin/additional-charges/template/subtotal-based-charges.php:39
-#: admin/additional-charges/template/weight-based-charges.php:39
+#: admin/additional-charges/template/weight-based-charges.php:41
 msgid "Category"
 msgstr ""
 
@@ -115,12 +120,18 @@ msgstr ""
 msgid "Change Fee based on Cart Quantity"
 msgstr ""
 
-#: admin/additional-charges/template/weight-based-charges.php:9
+#: admin/additional-charges/template/weight-based-charges.php:11
 msgid "Change Fee based on Cart Weight"
 msgstr ""
 
 #: admin/additional-charges/template/subtotal-based-charges.php:9
 msgid "Change Fees based on Cart Subtotal"
+msgstr ""
+
+#: admin/partials/addfeesRule.php:62
+msgid ""
+"Choose how the fee is calculated — Fixed amount or Percentage of cart "
+"subtotal."
 msgstr ""
 
 #: admin/partials/addfeesRule.php:13
@@ -129,6 +140,10 @@ msgstr ""
 
 #: admin/combine-method.php:62
 msgid "Combine multiple fees"
+msgstr ""
+
+#: admin/partials/addfeesRule.php:252
+msgid "Condition that will decide when to apply this fee"
 msgstr ""
 
 #. Description of the plugin
@@ -154,11 +169,11 @@ msgstr ""
 msgid "Create fee rule"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:130
+#: admin/selection_rules/rules/pro_rules.php:122
 msgid "Custom product attribute (Number)(Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:137
+#: admin/selection_rules/rules/pro_rules.php:129
 msgid "Custom product attribute (Text)(Available in PRO Version) 🔒"
 msgstr ""
 
@@ -166,11 +181,11 @@ msgstr ""
 msgid "Customer IP address based country"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:138
+#: admin/partials/addfeesRule.php:86
 msgid "Customer will be having the option to select this fee or not"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:67
+#: admin/selection_rules/rules/pro_rules.php:59
 msgid "Days of the week (Available in PRO Version) 🔒"
 msgstr ""
 
@@ -186,6 +201,18 @@ msgstr ""
 msgid "Edit fee"
 msgstr ""
 
+#: admin/partials/addfeesRule.php:37
+msgid "Enable or disable this fee rule"
+msgstr ""
+
+#: admin/class-customfields.php:83
+msgid "Enable processing fee"
+msgstr ""
+
+#: admin/class-customfields.php:93
+msgid "Enter amount"
+msgstr ""
+
 #: admin/class-payment-processing-fee.php:42
 msgid ""
 "Enter gateway charge amount for each payment gateway. Leave blank for no "
@@ -194,6 +221,10 @@ msgstr ""
 
 #: admin/class-conditional-fees-rule-woocommerce-list-fees-rules.php:45
 msgid "Extra fees rules"
+msgstr ""
+
+#: admin/option.php:33
+msgid "Extra Settings"
 msgstr ""
 
 #: admin/option.php:74
@@ -212,23 +243,40 @@ msgstr ""
 msgid "Fee type"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:199
+#: admin/partials/addfeesRule.php:167
 msgid "Fee Validity Period"
 msgstr ""
 
 #: admin/partials/listfeesRule.php:21
 #: admin/additional-charges/template/quantity-based-charges.php:42
 #: admin/additional-charges/template/subtotal-based-charges.php:42
-#: admin/additional-charges/template/weight-based-charges.php:42
+#: admin/additional-charges/template/weight-based-charges.php:44
 msgid "Fees"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:102
+#: admin/partials/addfeesRule.php:182
+msgid ""
+"Fees can't be less than its min fees. Leave it blank if you don't want to "
+"restrict it."
+msgstr ""
+
+#: admin/partials/addfeesRule.php:191
+msgid ""
+"Fees can't be more than its max fees. Leave it blank if you don't want to "
+"restrict it. This is useful as fees can be dynamic and if you want to "
+"restrict it to certain amount you can do that using this"
+msgstr ""
+
+#: admin/selection_rules/rules/pro_rules.php:94
 msgid "First order (Available in PRO Version) 🔒"
 msgstr ""
 
 #: admin/partials/addfeesRule.php:66
 msgid "Fixed"
+msgstr ""
+
+#: admin/class-customfields.php:86
+msgid "Fixed Amount"
 msgstr ""
 
 #: admin/class-payment-processing-fee.php:40
@@ -250,7 +298,7 @@ msgid ""
 "If enabled it will show the optional fees checkbox on the cart page as well"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:152
+#: admin/partials/addfeesRule.php:202
 msgid "If left blank then Fee title will be used in the checkbox"
 msgstr ""
 
@@ -258,24 +306,45 @@ msgstr ""
 msgid "Increase / Decrease Fee by these extra rules"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:85
+#: admin/partials/addfeesRule.php:282
+msgid ""
+"Increment/Decrease fee charge by weight, quantity, subtotal etc. ranges."
+msgstr ""
+
+#: admin/partials/addfeesRule.php:100
 msgid "Is fee taxable"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:137
+#: admin/partials/addfeesRule.php:85
 msgid "Is this fee optional"
+msgstr ""
+
+#: admin/option.php:37
+msgid "It will move the plugin options in the WooCommerce submenu"
+msgstr ""
+
+#: admin/class-customfields.php:167
+msgid "Label for processing fee"
 msgstr ""
 
 #: admin/additional-charges/additional-charges.php:61
 msgid "Largest of the matched charges"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:109
+#: admin/selection_rules/rules/pro_rules.php:101
 msgid "Last Order Total (Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:74
+#: admin/selection_rules/rules/pro_rules.php:66
 msgid "Local pickup fees (Available in PRO Version) 🔒"
+msgstr ""
+
+#: admin/class-customfields.php:103
+msgid "Max amount"
+msgstr ""
+
+#: admin/partials/addfeesRule.php:191
+msgid "Max fees ($)"
 msgstr ""
 
 #: admin/selection_rules/rules/height.php:29
@@ -298,8 +367,16 @@ msgstr ""
 msgid "Max Subtotal"
 msgstr ""
 
-#: admin/additional-charges/template/weight-based-charges.php:41
+#: admin/additional-charges/template/weight-based-charges.php:43
 msgid "Max Weight"
+msgstr ""
+
+#: admin/class-customfields.php:98
+msgid "Min amount"
+msgstr ""
+
+#: admin/partials/addfeesRule.php:182
+msgid "Min fees ($)"
 msgstr ""
 
 #: admin/additional-charges/template/quantity-based-charges.php:40
@@ -310,28 +387,44 @@ msgstr ""
 msgid "Min Subtotal"
 msgstr ""
 
-#: admin/additional-charges/template/weight-based-charges.php:40
+#: admin/additional-charges/template/weight-based-charges.php:42
 msgid "Min Weight"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:128
+#: admin/class-customfields.php:182
+msgid "Minimum and maximum amounts for the processing fee"
+msgstr ""
+
+#: admin/option.php:37
+msgid "Move to WooCommerce submenu"
+msgstr ""
+
+#: admin/partials/addfeesRule.php:51
+msgid "Name of the fee rule shown to the customer (required)."
+msgstr ""
+
+#: admin/partials/addfeesRule.php:146
 msgid "Nearest higher integer (PRO)"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:127
+#: admin/partials/addfeesRule.php:145
 msgid "Nearest integer"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:129
+#: admin/partials/addfeesRule.php:147
 msgid "Nearest lower integer (PRO)"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:90 admin/partials/addfeesRule.php:126
-#: admin/partials/addfeesRule.php:142 admin/partials/addfeesRule.php:167
+#: admin/partials/addfeesRule.php:91 admin/partials/addfeesRule.php:105
+#: admin/partials/addfeesRule.php:144 admin/partials/addfeesRule.php:217
 msgid "No"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:116
+#: admin/class-customfields.php:108
+msgid "Not taxable"
+msgstr ""
+
+#: admin/selection_rules/rules/pro_rules.php:108
 msgid "Number of Orders during a period (Available in PRO Version) 🔒"
 msgstr ""
 
@@ -339,7 +432,7 @@ msgstr ""
 msgid "Open All ▼"
 msgstr ""
 
-#: admin/option.php:35 public/class-apply-fees.php:272
+#: admin/option.php:35 public/class-apply-fees.php:275
 msgid "Optional services"
 msgstr ""
 
@@ -347,12 +440,24 @@ msgstr ""
 msgid "Optional services label"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:53
-msgid "Payment Method (Available in PRO Version) 🔒"
+#: admin/partials/addfeesRule.php:127
+msgid "Other basic settings"
 msgstr ""
 
 #: admin/class-payment-processing-fee.php:110
-msgid "Payment Processing fee"
+msgid "Payment gateway fee"
+msgstr ""
+
+#: admin/selection_rules/rules/pro_rules.php:45
+msgid "Payment Method (Available in PRO Version) 🔒"
+msgstr ""
+
+#: admin/class-customfields.php:87
+msgid "Payment processing charge will be a percentage of the order total"
+msgstr ""
+
+#: admin/class-customfields.php:86
+msgid "Payment processing charge will be fixed amount"
 msgstr ""
 
 #: admin/class-payment-processing-fee.php:36
@@ -360,8 +465,12 @@ msgstr ""
 msgid "Payment processing fee"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:67
+#: admin/class-customfields.php:87 admin/partials/addfeesRule.php:67
 msgid "Percentage"
+msgstr ""
+
+#. Name of the plugin
+msgid "PI Conditional cart fee / Extra charge rule for WooCommerce"
 msgstr ""
 
 #. Author of the plugin
@@ -372,11 +481,7 @@ msgstr ""
 msgid "Pickup location"
 msgstr ""
 
-#. Name of the plugin
-msgid "PiWeb Conditional cart fee / Extra charge rule for WooCommerce"
-msgstr ""
-
-#: admin/partials/addfeesRule.php:177
+#: admin/partials/addfeesRule.php:227
 msgid "Plain text (no HTML) tooltip shown beside the fee on the frontend."
 msgstr ""
 
@@ -395,47 +500,50 @@ msgstr ""
 msgid "Postcode"
 msgstr ""
 
+#: admin/class-customfields.php:171
+msgid "Processing fee amount (fixed or percentage of total)"
+msgstr ""
+
 #: admin/selection_rules/rules/quantity.php:29
 msgid "Quantity"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:88
+#: admin/selection_rules/rules/pro_rules.php:80
 msgid "Quantity of product from category (Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:95
+#: admin/selection_rules/rules/pro_rules.php:87
 msgid "Quantity of product from Tag (Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:187
+#: admin/partials/addfeesRule.php:155
 msgid ""
 "Restrict this fee to a specific currency. Leave empty to apply to all "
 "currencies."
 msgstr ""
 
-#: admin/partials/addfeesRule.php:121
+#: admin/partials/addfeesRule.php:139
 msgid "Round off to integer"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:122
+#: admin/partials/addfeesRule.php:140
 msgid "Round the calculated fee to the nearest whole number."
+msgstr ""
+
+#: admin/partials/addfeesRule.php:128
+msgid "Roundoff, Currency, Minimum fee, Maximum fee & Valid period"
+msgstr ""
+
+#: admin/option.php:96
+msgid "Save Changes"
 msgstr ""
 
 #: admin/class-payment-processing-fee.php:129
 msgid "Save Option"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:272
+#: admin/partials/addfeesRule.php:303
 msgid "Save Rule"
-msgstr ""
-
-#: admin/partials/addfeesRule.php:99
-msgid "Select tax class"
-msgstr ""
-
-#: admin/partials/addfeesRule.php:100
-msgid ""
-"Select the tax class for this fee. If you are not sure, leave it as Standard."
 msgstr ""
 
 #: admin/selection_rules/rules/selected_delivery_date.php:38
@@ -446,17 +554,17 @@ msgstr ""
 msgid "Selected delivery day"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:234
+#: admin/partials/addfeesRule.php:265
 msgid "Selection Rules"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:200
+#: admin/partials/addfeesRule.php:168
 msgid ""
 "Set a start and end date for this fee. If left empty, the fee will be valid "
 "indefinitely."
 msgstr ""
 
-#: conditional-fees-rule-woocommerce.php:116
+#: conditional-fees-rule-woocommerce.php:119
 msgid "Settings"
 msgstr ""
 
@@ -464,7 +572,7 @@ msgstr ""
 msgid "Shipping Class"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:81
+#: admin/selection_rules/rules/pro_rules.php:73
 msgid "Shipping method (Available in PRO Version) 🔒"
 msgstr ""
 
@@ -472,6 +580,14 @@ msgstr ""
 msgid ""
 "Shipping module is missing, Activate/Install the missing shipping modules to "
 "ensure all functionality is available."
+msgstr ""
+
+#: admin/class-customfields.php:156
+msgid "Short codes:"
+msgstr ""
+
+#: admin/partials/addfeesRule.php:101
+msgid "Should this fee be considered taxable?"
 msgstr ""
 
 #: admin/option.php:39
@@ -486,6 +602,10 @@ msgstr ""
 msgid "Specific product quantity (PRO also support Variable Product)"
 msgstr ""
 
+#: admin/class-customfields.php:109
+msgid "Standard"
+msgstr ""
+
 #: admin/selection_rules/rules/state.php:32
 msgid "State"
 msgstr ""
@@ -498,7 +618,7 @@ msgstr ""
 msgid "Step 1: Basic Settings"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:250
+#: admin/partials/addfeesRule.php:281
 msgid "Step 3: Adjust fee charge"
 msgstr ""
 
@@ -506,7 +626,11 @@ msgstr ""
 msgid "Sum of all matched charges"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:151
+#: admin/class-customfields.php:178
+msgid "Tax class for the processing fee"
+msgstr ""
+
+#: admin/partials/addfeesRule.php:201
 msgid "Text shown next to the optional fee checkbox"
 msgstr ""
 
@@ -514,23 +638,27 @@ msgstr ""
 msgid "There are no fee rule added yet, add them first"
 msgstr ""
 
+#: admin/selection_rules/pisol_rule_form.php:6
+msgid "These rules decide if this fees will be applied or not"
+msgstr ""
+
 #: admin/option.php:35
 msgid "This label is shown above the fees"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:144
+#: admin/selection_rules/rules/pro_rules.php:136
 msgid "Time-Based Availability (Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:176
-msgid "Tool tip shown next to the fee amount"
+#: admin/partials/addfeesRule.php:226
+msgid "Tooltip shown next to the fee amount"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:123
+#: admin/selection_rules/rules/pro_rules.php:115
 msgid "Total amount spent during a period (Available in PRO Version) 🔒"
 msgstr ""
 
-#: admin/selection_rules/rules/product_quantity.php:156
+#: admin/selection_rules/rules/product_quantity.php:157
 msgid "Total Quantity"
 msgstr ""
 
@@ -546,23 +674,19 @@ msgstr ""
 msgid "User Role"
 msgstr ""
 
-#: admin/selection_rules/rules/pro_rules.php:45
-msgid "User role (Available in PRO Version) 🔒"
-msgstr ""
-
 #: admin/selection_rules/rules/weight.php:29
 msgid "Weight"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:163
+#: admin/partials/addfeesRule.php:213
 msgid ""
 "When the fee is optional, The fee checkbox will be auto selected on the "
-"checkout page initially, if customer don't want to pay for that fee they can "
-"unselect that checkbox and remove that fee"
+"checkout page initially, if customers don't want to pay for that fee they "
+"can unselect that checkbox and remove that fee"
 msgstr ""
 
-#: admin/partials/addfeesRule.php:91 admin/partials/addfeesRule.php:143
-#: admin/partials/addfeesRule.php:168
+#: admin/partials/addfeesRule.php:92 admin/partials/addfeesRule.php:106
+#: admin/partials/addfeesRule.php:218
 msgid "Yes"
 msgstr ""
 

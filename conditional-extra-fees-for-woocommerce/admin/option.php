@@ -30,11 +30,11 @@ class pisol_cefw_options{
 
 
         $this->settings = array(
-            array('field'=>'pi_affsw_moveto_top', 'label'=>__('Extra Settings'), 'desc'=>'', 'type'=>'setting_category', 'default'=>"1"),
+            array('field'=>'pi_affsw_moveto_top', 'label'=>__('Extra Settings', 'conditional-extra-fees-woocommerce'), 'desc'=>'', 'type'=>'setting_category', 'default'=>"1"),
 
             array('field'=>'pisol_cefw_optional_services', 'label'=>__('Optional services label', 'conditional-extra-fees-woocommerce'), 'desc'=>__('This label is shown above the fees', 'conditional-extra-fees-woocommerce'), 'type'=>'text', 'default'=>__('Optional services', 'conditional-extra-fees-woocommerce')),
 
-            array('field'=>'pisol_cefw_move_to_submenu', 'label'=>__('Move to WooCommerce submenu'), 'desc'=>__('It will move the plugin options in the WooCommerce submenu'), 'type'=>'switch', 'default'=>"0"),
+            array('field'=>'pisol_cefw_move_to_submenu', 'label'=>__('Move to WooCommerce submenu', 'conditional-extra-fees-woocommerce'), 'desc'=>__('It will move the plugin options in the WooCommerce submenu', 'conditional-extra-fees-woocommerce'), 'type'=>'switch', 'default'=>"0"),
 
             array('field'=>'pisol_cefw_fees_option_cart', 'label'=>__('Show optional fees checkbox on cart page', 'conditional-extra-fees-woocommerce'), 'desc'=>__('If enabled it will show the optional fees checkbox on the cart page as well', 'conditional-extra-fees-woocommerce'), 'type'=>'switch', 'default'=>"0", 'pro'=>true),
         );
@@ -93,7 +93,7 @@ class pisol_cefw_options{
                 new pisol_class_form_cefw($setting, $this->setting_key);
             }
         ?>
-        <input type="submit" class="my-3 btn btn-primary btn-md" value="Save Option" />
+        <input type="submit" class="my-3 btn btn-primary btn-md" value="<?php echo esc_attr__('Save Changes','conditional-extra-fees-woocommerce'); ?>" />
         </form>
        <?php
     }

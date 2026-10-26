@@ -86,6 +86,8 @@ class Pi_cefw_Apply_fees{
 
                     $fees_amount = pisol_cefw_multiCurrencyFilters($fees_amount);
 
+                    $fees_amount = $this->round_off($fees_amount, $fees_obj);
+
                     $this->add_to_fees_amount_list($fees_name, $fees_amount);
 
                     if($fees_obj->is_optional()){
@@ -95,7 +97,6 @@ class Pi_cefw_Apply_fees{
                         }
                     }
                     
-                    $fees_amount = $this->round_off($fees_amount, $fees_obj);
 
                      /**
                      * without this advance way of adding fees with ID
@@ -190,6 +191,8 @@ class Pi_cefw_Apply_fees{
                 return 0;
             }
         }
+
+        return 0;
     }
 
     function qty($arg){
@@ -235,7 +238,7 @@ class Pi_cefw_Apply_fees{
                 'excluded_products' => ''
             ),
             $arg,
-            'selected_product_qty'
+            'selected_product_count'
         );
         $fees_id = $this->short_code_fees_id;
         $cart = $this->short_code_cart;
