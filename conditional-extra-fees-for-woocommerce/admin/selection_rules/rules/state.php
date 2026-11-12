@@ -98,16 +98,25 @@ class Pi_cefw_selection_rule_state{
     function conditionCheck($result, $package, $logic, $values){
         
                     $or_result = false;
+                    $user_country = ( WC()->customer instanceof WC_Customer ) ? WC()->customer->get_shipping_country() : '';
                     $user_state = ( WC()->customer instanceof WC_Customer ) ? WC()->customer->get_shipping_state() : '';
-                    $rule_states = $this->separateState($values);
+
+                    if ( empty($user_country) || empty($user_state) ) {
+                        return false;
+                    }
+
+                    $user_value   = $user_country . ':' . $user_state;
+
+                    $rule_states = is_array($values) ? $values : array();
+
                     if($logic == 'equal_to'){
-                        if(in_array($user_state, $rule_states)){
+                        if(in_array($user_value, $rule_states)){
                             $or_result = true;
                         }else{
                             $or_result = false;
                         }
                     }else{
-                        if(in_array($user_state, $rule_states)){
+                        if(in_array($user_value, $rule_states)){
                             $or_result = false;
                         }else{
                             $or_result = true;
@@ -115,17 +124,6 @@ class Pi_cefw_selection_rule_state{
                     }
                
         return  $or_result;
-    }
-
-    function separateState($countries_states){
-        $value = array();
-        if(is_array($countries_states)){
-        foreach($countries_states as $countries_state){
-            $array = explode(":",$countries_state);
-            $value[] = $array[1];
-        }
-        }
-        return $value;
     }
 }
 

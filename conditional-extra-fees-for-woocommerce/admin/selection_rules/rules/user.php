@@ -74,6 +74,10 @@ class Pi_cefw_selection_rule_user{
         if(is_array($values)){
             foreach($values as $value){
                 $user_obj = get_user_by("ID",$value);
+                if(!is_object($user_obj)){
+                    $saved_users[$value] = 'ID: '.$value;
+                    continue;
+                }
                 $saved_users[$user_obj->ID] = $user_obj->display_name;
             }
         }
