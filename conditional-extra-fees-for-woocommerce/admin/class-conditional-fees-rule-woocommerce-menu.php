@@ -42,6 +42,12 @@ class Pi_cefw_Menu{
         
     }
 
+    static function  getCapability(){
+        $capability = 'manage_options';
+
+        return (string)apply_filters('pisol_cefw_settings_cap', $capability);
+    }
+
     public function bootstrap_style() {
         add_thickbox();
         wp_enqueue_style( $this->plugin_name."_admin", plugin_dir_url( __FILE__ ) . 'css/admin.css', array(), $this->version, 'all' );

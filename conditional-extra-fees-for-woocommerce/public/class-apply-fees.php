@@ -268,7 +268,7 @@ class Pi_cefw_Apply_fees{
                 if(self::feesChecked($fees_id)){
                     $checked = ' checked="checked" ';
                 }
-                $html .= sprintf('<li><label><input type="checkbox" value="1" name="%s" class="pi-cefw-optional-fees" %s> %s</label></li>', $name, $checked, $title );
+                $html .= sprintf('<li><label><input type="checkbox" value="1" name="%s" class="pi-cefw-optional-fees" %s> %s</label></li>', $name, $checked, esc_html($title) );
             }
         }
         //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

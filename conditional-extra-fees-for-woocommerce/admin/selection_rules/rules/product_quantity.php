@@ -137,14 +137,14 @@ class Pi_cefw_selection_rule_product_quantity{
             $multiple = '';
         }
 
-        $html = '<select class="form-control pi_condition_value pi_values_'.$dynamic.'" data-condition="'.$condition.'" name="pi_selection['.$count.'][pi_'.PI_CEFW_SELECTION_RULE_SLUG.'_condition_value][product]" '.$multiple.' placeholder="Select">';
+        $html = '<select class="form-control pi_condition_value pi_values_'.esc_attr($dynamic).'" data-condition="'.esc_attr($condition).'" name="pi_selection['.esc_attr($count).'][pi_'.esc_attr(PI_CEFW_SELECTION_RULE_SLUG).'_condition_value][product]" '.$multiple.' placeholder="Select">';
         foreach ($array as $key => $value){
                 $selected = "";
                 if(is_array($values) && in_array($key, $values)){
                     $selected = ' selected="selected" ';
                 }
-                $html .= '<option value="'.$key.'" '.$selected.'>';
-            $html .= $value;
+                $html .= '<option value="'.esc_attr($key).'" '.$selected.'>';
+            $html .= esc_html($value);
             $html .= '</option>';
         }
         $html .= '</select>';
@@ -154,7 +154,7 @@ class Pi_cefw_selection_rule_product_quantity{
     static function createNumberField($count, $condition ="",  $value = "", $step = 'any'){
 
         
-        $html = '<input type="number" step="'.$step.'" class="form-control" data-condition="'.$condition.'" name="pi_selection['.$count.'][pi_'.PI_CEFW_SELECTION_RULE_SLUG.'_condition_value][quantity]" value="'.$value.'" placeholder="'.__('Total Quantity','conditional-extra-fees-woocommerce').'" >';
+        $html = '<input type="number" step="'.esc_attr($step).'" class="form-control" data-condition="'.esc_attr($condition).'" name="pi_selection['.esc_attr($count).'][pi_'.esc_attr(PI_CEFW_SELECTION_RULE_SLUG).'_condition_value][quantity]" value="'.esc_attr($value).'" placeholder="'.__('Total Quantity','conditional-extra-fees-woocommerce').'" >';
         return $html;
     }
 

@@ -216,8 +216,14 @@ class Class_Pi_cefw_Add_Edit{
 				$post_id  = wp_insert_post( $shipping_method_post );
                 $redirect_url = admin_url( '/admin.php?page=pisol-cefw&tab=pi_cefw_add_rule&action=edit&id='.$post_id);
 			} else {
+				$post_id = (int)sanitize_text_field($data['post_id']);
+
+				if ( get_post_type( $post_id ) !== 'pi_fees_rule' ) {
+					return false;
+				}
+
 				$shipping_method_post = array(
-					'ID'          => (int)sanitize_text_field($data['post_id']),
+					'ID'          => $post_id,
 					'post_title'  => sanitize_text_field($data['pi_title']),
 					'post_status' => 'publish',
 				);
@@ -337,7 +343,7 @@ class Class_Pi_cefw_Add_Edit{
         $post_id = filter_input(INPUT_POST,'id');
         $status = filter_input(INPUT_POST,'status');
 
-        if(!current_user_can('administrator') || empty($post_id)) return;
+        if(!current_user_can('manage_options') || empty($post_id)) return;
         
         if ( !empty($status) ) {
             update_post_meta( $post_id, 'pi_status', "on" );

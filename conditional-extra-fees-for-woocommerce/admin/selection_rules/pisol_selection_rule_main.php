@@ -229,7 +229,7 @@ class Pi_cefw_selection_rule_main{
         }else{
             $value = "";
         }
-        $html = '<input type="number" step="'.$step.'" class="form-control" data-condition="'.$condition.'" name="pi_selection['.$count.'][pi_'.PI_CEFW_SELECTION_RULE_SLUG.'_condition_value][]" value="'.$value.'">';
+        $html = '<input type="number" step="'.esc_attr($step).'" class="form-control" data-condition="'.esc_attr($condition).'" name="pi_selection['.esc_attr($count).'][pi_'.esc_attr(PI_CEFW_SELECTION_RULE_SLUG).'_condition_value][]" value="'.esc_attr($value).'">';
         return $html;
     }
 
@@ -240,7 +240,7 @@ class Pi_cefw_selection_rule_main{
         }else{
             $value = "";
         }
-        $html = '<input required type="text" class="form-control" data-condition="'.$condition.'" name="pi_selection['.$count.'][pi_'.PI_CEFW_SELECTION_RULE_SLUG.'_condition_value][]" value="'.$value.'">';
+        $html = '<input required type="text" class="form-control" data-condition="'.esc_attr($condition).'" name="pi_selection['.esc_attr($count).'][pi_'.esc_attr(PI_CEFW_SELECTION_RULE_SLUG).'_condition_value][]" value="'.esc_attr($value).'">';
         return $html;
     }
 
